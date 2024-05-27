@@ -107,7 +107,7 @@ print '@fecha='+cast(@fecha as varchar)
 
     WHILE @@FETCH_STATUS = 0
     BEGIN
-        IF @recibirCorreos = 1
+        IF @recibirCorreos = 0
         BEGIN
             -- Insert logic to send email notification
             -- For example, you could call a stored procedure or use SQL Server Agent to send emails
