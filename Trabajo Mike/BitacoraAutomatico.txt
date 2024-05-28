@@ -1,0 +1,3515 @@
+Revision Incluye
+	Conectarse a cada Maquina y revisar que Excel  este corriendo y disco C no este lleno
+	Asegurar que el  acceso a los drives O: y S: este completo
+	Asegurar que la maquina que se revisa en VisualBasic, no tenga mas  de 1 Dia Corriendo
+*************************************************************************************************************
+Revision Maquinas 28-May-2024 8:56 am
+01		OK			Terminando Alta-EAF		disco C OK											
+02		OK			Ejecutando GMSFS-F3	  	disco C OK
+03		OK			Ejecutando NMEM-EAF 		disco C OK
+04		OK			Ejecutando GLNMTB-LMF 		disco C OK													
+05		Error			Detenido en GLNCVL-EAF  	disco C OK, Sin recursos suficientes para terminar la tarea
+Desarrollo3	Ok			Reiniciada			disco C OK, Ya se encuentra ejecuntando NOVE
+*************************************************************************************************************
+Revision Maquinas 27-May-2024 9:21 am
+01		ERROR			Reiniciada				disco C OK, Ya se encuentra ejecutando SDICOL-North DC												
+02		OK			Ejecutando NHICK-Fldc	  	disco C OK
+03		OK			Ejecutando NMEM-EAF 		disco C OK
+04		OK			Ejecutando GLNMTB-LMF 		disco C OK													
+05		OK			Ejecutando SDICOL-South DC  	disco C OK
+Desarrollo3	ERROR			Reiniciada				disco C OK, Ya se encuentra ejecuntando ALTN
+*************************************************************************************************************
+Revision Maquinas 24-May-2024 9:24 am
+01		OK			Ejecutando NSBS-South		disco C OK												
+02		OK			Ejecutando GLNWIL-EAF   	disco C OK
+03		OK			Ejecutando APECHAT-EAF 		disco C OK
+04		OK			Ejecutando APEGNK-EAF 		disco C OK													
+05		OK			Ejecutando NY-F1		  	disco C OK
+Desarrollo3	OK			Ejecutando Nove			disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-May-2024 9:40 am
+01		OK			Ejecutando NSBS-South_awv	disco C OK												
+02		OK			Ejecutando NSBS-North   	disco C OK
+03		OK			Ejecutando Regina-F4		disco C OK
+04		OK			Ejecutando TSTaiNTS-EAF		disco C OK													
+05		ERROR			Ejecutando GLNMid-B Fce  	disco C OK, Falta de recursos Excel
+Desarrollo3	OK			Ejecuntado SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-May-2024 9:43 am
+01		ERROR			Detenido GAL-EAF		disco C OK, falta de recursos Excel												
+02		OK			Ejecutando APEGNK-EAF   	disco C OK
+03		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+04		OK			Ejecutando GLNWIL-EAF		disco C OK													
+05		OK			Ejecutando APECHAT-EAF  	disco C OK
+Desarrollo3	ERROR			Reiniciada			disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-May-2024 9:27 am
+01		ERROR			Detenido GLNMid- Fce		disco C OK, falta de recursos Excel												
+02		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+03		OK			Ejecutando NSBS-South		disco C OK
+04		OK			Ejecutando GLNWIL-EAF		disco C OK													
+05		OK			Ejecutando APECHAT-EAF  	disco C OK
+Desarrollo3	OK			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-May-2024 9:15 am
+01		OK			Ejecutando NSBS-NORTH		disco C OK												
+02		ERROR			Detenido GMSFS-F3		disco C OK, mas de 24 horas
+03		ERROR			Detenido GLNWIL-EAF		disco C OK, falta de recursos Excel
+04		ERROR			Detenido  GLNPTB-EAF		disco C OK, mas de 24 horas													
+05		ERROR			Detenido DSPohang-Bdc Shell	disco C OK, mas de 24 horas
+Desarrollo3	ERROR			Reiniciada			disco C OK, parece que se reinicia cada fin de semana
+*************************************************************************************************************
+Revision Maquinas 17-May-2024 9:15 am
+01		OK			Ejecutando POL-EAF		disco C OK												
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando GLNWIL-EAF		disco C OK
+04		OK			Ejecutando OTKSCAL-EAF		disco C OK													
+05		OK			Ejecutando NUTA-F2Sub		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-May-2024 9:46 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK												
+02		OK			Ejecutando ALLSVK-EAF		disco C OK
+03		OK			Ejecutando REGINA-F4		disco C OK
+04		OK			Ejecutando TSThaiNTS-EAF	disco C OK													
+05		OK			Ejecutando NHICK-Fldc		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-May-2024 9:26 am
+01		ERROR			Detenido APECHAT-EAF		disco C OK, Le falta algun archivo o no lo detecto, esta trabajando con un archivo sin nombre adjunto evidencia												
+02		OK			Ejecutando CTLatrobe-EAF	disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		ERROR			DETENIDO GLNCVL-EAF		disco C OK, mas de 24 horas													
+05		OK			Ejecutando NHICK-Fldc		disco C OK
+Desarrollo3	OK			Ejecutando OLA			disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-May-2024 9:21 am
+01		ERROR			Detenido GLNWTB-LMF		disco C OK, Falta de recursos en Excel													
+02		OK			Ejecutando Alta-LMF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK													
+05		OK			Ejecutando GMSFS-F3		disco C OK
+Desarrollo3	OK			Ejecutando OEMK			disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-May-2024 9:24 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK 													
+02		OK			Ejecutando NMEM-EAF		disco C OK
+03		ERROR			Ejecutando GLNCVL-EAF		disco C OK, Falta de recursos en Excel
+04		OK			Ejecutando SDICOL-South DC	disco C OK													
+05		OK			Ejecutando GLNMTB-LMF		disco C OK
+Desarrollo3	ERROR 			Se encuentra reiniciada		disco C OK, Se registro un reinicio a la 1:20 PM del domingo 12 de mayo
+*************************************************************************************************************
+Revision Maquinas 10-May-2024 9:29 am
+01		OK			Ejecutando NDUF-EAF		disco C OK 													
+02		OK			Ejecutando GLNJKS-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK													
+05		OK			Ejecutando SDICOL-South DC	disco C OK
+Desarrollo3	OK 			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 9-May-2024 9:06 am
+01		OK			Ejecutando GLNMTB-LMF		disco C OK 													
+02		OK			Ejecutando GLNMID-B Fce		disco C OK
+03		OK			Ejecutando ArvediAST-EAF	disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK													
+05		OK			Ejecutando GLNMTB-EAF		disco C OK
+Desarrollo3	ERROR 			Macro se cerró			disco C OK, Comentario.	Ayer la revise y si estuvo trabajando procesando, desconozco motivo por el que haya cerrado el macro, dejó abierto el summary de Alton Steel
+*************************************************************************************************************
+Revision Maquinas 8-May-2024 9:23 am
+01		ERROR			Detenido NUTA-F1		disco C OK 													Mas de 24 horas
+02		OK			Ejecutando GLNWTB-EAF		disco C OK
+03		OK			Ejecutando ALLSVK-EAF		disco C OK
+04		PRUEBA			Ejecutando GLNPTB-EAF		disco C OK,													Maquina en uso para dar seguimiento a macro
+05		OK			Ejecutando GLNWTB-LMF		disco C OK
+Desarrollo3	ERROR 			Detenido SSAB			disco C OK, cuadro de dialogo indicado 										No encuentra la worksheet resDetail_prev
+*************************************************************************************************************
+Revision Maquinas 7-May-2024 9:33 am
+01		OK			Ejecutando NUTA-F1		disco C OK
+02		OK			Ejecutando GMFS-LMF		disco C OK
+03		ERROR			Detenido SYS-SYS1		disco C OK, cuadro de dialogo indicado										Falta de recursos en Excel, sospecho que es problema de Sys-Sys1, voy a revisar que si ejecute de manera correcta
+04		OK			Ejecutando Fink1CH-EAF		disco C OK
+05		OK			Ejecutando GMSFS-F3		disco C OK
+Desarrollo3	ERROR 			Detenido SSAB			disco C OK, 													Mas de 24 horas
+*************************************************************************************************************
+Revision Maquinas 6-May-2024 9:11 am
+01		OK			Ejecutando NMAR-EAf				disco C OK, observacion										Lleva 18 horas ejecuntandose
+02		ERROR			Detenido GLNPTB-EAF 				disco C OK, cuadro de dialogo indicado								Falta de recursos en Excel
+03		ERROR			Detenido SYS-SYS1				disco C OK, cuadro de dialogo indicado								Falta de recursos en Excel
+04		OK			Ejecutando Fink1CH-EAF				disco C OK, observacion										Lleva 12 horas ejecutandose
+05		ERROR			Detenido TUTA-EAF				disco C OK, cuadro de dialogo indicado								Falta de recursos en Excel
+Desarrollo3	OK			Ejecutando SSAB					disco C OK
+*************************************************************************************************************
+Revision Maquinas 3-May-2024 10:49 am
+01		OK			Ejecutando POL-EAF		disco C OK
+02		OK			Ejecutando NUTA-F1		disco C OK
+03		OK			Ejecutando GMSFS-F3		disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando GLNCVL-LMF		disco C OK
+Desarrollo3	ERROR 			No esta ejecutando ni VPN, se ejecuta SSAB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 2-May-2024 10:19 am
+01		OK			Ejecutando GNWIL-EAF		disco C OK
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando Yumbo2 HAE		disco C OK
+04		OK			Ejecutando TSTAH-EAFdc		disco C OK
+05		OK			Ejecutando GMSFS-F4		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 1-May-2024 4:34 pm
+01		OK			Ejecutando DSIncheon-EAFDC	disco C OK
+02		OK			Ejecutando TUTA-EAF		disco C OK
+03		OK			Ejecutando NSBS-South		disco C OK
+04		OK			Ejecutando HHAL-EAFdc		disco C OK
+05		OK			Ejecutando NSBS-North		disco C OK
+Desarrollo3	ERROR			Reseteada la compu se puso a correr con SSAB, disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Abr-2024 8:50 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando StdS-EAF		disco C OK
+03		ERROR			Detenido GLNMid-B Fce		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+04		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando IND 			disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Abr-2024 9:30 am
+01		ERROR			Detenido NHICK-F1dc		disco C OK, reinicio de equipo
+02		ERROR			Detenido GLNPTB-LMF		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+03		OK			Ejecutando GLNMid-B Fce		disco C OK
+04		ERROR			Detenido GLNMid-A Fce		disco C OK, Estaba corriendo pero ya 										llevaba mas de 24 horas en el mismo
+05		ERROR			Detenido APECHAT-EAF		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+Desarrollo3	ERROR			Detenido 			disco C OK, reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 23-Abr-2024 8:30 am
+01		OK			Ejecutando NUTA-F2		disco C OK
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando POL-EAF		disco C OK
+04		OK			Ejecutando NUTA-F1		disco C OK
+05		OK			Ejecutando GMSFS-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Abr-2024 8:50 am
+01		ERROR			Detenido GMSFS-F4		disco C OK
+02		OK			Ejecutando GLNWTB-LMF		disco C OK
+03		ERROR			Detenido NSBS-North		disco C OK
+04		ERROR			Detenido TENKOP-EAF		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	ERROR			Detenido 			disco C OK,reinicio de maquina
+*************************************************************************************************************
+Revision Maquinas 19-Abr-2024 8:40 am
+01		OK			Ejecutando NHICK-F2dc		disco C OK
+02		OK			Ejecutando StdS-EAF		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Abr-2024 8:50 am
+01		OK			Ejecutando GAL-EAF		disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando APECHAT-EAF		disco C OK
+04		OK			Ejecutando NMAR-EAF		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Abr-2024 8:40 am
+01		OK			Ejecutando SYS-SYS2		disco C OK
+02		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+03		OK			Ejecutando Regina-F4		disco C OK
+04		OK			Ejecutando APEGNK-EAF		disco C OK
+05		OK			Ejecutando NY-F2		disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Abr-2024 8:40 am
+01		OK			Ejecutando HHAL-EAFdc		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando KWT-EAF		disco C OK
+04		OK			Ejecutando GLNPTB-LMF		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Abr-2024 9:00 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GLNCVL-LMF		disco C OK
+03		OK			Ejecutando Yumbo2-HAE		disco C OK
+04		ERROR			Detenido NSBS_South_awv		disco C OK, reinicio de equipo
+05		OK			Ejecutando TSTAH-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Abr-2024 9:00 am
+01		OK			Ejecutando NDUF-EAF		disco C OK
+02		OK			Ejecutando SDICOL-South DC	disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando GLNJKS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando OLA			disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Abr-2024 8:50 am
+01		OK			Ejecutando SDICOL-South DC	disco C OK
+02		OK			Ejecutando GLNJKS-EAF		disco C OK
+03		OK			Ejecutando GLNWTB-EAF		disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando TENKOP-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Abr-2024 8:50 am
+01		OK			Ejecutando oHofors-EAF		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando NDEC-EAFdc		disco C OK
+04		OK			Ejecutando StdS-EAF		disco C OK
+05		OK			Ejecutando NHICK-F1dc		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka		disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Abr-2024 8:40 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando SYS-SYS2		disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Abr-2024 8:50 am
+01		OK			Ejecutando TSTAH-EAFdc		disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando GLNWIL-EAF		disco C OK
+04		OK			Ejecutando Yumbo2-HAE		disco C OK
+05		OK			Ejecutando GLNCVL-LMF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Abr-2024 9:30 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+04		OK			Ejecutando CTLatrobe-EAF	disco C OK
+05		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+Desarrollo3	OK			Ejecutando IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Abr-2024 9:10 am
+01		OK			Ejecutando NY-F1		disco C OK
+02		OK			Ejecutando APEGNK-EAF		disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Abr-2024 9:00 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando TSTAH-EAFdc		disco C OK
+04		OK			Ejecutando GMSFS-F3		disco C OK
+05		OK			Ejecutando Yumbo2-HAE		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Abr-2024 9:00 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando GLNJKS-EAF		disco C OK
+04		OK			Ejecutando SDICOL-South DC	disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Mar-2024 8:50 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando TUTA-EAF		disco C OK
+04		OK			Ejecutando NSBS-North		disco C OK
+05		OK			Ejecutando NSBS-South-awv	disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Mar-2024 8:50 am
+01		OK			Ejecutando GMSFS-F3		disco C OK
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando NUTA-F1		disco C OK
+04		OK			Ejecutando GMSFS-LMF		disco C OK
+05		OK			Ejecutando GMSFS-F4		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Mar-2024 8:40 am
+01		OK			Ejecutando SDICOL-South DC	disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GLNPTB-LMF		disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando GLNJKS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Mar-2024 9:10 am
+01		ERROR			Detenido TENKOP-EAF		disco C OK,llego correo que el archivo 										zip no contenia informacion
+02		OK			Ejecutando POL-EAF		disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Mar-2024 9:10 am
+01		OK			Ejecutando oHofors-EAF		disco C OK
+02		OK			Ejecutando TENKOP-EAF		disco C OK
+03		OK			Ejecutando NHICK-F1dc		disco C OK
+04		OK			Ejecutando NHICK-F2dc		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando OLA 			disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Mar-2024 9:00 am
+01		OK			Ejecutando NY-F1		disco C OK,Detenida desde el dia 										anterior
+02		OK			Ejecutando NMAR-EAF		disco C OK,Detenida desde el dia 										anterior
+03		ERROR			Detenido GLNCVL-EAF		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+04		ERROR			Detenido FinklCH-EAF		disco C OK, llego correo que el archivo 									zip no contenia informacion
+05		OK			Ejecutando NMEM-EAF		disco C OK,Detenida desde el dia 										anterior
+
+Desarrollo3	ERROR			Detenido VSY 			disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 15-Mar-2024 8:40 am
+01		OK			Ejecutando GLNWTB-EAF		disco C OK
+02		OK			Ejecutando GLNWTB-LMF		disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando GLNJKS-EAF		disco C OK
+05		OK			Ejecutando SDICOL-South DC	disco C OK
+Desarrollo3	OK			Ejecutando OEMK 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Mar-2024 8:50 am
+01		OK			Ejecutando StdS-EAF		disco C OK
+02		OK			Ejecutando GLNMid-A fce		disco C OK
+03		OK			Ejecutando GLNMid-B fce		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		OK			Ejecutando NDEC-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando ALTN 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Mar-2024 8:40 am
+01		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+02		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando TSKYU-EAFdc		disco C OK
+05		OK			Ejecutando CTLatrobe-EAF	disco C OK
+Desarrollo3	OK			Ejecutando NOVE 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Mar-2024 8:50 am
+01		OK			Ejecutando APEGNK-EAF		disco C OK
+02		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+03		OK			Ejecutando APECHAT-EAF		disco C OK
+04		OK			Ejecutando NY-F1		disco C OK
+05		OK			Ejecutando NDUF-EAF		disco C OK
+Desarrollo3	OK			Ejecutando Butler 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Mar-2024 8:50 am
+01		OK			Ejecutando GLNCVL-LMF		disco C OK
+02		OK			Ejecutando Yumbo2-HAE		disco C OK
+03		OK			Ejecutando GLNCVL-EAF		disco C OK
+04		OK			Ejecutando TSTAH-EAFdc		disco C OK
+05		OK			Ejecutando NUTA-F2		disco C OK
+Desarrollo3	OK			Ejecutando IND	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Mar-2024 8:40 am
+01		OK			Ejecutando TSTAH-EAFdc		disco C OK
+02		OK			Ejecutando Yumbo2-HAE		disco C OK
+03		OK			Ejecutando GLNCVL-LMF		disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando GLNWIL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Mar-2024 8:40 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK
+02		OK			Ejecutando GMSFS-LMF		disco C OK
+03		OK			Ejecutando NUTA-F2		disco C OK
+04		OK			Ejecutando NUTA-F2Sub		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando VSY	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Mar-2024 8:55 am
+01		OK			Ejecutando GLNJKS-EAF		disco C OK
+02		OK			Ejecutando GLNCHL-EAF		disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando GLNPTB-LMF		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Mar-2024 8:50 am
+01		OK			Ejecutando GSDR-EAF		disco C OK
+02		OK			Ejecutando GLNCHL-EAF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Mar-2024 8:40 am
+01		OK			Ejecutando TSKYU-EAFdc		disco C OK
+02		OK			Ejecutando SDICC-North		disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando TENKOP-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Feb-2024 10:50 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando GLNMid-B Fce		disco C OK
+04		OK			Ejecutando ArvediAST-EAF	disco C OK
+05		OK			Ejecutando GLNMTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando OEMK	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Feb-2024 8:50 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		OK			Ejecutando TSKYU-EAFdc		disco C OK
+03		OK			Ejecutando NHICK-F1dc		disco C OK
+04		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+05		OK			Ejecutando SDICC-South		disco C OK
+Desarrollo3	OK			Ejecutando OLA	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Feb-2024 8:40 am
+01		OK			Ejecutando NY-F1		disco C OK
+02		OK			Ejecutando APECHAT-EAF		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando GAL-EAF		disco C OK
+05		OK			Ejecutando TSOKA-EAFdc		disco C OK
+Desarrollo3	ERROR			Detenido VSY	 		disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 23-Feb-2024 9:00 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando NSBS-North_awv	disco C OK
+04		OK			Ejecutando NSBS-South_awv	disco C OK
+05		OK			Ejecutando NSBS-South		disco C OK
+Desarrollo3	OK			Ejecutando OEMK	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Feb-2024 8:40 am
+01		OK			Ejecutando HHAL-EAFdc		disco C OK
+02		OK			Ejecutando NSBS-South_awv	disco C OK
+03		OK			Ejecutando NSBS-North_awv	disco C OK
+04		OK			Ejecutando NSBS-South		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Feb-2024 8:45 am
+01		OK			Ejecutando GLNCVL-LMF		disco C OK
+02		OK			Ejecutando TUTA-EAF		disco C OK
+03		OK			Ejecutando NSBS-North		disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+Desarrollo3	OK			Ejecutando IND	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Feb-2024 8:40 am
+01		OK			Ejecutando GMSFS-F4		disco C OK
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando GCTUL-EAF		disco C OK
+04		OK			Ejecutando TSTAH-EAFdc		disco C OK
+05		OK			Ejecutando GLNWIL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Feb-2024 9:00 am
+01		OK			Ejecutando GCTUL-EAF		disco C OK
+02		OK			Ejecutando Yumbo2-HAE		disco C OK
+03		OK			Ejecutando TSTAH-EAFdc		disco C OK
+04		OK			Ejecutando GLNWIL-EAF		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Feb-2024 8:50 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GLNWTB-EAF		disco C OK
+04		OK			Ejecutando ALLSVK-EAF		disco C OK
+05		OK			Ejecutando ArvediAST-EAF	disco C OK
+Desarrollo3	OK			Ejecutando IND	 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Feb-2024 9:00 am
+01		OK			Ejecutando ArvediAST-EAF	disco C OK
+02		OK			Ejecutando GLNWTB-EAF		disco C OK
+03		OK			Ejecutando SDICOL-South DC	disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando NDUF-EAF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Feb-2024 8:40 am
+01		OK			Ejecutando GLNMTB-EAF		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando GLNMid-B Fce		disco C OK
+04		OK			Ejecutando NDUF-EAF		disco C OK
+05		OK			Ejecutando GLNMid-A Fce		disco C OK
+Desarrollo3	OK			Ejecutando SSAB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Feb-2024 9:00 am
+01		OK			Ejecutando oHofors-EAF		disco C OK
+02		OK			Ejecutando POL-EAF		disco C OK
+03		OK			Ejecutando TENKOP-EAF		disco C OK
+04		OK			Ejecutando NDUF-EAF		disco C OK
+05		OK			Ejecutando StdS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Feb-2024 8:50 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2dc		disco C OK
+03		OK			Ejecutando oHofors-EAF		disco C OK
+04		OK			Ejecutando SDICC-North		disco C OK
+05		OK			Ejecutando NHICK-F1dc		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Feb-2024 8:40 am
+01		OK			Ejecutando NSBS-South		disco C OK
+02		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+03		OK			Ejecutando NSBS-South_awv	disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando NSBS-North		disco C OK
+Desarrollo3	OK			Ejecutando IND   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Feb-2024 8:50 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando HHAL-EAFdc		disco C OK
+03		OK			Ejecutando NSBS-South_awv	disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando NSBS-South		disco C OK
+Desarrollo3	OK			Ejecutando NOVE   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Feb-2024 9:00 am
+01		OK			Ejecutando NUTA-F2		disco C OK
+02		OK			Ejecutando TUTA-EAF		disco C OK
+03		OK			Ejecutando NSBS-North_awv	disco C OK
+04		OK			Ejecutando NASGhent-F1		disco C OK
+05		OK			Ejecutando NSBS-North		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Feb-2024 8:50 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando NHICK-F2dc		disco C OK
+04		OK			Ejecutando TENKOP-EAF		disco C OK
+05		OK			Ejecutando NHICK-F1dc		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Feb-2024 8:40 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando TENKOP-EAF		disco C OK
+04		OK			Ejecutando TSKYU-EAFdc		disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutando OLA   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Feb-2024 8:50 am
+01		OK			Ejecutando StdS-EAF		disco C OK
+02		OK			Ejecutando SDICC-North		disco C OK
+03		OK			Ejecutando NHICK-F2dc		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-Ene-2024 8:40 am
+01		OK			Ejecutando StdS-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2dc		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando SDICC-South		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Ene-2024 8:50 am
+01		OK			Ejecutando NHICK-F1dc		disco C OK
+02		OK			Ejecutando NDEC-EAFdc		disco C OK
+03		OK			Ejecutando NHICK-F2dc		disco C OK
+04		OK			Ejecutando StdS-EAF		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Ene-2024 8:40 am
+01		OK			Ejecutando ALLSVK-EAF		disco C OK
+02		OK			Ejecutando GLNMTB-EAF		disco C OK
+03		OK			Ejecutando GLNMid-A Fce		disco C OK
+04		OK			Ejecutando GLNMTB-LMF		disco C OK
+05		OK			Ejecutando GLNWTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Ene-2024 8:50 am
+01		OK			Ejecutando NDEC-EAFdc		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando GLNMTB-LMF		disco C OK
+04		OK			Ejecutando GLNMid-B Fce		disco C OK
+05		OK			Ejecutando GLNMTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Ene-2024 8:50 am
+01		OK			Ejecutando SDICOL-North DC	disco C OK
+02		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+03		OK			Ejecutando SDICOL-South DC	disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Ene-2024 8:40 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK
+02		OK			Ejecutando GLNCHL-EAF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando GSDR-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Ene-2024 9:20 am
+01		OK			Ejecutando GLNJKS-EAF		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Ene-2024 8:50 am
+01		OK			Ejecutando ALLSVK-EAF		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		OK			Ejecutando GLNMTB-LMF		disco C OK
+05		OK			Ejecutando GLNWTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Ene-2024 8:40 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando NHICK-F1dc		disco C OK
+03		OK			Ejecutando POL-EAF		disco C OK
+04		OK			Ejecutando SDICC-North		disco C OK
+05		OK			Ejecutando NHICK-F2dc		disco C OK
+Desarrollo3	OK			Ejecutando IND   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Ene-2024 9:00 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando NHICK-F2dc		disco C OK
+03		ERROR			Detenido NDUF-EAF		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando IND   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Ene-2024 8:50 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		ERROR			Detenido NMEM-EAF		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Ene-2024 8:40 am
+01		ERROR			Detenido NDEC-EAFdc		disco C OK
+02		OK			Ejecutando Alta-LMF		disco C OK
+03		OK			Ejecutando GLNCHL-EAF		disco C OK
+04		OK			Ejecutando NUTA-F1Sub		disco C OK
+05		OK			Ejecutando ALTA-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Ene-2024 9:10 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando TSTAH-EAFdc		disco C OK
+03		OK			Ejecutando Yumbo2-HAE		disco C OK
+04		OK			Ejecutando OTKSCAL-EAF		disco C OK
+05		ERROR			Detenido NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Ene-2024 8:45 am
+01		OK			Ejecutando ALLSVK-EAF		disco C OK
+02		OK			Ejecutando SDICOL-South DC	disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando GLNWTB-EAF		disco C OK
+05		OK			Ejecutando GLNJKS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Ene-2024 9:00 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		ERROR			Detenido NMEM-EAF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Ene-2024 8:50 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GCTUL-EAF		disco C OK
+03		OK			Ejecutando GMSFS-F3		disco C OK
+04		ERROR			Detenido NDEC-EAFdc		disco C OK
+05		OK			Ejecutando GMSFS-F4		disco C OK
+Desarrollo3	OK			Ejecutando VSY   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Ene-2024 9:10 am
+01		OK			Ejecutando NASGhent-F1		disco C OK
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando GLNCVL-LMF		disco C OK
+04		OK			Ejecutando TSTAH-EAFdc		disco C OK
+05		OK			Ejecutando GLNCVL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando Butler   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Ene-2024 9:00 am
+01		OK			Ejecutando GMSFS-F4		disco C OK
+02		OK			Ejecutando NUTA-F2Sub		disco C OK
+03		OK			Ejecutando GMSFS-LMF		disco C OK
+04		ERROR			Detenido NHICK-F2dc		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando ALTN	   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Ene-2024 8:50 am
+01		OK			Ejecutando SDICOL-North DC	disco C OK
+02		OK			Ejecutando GLNWTB-LMF		disco C OK
+03		ERROR			Detenido NHICK-F1dc		disco C OK
+04		OK			Ejecutando GLNWTB-EAF		disco C OK
+05		OK			Ejecutando SDICOL-South DC	disco C OK
+Desarrollo3	OK			Ejecutando ALTN	   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Ene-2024 8:50 am
+01		OK			Ejecutando GLNWTB-EAF		disco C OK
+02		OK			Ejecutando SDICOL-South DC	disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		ERROR			Detenido NDEC-EAFdc		disco C OK
+05		OK			Ejecutando SDICOL-North DC	disco C OK
+Desarrollo3	OK			Ejecutando ALTN	   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Ene-2024 8:40 am
+01		OK			Ejecutando GLNMTB-EAF		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando SDICOL-South DC	disco C OK
+04		OK			Ejecutando GLNWTB-EAF		disco C OK
+05		OK			Ejecutando GLNWTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB	   		disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Ene-2024 9:00 am
+01		OK			Ejecutando GLNJKS-EAF		disco C OK
+02		OK			Ejecutando StdS-EAF		disco C OK
+03		OK			Ejecutando NDEC-EAFdc		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando GLNMid-B Fce		disco C OK
+Desarrollo3	OK			Ejecutando Butler	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Dic-2023 8:55 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando NDEC-EAFdc		disco C OK
+04		OK			Ejecutando Stds-EAF		disco C OK
+05		ERROR			Detenido NSEA-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Dic-2023 8:50 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando ALLSVK-EAF		disco C OK
+04		ERROR			Detenido NSEA-EAF		disco C OK
+05		OK			Ejecutando GLNMTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Dic-2023 8:40 am
+01		ERROR			Detenido NSEA-EAF		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando ALLSVK-EAF		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		OK			Ejecutando GLNWTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Dic-2023 9:20 am
+01		ERROR			Detenido NHICK-F2dc		disco C OK
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		OK			Ejecutando ALLSVK-EAF		disco C OK
+04		ERROR			Detenido NHICK-F1dc		disco C OK
+05		ERROR			Detenido NSEA-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Dic-2023 8:55 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GCTUL-EAF		disco C OK
+03		OK			Ejecutando OTSKCAL-EAF		disco C OK
+04		OK			Ejecutando TSTAH-EAFdc		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Dic-2023 8:50 am
+01		OK			Ejecutando NSBS-South_awv	disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando NSBS-North		disco C OK
+04		OK			Ejecutando HHAL-EAFdc		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Dic-2023 9:30
+0 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando CHSCLE-EAF		disco C OK
+04		OK			Ejecutando NSBS-South_awv	disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando Butler	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Dic-2023 9:10 am
+01		OK			Ejecutando CHSCLE-EAF		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+05		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Dic-2023 8:50 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando NSBS-South_awv	disco C OK
+03		OK			Ejecutando NSBS-North		disco C OK
+04		ERROR			Detenido NMEM-EAF		disco C OK
+05		ERROR			Detenido NSEA-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Dic-2023 8:40 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando SYS-SYS2		disco C OK
+04		OK			Ejecutando TSOKA-EAFdc		disco C OK
+05		OK			Ejecutando NY-F1		disco C OK
+Desarrollo3	OK			Ejecutando OLA		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Dic-2023 9:00 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando oHofors-EAF		disco C OK
+04		OK			Ejecutando SDICC-North		disco C OK
+05		OK			Ejecutando NHICK-EAFdc1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Dic-2023 11:50 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando GLNCHL-EAF		disco C OK
+03		OK			Ejecutando GLNPTB-LMF		disco C OK
+04		OK			Ejecutando SDICOL-North		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Dic-2023 9:00 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		OK			Ejecutando Regina-F5		disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando GLNPTB-LMF		disco C OK
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Dic-2023 9:40 am
+01		OK			Ejecutando GMSFS-LMF		disco C OK
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando GMSFS-F4		disco C OK
+04		OK			Ejecutando NUTA-F1		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Dic-2023 8:50 am
+01		OK			Ejecutando SDICOL-South DC	disco C OK
+02		OK			Ejecutando SDICOL-North DC	disco C OK
+03		OK			Ejecutando GLNPTB-LMF		disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Dic-2023 8:40 am
+01		OK			Ejecutando RMSM-F5		disco C OK
+02		OK			Ejecutando NUTA-F1Sub		disco C OK
+03		OK			Ejecutando Alta-EAF		disco C OK
+04		OK			Ejecutando Alta-LMF		disco C OK
+05		OK			Ejecutando NUTA-F2		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Dic-2023 9:40 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando NUTA-F1		disco C OK
+05		OK			Ejecutando GMSFS-F4		disco C OK
+Desarrollo3	OK			Ejecutando Butler	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Dic-2023 8:40 am
+01		OK			Ejecutando NSBS-South		disco C OK
+02		OK			Ejecutando NSBS-South_awv	disco C OK
+03		OK			Ejecutando HHAL-EAFdc		disco C OK
+04		OK			Ejecutando NUTA-F1		disco C OK
+05		OK			Ejecutando NSBS-North		disco C OK
+Desarrollo3	OK			Ejecutando OLA		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Dic-2023 8:45 am
+01		OK			Ejecutando Regina-F4		disco C OK
+02		OK			Ejecutando SYS-SYS2		disco C OK
+03		OK			Ejecutando SYS-SYS1		disco C OK
+04		OK			Ejecutando Regina-F5		disco C OK
+05		OK			Ejecutando CTReadinf-F-fce	disco C OK
+Desarrollo3	ERROR			Detenido SSAB		   	disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 01-Dic-2023 8:45 am
+01		OK			Ejecutando CHSCLE-EAF		disco C OK
+02		OK			Ejecutando NSBS-South_awv	disco C OK
+03		OK			Ejecutando NSBS-South		disco C OK
+04		OK			Ejecutando KWT-EAF		disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando IND		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Nov-2023 8:35 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando Regina-F4		disco C OK
+05		OK			Ejecutando NSEA-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Nov-2023 9:30 am
+01		OK			Ejecutando GAL-EAF		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando APECHAT-EAF		disco C OK
+04		OK			Ejecutando NMAR-EAF		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Nov-2023 9:20 am
+01		ERROR			Detenido oHofors-EAF		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+02		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+03		OK			Ejecutando TSKYU-EAFdc		disco C OK
+04		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+05		ERROR			Detenido GLNPTB-EAF		disco C OK, cuadro de dialogo indicando 									falta de recursos en Excel
+Desarrollo3	ERROR			Detenido   SSAB		   	disco C OK, Detenida desde las 6:40 pm del 									dia 24/Nov
+*************************************************************************************************************
+Revision Maquinas 24-Nov-2023 8:40 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando NHICK-F1dc		disco C OK
+Desarrollo3	ERROR			Detenido   SSAB		   	disco C OK Detenida desde las 9 pm del dia 									anterior
+*************************************************************************************************************
+Revision Maquinas 23-Nov-2023 9:30 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		ERROR			Ejecutando GLNJKS-EAF		disco C OK Estaba corriendo pero ya 										llevaba mas de 24 horas en el mismo
+03		ERROR			Ejecutando SYS-SYS1		disco C OK Estaba corriendo pero ya 										llevaba mas de 24 horas en el mismo
+04		ERROR			Ejecutando POL-EAF		disco C OK Estaba corriendo pero ya 										llevaba mas de 7 horas en el mismo
+05		ERROR			Detenida   NHICK-F2dc		disco C OK Detenida desde las 4 am de hoy
+Desarrollo3	OK			Ejecutando Butler	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Nov-2023 9:10 am
+01		OK			Ejecutando SYS-SYS2		disco C OK
+02		OK			Ejecutando GLNJKS-EAF		disco C OK
+03		OK			Ejecutando SYS-SYS1		disco C OK
+04		OK			Ejecutando NSEA-EAF		disco C OK
+05		OK			Ejecutando Regina-F5		disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Nov-2023 8:50 am
+01		OK			Ejecutando POL-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2dc		disco C OK
+03		OK			Ejecutando NHICK-F1dc		disco C OK
+04		ERROR			Detenido   NMAR-EAF 		disco C OK, Llevaba detenida desde el 										19/Nov a las 17:00
+05		ERROR			Detenido   GMSFS-F4		disco C OK, Llevaba detenida desde el 										19/Nov	a las 16:00
+Desarrollo3	ERROR			Detenido   VSY		   	disco C OK, Llevaba detenida desde el 										20/Nov a las 19:00
+*************************************************************************************************************
+Revision Maquinas 17-Nov-2023 8:50 am
+01		OK			Ejecutando GLNMTB-LMF		disco C OK
+02		OK			Ejecutando ALLSVK-EAF		disco C OK
+03		OK			Ejecutando GLNMid-A Fce		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Nov-2023 8:30 am
+01		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+02		OK			Ejecutando StdS-EAF		disco C OK
+03		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+04		OK			Ejecutando SDICC-North		disco C OK
+05		OK			Ejecutando SDICC-South		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Nov-2023 8:40 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando NDEC-EAFdc		disco C OK
+03		OK			Ejecutando ALLSVK-EAF		disco C OK
+04		OK			Ejecutando StdS-EAF		disco C OK
+05		OK			Ejecutando GLNMid-B fce		disco C OK
+Desarrollo3	ERROR			Ejecutando VSY		   	disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 14-Nov-2023 8:10 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK
+02		ERROR			Ejecutando NHICK-F2		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando SDICOL-South DC	disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Nov-2023 9:40 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando GLNJKS-EAF		disco C OK
+05		OK			Ejecutando RMSM-F5		disco C OK
+Desarrollo3	OK			Ejecutando IND		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Nov-2023 8:30 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando Regina-F4		disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando NY-F2		disco C OK
+05		OK			Ejecutando APEGNK-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Nov-2023 9:40 am
+01		OK			Ejecutando ArvediST-EAF		disco C OK
+02		OK			Ejecutando APECHAT-EAF		disco C OK
+03		OK			Ejecutando TSOKA-EAFdc		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando NY-F2		disco C OK
+Desarrollo3	OK			Ejecutando CCE		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Nov-2023 8:40 am
+01		OK			Ejecutando APECHAT-EAF		disco C OK
+02		OK			Ejecutando TSOKA-EAFdc		disco C OK
+03		OK			Ejecutando GAL-EAF		disco C OK
+04		OK			Ejecutando NDUF-EAF		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Nov-2023 9:00 am
+01		OK			Ejecutando TSOKA-EAFdc		disco C OK
+02		ERROR			Ejecutando NDUF-EAF		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+03		OK			Ejecutando APECHAT-EAF		disco C OK
+04		OK			Ejecutando NY-F2		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Nov-2023 8:50 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando SDICC-North		disco C OK
+03		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+Desarrollo3	ERROR			Detenido VSY		   	disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 03-Nov-2023 8:40 am
+01		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando NSEA-EAF		disco C OK
+04		OK			Ejecutando CHSCLE-EAF		disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutado VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Nov-2023 8:50 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+04		OK			Ejecutando Regina-F5		disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutado SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Nov-2023 9:00 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando Regina-F4		disco C OK
+03		ERROR			Detenido NUTA-F2		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+04		OK			Ejecutando Regina-F5		disco C OK
+05		ERROR			Detenido NSEA-EAF		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+Desarrollo3	OK			Ejecutado SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-Oct-2023 8:30 am
+01		OK			Ejecutando NMAR-EAF		disco C OK
+02		OK			Ejecutando GAL-EAF		disco C OK
+03		OK			Ejecutando CTLatrobe-EAF	disco C OK
+04		OK			Ejecutando YAMS-EAFdc		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutado CakratuJaka	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Oct-2023 8:40 am
+01		OK			Ejecutando CTLatrobe-EAF	disco C OK
+02		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+03		OK			Ejecutando NMAR-EAF		disco C OK
+04		OK			Ejecutando NHICK-F1dc		disco C OK
+05		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+Desarrollo3	OK			Detenido 		   	disco C OK,reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 27-Oct-2023 8:50 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando SYS-SYS1		disco C OK
+04		OK			Ejecutando NSEA-EAF		disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Oct-2023 8:40 am
+01		OK			Ejecutando CHSCLE-EAF		disco C OK
+02		OK			Ejecutando KWT-SUB		disco C OK
+03		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+04		OK			Ejecutando NSBS-South		disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE 		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Oct-2023 9:00 am
+01		OK			Ejecutando OTKSCAL-EAF		disco C OK
+02		OK			Ejecutando NASGhent-F1		disco C OK
+03		OK			Ejecutando GLNCVL-EAF		disco C OK
+04		OK			Ejecutando Yumbo2-HAE		disco C OK
+05		OK			Ejecutando GLNCVL-LMF		disco C OK
+Desarrollo3	OK			Detenido 		   	disco C OK,reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 24-Oct-2023 8:40 am
+01		OK			Ejecutando Alta-LMF		disco C OK
+02		OK			Ejecutando GCTUL-EAF		disco C OK
+03		OK			Ejecutando Alta-EAF		disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando GSDR-EAF		disco C OK
+Desarrollo3	OK			Ejecutando OLA		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Oct-2023 8:50 am
+01		OK			Ejecutando GLNWTB-EAF		disco C OK
+02		OK			Ejecutando SDICOL-South DC	disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando DSInheon-EAFdc	disco C OK
+05		OK			Ejecutando NUTA-F2		disco C OK
+Desarrollo3	ERROR			Detenido ALTN		   	disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 20-Oct-2023 9:00 am
+01		OK			Ejecutando TSOKA-EAFdc		disco C OK
+02		OK			Ejecutando GAL-EAF		disco C OK
+03		OK			Ejecutando NY-F1		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando APEGNK-EAF		disco C OK
+Desarrollo3	OK			Detenido 		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Oct-2023 8:50 am
+01		OK			Ejecutando FinklCH-EAF		disco C OK
+02		OK			Ejecutando CHSCLE-EAF		disco C OK
+03		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+04		OK			Ejecutando oHofors-EAF		disco C OK
+05		OK			Ejecutando KWT-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Oct-2023 8:40 am
+01		OK			Ejecutando HHAL-EAFdc		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando NSBS-South_awv	disco C OK
+04		OK			Ejecutando ALLSVK-EAF		disco C OK
+05		OK			Ejecutando NSBS-North		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka	   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Oct-2023 9:10 am
+01		OK			Ejecutando GLMSFS-F3		disco C OK
+02		OK			Ejecutando GLNCVL-LMF		disco C OK
+03		OK			Ejecutando GMSFS-F4		disco C OK
+04		OK			Ejecutando GLNWIL-EAF		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Oct-2023 9:00 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando GCTUL-EAF		disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK
+05		OK			Ejecutando GSDR-EAF		disco C OK
+Desarrollo3	OK			Detenido		   	disco C OK, reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 13-Oct-2023 9:00 am
+01		OK			Ejecutando GAL-EAF		disco C OK
+02		OK			Ejecutando NMAR-EAF		disco C OK
+03		OK			Ejecutando NMEM-EAF		disco C OK
+04		OK			Ejecutando APECHAT-EAF		disco C OK
+05		OK			Ejecutando GLNJKS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Oct-2023 8:50 am
+01		OK			Ejecutando HHAL-EAFdc		disco C OK
+02		OK			Ejecutando CTLatrobe-EAF	disco C OK
+03		OK			Ejecutando DSPohang-B Shell	disco C OK
+04		OK			Ejecutando CHSCLE-EAF		disco C OK
+05		OK			Ejecutando NHICK-F1		disco C OK
+Desarrollo3	OK			Ejecutando IND 		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Oct-2023 8:45 am
+01		OK			Ejecutando GLNJKS-EAF		disco C OK
+02		OK			Ejecutando GAL-EAF		disco C OK
+03		OK			Ejecutando APECHAT-EAF		disco C OK
+04		OK			Ejecutando NMEM-EAF		disco C OK
+05		OK			Ejecutando NMAR-EAF		disco C OK
+Desarrollo3	OK			Detenido 		   	disco C OK,reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 10-Oct-2023 8:35 am
+01		OK			Ejecutando SYS-SYS2		disco C OK
+02		OK			Ejecutando TENKOP-EAF		disco C OK
+03		OK			Ejecutando Regina-F4		disco C OK
+04		OK			Ejecutando Regina-F5		disco C OK
+05		OK			Ejecutando SYS-SYS1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Oct-2023 8:40 am
+01		OK			Ejecutando oHofors-EAF		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando SDICOL-South		disco C OK
+05		OK			Ejecutando FinklCH-EAF		disco C OK
+Desarrollo3	ERROR			Detenido VSY		   	disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 06-Oct-2023 8:40 am
+01		OK			Ejecutando GCTUL-EAF		disco C OK
+02		OK			Ejecutando GLNPTB-EAF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Oct-2023 8:35 am
+01		OK			Ejecutando NUTA-F1		disco C OK
+02		OK			Ejecutando NUTA-F2		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNPTB-LMF		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Oct-2023 8:30 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando GLNPTB-EAF		disco C OK
+04		ERROR			Detenido OTKSCAL-EAF		disco C OK,cuadro de dialogo indicando 										falta de recursos en Excel
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Oct-2023 8:40 am
+01		OK			Ejecutando GCTUL-EAF		disco C OK
+02		OK			Ejecutando GSDR-EAF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando Alta-EAF		disco C OK
+05		OK			Ejecutando SulbBahrain-EAF	disco C OK
+Desarrollo3	OK			Ejecutando ALTN		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Oct-2023 8:35 am
+01		OK			Ejecutando NUTA-F2		disco C OK
+02		OK			Ejecutando GLNMTB-EAF		disco C OK
+03		OK			Ejecutando NUTA-F2Sub		disco C OK
+04		OK			Ejecutando OTKSCAL-EAF		disco C OK
+05		OK			Ejecutando Yumbo2-HAE		disco C OK
+Desarrollo3	ERROR			Detenido VSY		   	disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 29-Sep-2023 8:40 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando Regina-F5		disco C OK
+03		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+04		OK			Ejecutando NY-F1		disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Sep-2023 8:50 am
+01		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+02		OK			Ejecutando APEGNK-EAF		disco C OK
+03		OK			Ejecutando POL-EAF		disco C OK
+04		OK			Ejecutando TENKOP-EAF		disco C OK
+05		OK			Ejecutando DSPohang-B Shell	disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Sep-2023 8:50 am
+01		OK			Ejecutando KWT-EAF		disco C OK
+02		OK			Ejecutando NSEA-EAF		disco C OK
+03		OK			Ejecutando NSBS-South		disco C OK
+04		OK			Ejecutando oHofors-EAF		disco C OK
+05		OK			Ejecutando SYS-SYS2		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Sep-2023 8:40 am
+01		OK			Ejecutando TUTA-EAF		disco C OK
+02		OK			Ejecutando SDICC-South		disco C OK
+03		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+04		OK			Ejecutando FinklCH-EAF		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Sep-2023 9:40 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando FinklCH-EAF		disco C OK
+03		OK			Ejecutando SDICOL-South		disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	ERROR			Detenido SSAB		   	disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 22-Sep-2023 8:40 am
+01		OK			Ejecutando NUTA-F2		disco C OK
+02		OK			Ejecutando NUTA-F2Sub		disco C OK
+03		OK			Ejecutando NASGhent-F1		disco C OK
+04		OK			Ejecutando Yumbo2-HAE		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando VSY		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Sep-2023 8:50 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK
+02		OK			Ejecutando NUTA-F1		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB		   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Sep-2023 8:35 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK
+02		OK			Ejecutando CHSCLE-EAF		disco C OK
+03		OK			Ejecutando NHICK-F1		disco C OK
+04		OK			Ejecutando GLNWTB-EAF		disco C OK
+05		OK			Ejecutando StdS-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka   	disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Sep-2023 8:30 am
+01		OK			Ejecutando NMAR-EAF		disco C OK
+02		OK			Ejecutando CTLatrobe-EAF	disco C OK
+03		OK			Ejecutando DSPohang-A Shell	disco C OK
+04		OK			Ejecutando NMEM-EAF		disco C OK
+05		OK			Ejecutando APECHAT-EAF		disco C OK
+Desarrollo3	ERROR			Detenido ALTN			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 14-Sep-2023 8:50 am
+01		OK			Ejecutando KWT-EAF		disco C OK
+02		OK			Ejecutando NSEA-EAF		disco C OK
+03		OK			Ejecutando SYS-SYS1		disco C OK
+04		OK			Ejecutando SYS-SYS2		disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Sep-2023 8:40 am
+01		OK			Ejecutando KWT-EAF		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando NSEA-EAF		disco C OK
+04		OK			Ejecutando NSBS-South_awv	disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Sep-2023 9:00 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando TUTA-EAF		disco C OK
+03		OK			Ejecutando TENKOP-EAF		disco C OK
+04		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+05		OK			Ejecutando ALLSVK-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Sep-2023 9:40 am
+01		OK			Ejecutando Alta-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando TSTAH-EAFdc		disco C OK
+04		OK			Ejecutando Alta-LMF		disco C OK
+05		OK			Ejecutando GLNWIL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido IND			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 08-Sep-2023 9:00 am
+01		OK			Ejecutando NMAR-EAF		disco C OK
+02		OK			Ejecutando NDEC-EAFdc		disco C OK
+03		OK			Ejecutando NSEA-EAF		disco C OK
+04		OK			Ejecutando DSPohang-A Shell	disco C OK
+05		OK			Ejecutando CTLatrobe-EAF	disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Sep-2023 8:30 am
+01		OK			Ejecutando NMAR-EAF		disco C OK
+02		OK			Ejecutando DSPohang-A Shell	disco C OK
+03		OK			Ejecutando NDEC-EAFdc		disco C OK
+04		OK			Ejecutando CTLatrobe-EAF	disco C OK
+05		OK			Ejecutando NSEA-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Sep-2023 8:50 am
+01		OK			Ejecutando NSEA-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando DSPohang-A Shell	disco C OK
+04		OK			Ejecutando NDEC-EAFdc		disco C OK
+05		OK			Ejecutando CTLatrobe-EAF	disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Sep-2023 8:40 am
+01		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+02		OK			Ejecutando NY-F1		disco C OK
+03		OK			Ejecutando APEGNK-EAF		disco C OK
+04		OK			Ejecutando Regina-F5		disco C OK
+05		OK			Ejecutando DSPohang-B Shell	disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Sep-2023 8:50 am
+01		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+02		OK			Ejecutando TUTA-EAF		disco C OK
+03		OK			Ejecutando NHICK-F1		disco C OK
+04		OK			Ejecutando ALLSVK-EAF		disco C OK
+05		OK			Ejecutando TENKOP-EAF		disco C OK
+Desarrollo3	ERROR			Detenido IND			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 01-Sep-2023 9:00 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK
+02		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+03		OK			Ejecutando NUTA-F2Sub		disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-Ago-2023 8:50 am
+01		OK			Ejecutando OTKSCAL-EAF		disco C OK
+02		OK			Ejecutando Yumbo2-HAE		disco C OK
+03		OK			Ejecutando NUTA-F2		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Ago-2023 8:30 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando StdS-EAF		disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando NMAR-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka		disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Ago-2023 8:50 am
+01		OK			Ejecutando GAL-EAF		disco C OK
+02		OK			Ejecutando DSPohang-B Shell	disco C OK
+03		OK			Ejecutando APEGNK-EAF		disco C OK
+04		OK			Ejecutando GLNJKS-EAF		disco C OK
+05		OK			Ejecutando TSOKA-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Ago-2023 9:20 am
+01		OK			Ejecutando SYS-SYS2		disco C OK
+02		OK			Ejecutando SYS-SYS1		disco C OK
+03		OK			Ejecutando KWT-SUB		disco C OK
+04		ERROR			Detenido CTReading-Ffce		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	ERROR			Ejecutando IND			disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 25-Ago-2023 9:10 am
+01		OK			Ejecutando ALLSVK-EAF		disco C OK
+02		OK			Ejecutando DSPohang-A Shell	disco C OK
+03		OK			Ejecutando GLNPTB-EAF		disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando GLNPTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Ago-2023 8:50 am
+01		OK			Ejecutando DSPohang-A Shell	disco C OK
+02		OK			Ejecutando NUTA-F2		disco C OK
+03		OK			Ejecutando NUTA-F2Sub		disco C OK
+04		OK			Ejecutando NUTA-F1		disco C OK
+05		OK			Ejecutando KWT-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Ago-2023 9:05 am
+01		OK			Ejecutando NHICK-F1		disco C OK
+02		OK			Ejecutando GMSFS-F3		disco C OK
+03		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+04		OK			Ejecutando GMSFS-F4		disco C OK
+05		OK			Ejecutando TENKOP-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Ago-2023 9:00 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK
+02		OK			Ejecutando SDICC-North		disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando GSDR-EAF		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Ago-2023 9:10 am
+01		OK			Ejecutando GLNCVL-LMF		disco C OK
+02		OK			Ejecutando SulbBahrain-EAF	disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		OK			Ejecutando GLNMTB-LMF		disco C OK
+05		OK			Ejecutando GLNCVL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Ago-2023 8:50 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando RMSM-F5		disco C OK
+03		OK			Ejecutando GAL-EAF		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando NSBS-South		disco C OK
+Desarrollo3	ERROR			Ejecutando SSAB			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 17-Ago-2023 9:00 am
+01		OK			Ejecutando RMSM-F5		disco C OK
+02		OK			Ejecutando GAL-EAF		disco C OK
+03		OK			Ejecutando NSBS-North		disco C OK
+04		OK			Ejecutando NSBS-South_awv	disco C OK
+05		OK			Ejecutando NSBS-South		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Ago-2023 8:50 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		OK			Ejecutando NY-F1		disco C OK
+05		OK			Ejecutando GLNWIL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Ago-2023 8:55 am
+01		OK			Ejecutando GLNMTB-EAF		disco C OK
+02		OK			Ejecutando GLNCVL-LMF		disco C OK
+03		OK			Ejecutando Alta-EAF		disco C OK
+04		OK			Ejecutando Alta-LMF		disco C OK
+05		OK			Ejecutando Yumbo2-HAE		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Ago-2023 9:20 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando NMAR-EAF		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		ERROR			Detenido 			disco C OK,reinicio de maquina
+Desarrollo3	ERROR			Detenido IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Ago-2023 8:50 am
+01		OK			Ejecutando KWT-SUB		disco C OK
+02		OK			Ejecutando NSEA-EAF		disco C OK
+03		OK			Ejecutando NMEM-EAF		disco C OK
+04		OK			Ejecutando NUTA-F2Sub		disco C OK
+05		OK			Ejecutando NUTA-F2		disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka		disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Ago-2023 9:05 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando NHICK-F1		disco C OK
+03		OK			Ejecutando GMSFS-F4		disco C OK
+04		OK			Ejecutando GMSFS-F3		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Ago-2023 9:00 am
+01		OK			Ejecutando NSBS-South		disco C OK
+02		OK			Ejecutando RMSM-F5		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando GAL-EAF		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Ago-2023 9:10 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando GLNWIL-EAF		disco C OK
+03		OK			Ejecutando GLNMTB-LMF		disco C OK
+04		OK			Ejecutando GLNCVL-EAF		disco C OK
+05		OK			Ejecutando GNLCVL-LMF		disco C OK
+Desarrollo3	OK			Ejecutando NOVE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Ago-2023 9:20 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando GLNMid-B Fce		disco C OK
+Desarrollo3	ERROR			Detenido VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Ago-2023 8:40 am
+01		OK			Ejecutando Alta-EAF		disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando SDICOL-South		disco C OK
+04		OK			Ejecutando Alta-LMF		disco C OK
+05		OK			Ejecutando GLNCVL-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Ago-2023 9:40 am
+01		OK			Ejecutando Alta-EAF		disco C OK
+02		OK			Ejecutando GLNCVL-LMF		disco C OK
+03		OK			Ejecutando Alta-LMF		disco C OK
+04		OK			Ejecutando Yumbo-HAE		disco C OK
+05		OK			Ejecutando GLNCVL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Ago-2023 8:40 am
+01		OK			Ejecutando FinklCH-EAF		disco C OK
+02		OK			Ejecutando HHAL-EAFdc		disco C OK
+03		OK			Ejecutando GLNWTB-EAF		disco C OK
+04		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Ago-2023 8:40 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNPTB-LMF		disco C OK
+05		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+Desarrollo3	ERROR			Ejecutando VSY			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 31-Jul-2023 8:50 am
+01		OK			Ejecutando DSPohang-B Shell	disco C OK
+02		OK			Ejecutando NASGhent-F1		disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando Regina-F4		disco C OK
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Jul-2023 8:40 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando DSPohang-A Shell	disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Jul-2023 9:00 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando NHICK-F1		disco C OK
+03		OK			Ejecutando GMSFS-F3		disco C OK
+04		OK			Ejecutando GMSFS-F4		disco C OK
+05		OK			Ejecutando NMEM-EAF		disco C OK
+Desarrollo3	OK			Ejecutando OLA			disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Jul-2023 9:00 am
+01		ERROR			Ejecutando GLNCVL-EAF		disco C OK, cuadro de dialogo indicando falta 									de recursos en Excel
+02		OK			Ejecutando POL-EAF		disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando DSPohang-A Shell	disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Jul-2023 8:50 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Jul-2023 9:10 am
+01		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido ALTN			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 21-Jul-2023 8:40 am
+01		OK			Ejecutando HHAL-EAFdc		disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando GLNCVL-LMF		disco C OK
+04		OK			Ejecutando GLNCHL-EAF		disco C OK
+05		OK			Ejecutando Alta-LMF		disco C OK
+Desarrollo3	ERROR			Ejecutando IND			disco C OK,sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 20-Jul-2023 9:05 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando GLNCVL-LMF		disco C OK
+04		OK			Ejecutando GLNMTB-EAF		disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Jul-2023 8:50 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GLNMid-B Fce		disco C OK
+04		OK			Ejecutando SulBahrain-EAF	disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	ERROR			Ejecutando SSAB			disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 18-Jul-2023 9:00 am
+01		OK			Ejecutando APECHAT-EAF		disco C OK
+02		OK			Ejecutando GAL-EAF		disco C OK
+03		OK			Ejecutando CTLatrobe-EAF	disco C OK
+04		OK			Ejecutando HHAL-EAFdc		disco C OK
+05		OK			Ejecutando NHICK-F2		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Jul-2023 9:05 am
+01		OK			Ejecutando NY-F2		disco C OK
+02		OK			Ejecutando SYS-SYS2		disco C OK
+03		OK			Ejecutando GCTUL-EAF		disco C OK
+04		OK			Ejecutando NY-F1		disco C OK
+05		OK			Ejecutando KWT-EAF		disco C OK
+Desarrollo3	ERROR			Detenido IND			disco C OK, sin conexion VPN
+*************************************************************************************************************
+Revision Maquinas 14-Jul-2023 9:25 am
+01		OK			Ejecutando SulbBahrain-EAF	disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GLNMid-B Fce		disco C OK
+04		OK			Ejecutando NMAR-EAF		disco C OK
+05		OK			Ejecutando GLNMid-A Fce		disco C OK
+Desarrollo3	OK			Ejecutando IND			disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Jul-2023 9:00 am
+01		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+02		OK			Ejecutando GLNWTB-EAF		disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando TSOKA-EAFdc		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Jul-2023 9:30 am
+01		OK			Ejecutando GCTUL-EAF		disco C OK
+02		OK			Ejecutando SYS-SYS2		disco C OK
+03		OK			Ejecutando NDEC-EAFdc		disco C OK
+04		OK			Ejecutando NHICK-F2		disco C OK
+05		OK			Ejecutando GSDR-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Jul-2023 9:05 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando HHAL-EAFdc		disco C OK
+05		OK			Ejecutando NY-F2		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Jul-2023 9:20 am
+01		OK			Ejecutando GLNJKS-EAF		disco C OK
+02		OK			Ejecutando SYS-SYS2		disco C OK
+03		OK			Ejecutando GCTUL-EAF		disco C OK
+04		OK			Ejecutando SYS-SYS1		disco C OK
+05		OK			Ejecutando GSDR-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Jul-2023 9:00 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando Regina-F4		disco C OK
+03		OK			Ejecutando DSPohang-A Shell	disco C OK
+04		OK			Ejecutando NASGhent-F1		disco C OK
+05		OK			Ejecutando oHofors-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Jul-2023 8:50 am
+01		OK			Ejecutando Regina-F5		disco C OK
+02		OK			Ejecutando CHSCLE-EAF		disco C OK
+03		OK			Ejecutando oHofors-EAF		disco C OK
+04		OK			Ejecutando DSPohang-A Shell	disco C OK
+05		OK			Ejecutando NASGhent-F1		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK *************************************************************************************************************
+Revision Maquinas 05-Jul-2023 9:50 am
+01		OK			Ejecutando POL-EAF		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando CHSCLE-EAF		disco C OK
+04		OK			Ejecutando SDICC-South		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Jul-2023 8:50 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando Alta-EAF		disco C OK
+03		OK			Ejecutando TSTAH-EAFdc		disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando NSBS-South_awv	disco C OK
+Desarrollo3	OK			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Jul-2023 9:40 am
+01		OK			Ejecutando POL-EAF		disco C OK
+02		OK			Ejecutando GLNMid-B EAF		disco C OK
+03		OK			Ejecutando NSBS-South		disco C OK
+04		OK			Ejecutando NSBS-North		disco C OK
+05		OK			Ejecutando NSBS-South_awv	disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Jun-2023 9:00 am
+01		OK			Ejecutando TSOKA-EAFdc		disco C OK
+02		OK			Ejecutando SSMalayasia-EAFdc	disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		OK			Ejecutando GLNMid-B Fce		disco C OK
+05		OK			Ejecutando GLNWTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Jun-2023 9:10 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando NMAR-EAF		disco C OK
+04		OK			Ejecutando GLNMTB-LMF		disco C OK
+05		OK			Ejecutando GLNMid-B Fce		disco C OK
+Desarrollo3	ERROR			Detenido ALTN(VPN Desconectada) disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Jun-2023 9:20 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNWTB-EAF		disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		ERROR			Detenido (Reinicio Excel)	disco C OK
+05		OK			Ejecutando SSMalayasia-EAFdc	disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Jun-2023 9:20 am
+01		OK			Ejecutando SulbBahrain-EAF	disco C OK
+02		OK			Ejecutando GLNMid-B Fce		disco C OK
+03		OK			Ejecutando TSOKA-EAFdc		disco C OK
+04		OK			Ejecutando GLNWTB-LMF		disco C OK
+05		OK			Ejecutando SSMalayasia-EAFdc	disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Jun-2023 9:20 am
+01		OK			Ejecutando NY-F1		disco C OK
+02		OK			Ejecutando GSDR-EAF		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando SDICOL-North		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Jun-2023 9:00 am
+01		OK			Ejecutando ALLSVK-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando NDEC-EAFdc 		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Jun-2023 9:10 am
+01		OK			Ejecutando APEGNK-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando SDICC-North 		disco C OK
+05		OK			Ejecutando Stds-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Jun-2023 9:40 am
+01		OK			Ejecutando CHSCLE-EAF		disco C OK
+02		OK			Ejecutando NSBS-South		disco C OK
+03		OK			Ejecutando NSBS-North		disco C OK
+04		OK			Ejecutando NSBS-South_awv	disco C OK
+05		OK			Ejecutando NSBS-North_awv	disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Jun-2023 8:40 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando CHSCLE-EAF		disco C OK
+03		OK			Ejecutando NSBS-North_awv	disco C OK
+04		OK			Ejecutando NSBS-South		disco C OK
+05		OK			Ejecutando NSBS-South_awv	disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Jun-2023 9:20 am
+01		OK			Ejecutando NSBS-North		disco C OK
+02		OK			Ejecutando RMSM-F5		disco C OK
+03		OK			Ejecutando POL-EAF		disco C OK
+04		OK			Ejecutando NSBS-South		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Jun-2023 9:00 am
+01		OK			Ejecutando NHICK-F2		disco C OK
+02		OK			Ejecutando HHAL-EAFdc		disco C OK
+03		OK			Ejecutando SDICC-South		disco C OK
+04		OK			Ejecutando APEGNK-EAF		disco C OK
+05		OK			Ejecutando Stds-EAF		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Jun-2023 9:10 am
+01		OK			Ejecutando SDICOL-North		disco C OK
+02		OK			Ejecutando SDICOL-South		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando GSDR-EAF		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Jun-2023 9:00 am
+01		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando NUTA-F1Sub		disco C OK
+04		OK			Ejecutando NUTA-F2		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	ERROR			Detenido(reinicio de equipo)	disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Jun-2023 9:15 am
+01		OK			Ejecutando SulbBahrain-EAF	disco C OK
+02		OK			Ejecutando DSPohang-B Shell	disco C OK
+03		OK			Ejecutando oHofors-EAF		disco C OK
+04		OK			Ejecutando NHICK-F1		disco C OK
+05		OK			Ejecutando NASGhent-F1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Jun-2023 9:00 am
+01		OK			Ejecutando POL-EAF		disco C OK
+02		OK			Ejecutando DSPohang-B Shell	disco C OK
+03		OK			Ejecutando NHICK-F1		disco C OK
+04		OK			Ejecutando ALLSVK-EAF		disco C OK
+05		OK			Ejecutando GLNMTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Jun-2023 8:50 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK
+02		OK			Ejecutando GLNMTB-EAF		disco C OK
+03		OK			Ejecutando GLNWIL-EAF		disco C OK
+04		OK			Ejecutando CHSCLE-EAF		disco C OK
+05		OK			Ejecutando GLNMTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Jun-2023 9:00 am
+01		OK			Ejecutando GLNMid-A Fce		disco C OK
+02		OK			Ejecutando NMAR-EAF		disco C OK
+03		OK			Ejecutando GLNWIL-EAF		disco C OK
+04		OK			Ejecutando CHSCLE-EAF		disco C OK
+05		OK			Ejecutando GLNMTB-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Jun-2023 9:00 am
+01		OK			Ejecutando SDICC-North		disco C OK
+02		OK			Ejecutando TSOKA-EAFdc		disco C OK
+03		OK			Ejecutando StdS-EAF		disco C OK
+04		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+05		OK			Ejecutando SDICC-South		disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Jun-2023 8:40 am
+01		OK			Ejecutando APECHAT-EAF		disco C OK
+02		OK			Ejecutando NDEC-EAFdc		disco C OK
+03		OK			Ejecutando GMSFS-F3		disco C OK
+04		OK			Ejecutando SYS-SYS2		disco C OK
+05		OK			Ejecutando NDUF-EAF		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Jun-2023 9:30 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando CHSCLE-EAF		disco C OK
+04		OK			Ejecutando NMAR-EAF		disco C OK
+05		OK			Ejecutando SDICC-North		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Jun-2023 9:10 am
+01		OK			Ejecutando GLNWTB-LMF		disco C OK
+02		OK			Ejecutando CHSCLE-EAF		disco C OK
+03		OK			Ejecutando NMAR-EAF		disco C OK
+04		OK			Ejecutando GLNMid-A Fce		disco C OK
+05		OK			Ejecutando GLNMid-B Fce		disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Jun-2023 9:00 am
+01		OK			Ejecutando SDICOL-South		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando NDEC-EAFdc		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-May-2023 8:50 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando GCTUL-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando SDICOL-South		disco C OK
+05		OK			Ejecutando NDUF-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-May-2023 9:30 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando NDUF-EAF		disco C OK
+03		OK			Ejecutando GLNJKS-EAF		disco C OK
+04		OK			Ejecutando NY-F1		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando Butler		disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-May-2023 9:00 am
+01		OK			Ejecutando APECHAT-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando APEGNK-EAF		disco C OK
+04		OK			Ejecutando NHICK-F1		disco C OK
+05		OK			Ejecutando SDICOL-South		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-May-2023 8:40 am
+01		OK			Ejecutando GLNCVL-EAF		disco C OK
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+04		OK			Ejecutando GLNPTB-EAF		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-May-2023 8:40 am
+01		OK			Ejecutando HHAL-EAF		disco C OK
+02		OK			Ejecutando NHICK-F2		disco C OK
+03		OK			Ejecutando APEGNK-EAF		disco C OK
+04		OK			Ejecutando GMSFS-F4		disco C OK
+05		OK			Ejecutando NHICK-F1		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-May-2023 9:00 am
+01		OK			Ejecutando NMAR-EAF		disco C OK
+02		OK			Ejecutando GLNMid-B Fce		disco C OK
+03		OK			Ejecutando SDICOL-South		disco C OK
+04		OK			Ejecutando GLNMid-A Fce		disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-May-2023 9:00 am
+01		OK			Ejecutando Regina-F4		disco C OK
+02		OK			Ejecutando NSBS-North_awv	disco C OK
+03		OK			Ejecutando Regina-F5		disco C OK
+04		OK			Ejecutando NSBS-North		disco C OK
+05		OK			Ejecutando SulbBahrain-EAF	disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-May-2023 9:30 am
+01		OK			Ejecutando NSBS-North_awv	disco C OK
+02		OK			Ejecutando NSBS-North		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando Alta-EAF		disco C OK
+05		OK			Ejecutando Regina-F4		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-May-2023 8:50 am
+01		ERROR			Detenido NY-F2			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+02		ERROR			Detenido NY-F1			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+03		ERROR			Detenido NDEC-EAFdc		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando SDICOL-South		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-May-2023 8:40 am
+01		OK			Ejecutando SYS-SYS1		disco C OK
+02		OK			Ejecutando GCTUL-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando APECHAT-EAF		disco C OK
+05		OK			Ejecutando SDICOL-South		disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-May-2023 8:50 am
+01		OK			Ejecutando OTKSCAL-EAF		disco C OK
+02		OK			Ejecutando GLNJKS-EAF		disco C OK
+03		OK			Ejecutando GLNPTB-LMF		disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-May-2023 9:10 am
+01		OK			Ejecutando NDUF-EAF		disco C OK
+02		OK			Ejecutando NMAR-EAF		disco C OK
+03		OK			Ejecutando NUTA-F1		disco C OK
+04		OK			Ejecutando Alta-EAF		disco C OK
+05		OK			Ejecutando Alta-LMF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-May-2023 8:50 am
+01		OK			Ejecutando NSBS-South_awv	disco C OK
+02		OK			Ejecutando NMEM-EAF		disco C OK
+03		OK			Ejecutando DSPohang-B Shell	disco C OK
+04		OK			Ejecutando ALLSVK-EAF		disco C OK
+05		OK			Ejecutando GLNCVL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-May-2023 9:10 am
+01		OK			Ejecutando SDICOL-South		disco C OK
+02		OK			Ejecutando APECHAT-EAF		disco C OK
+03		OK			Ejecutando GSDR-EAF		disco C OK
+04		OK			Ejecutando TUTA-EAF		disco C OK
+05		OK			Ejecutando GCTUL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido VSY			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 11-May-2023 9:00 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK
+02		OK			Ejecutando NY-F2		disco C OK
+03		OK			Ejecutando NY-F1		disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando APECHAT-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-May-2023 11:50 am
+01		OK			Ejecutando NMEM-EAF		disco C OK
+02		OK			Ejecutando SulbBahrain-EAF	disco C OK
+03		OK			Ejecutando TUTA-EAF		disco C OK
+04		OK			Ejecutando GSDR-EAF 		disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-May-2023 9:10 am
+01		OK			Ejecutando GLNPTB-EAF		disco C OK
+02		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+03		OK			Ejecutando GLNPTB-LMF		disco C OK
+04		OK			Ejecutando NUTA-F2 		disco C OK
+05		OK			Ejecutando GLNJKS-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-May-2023 9:00 am
+01		OK			Ejecutando GLNCVL-LMF		disco C OK
+02		OK			Ejecutando GLNMTB-EAF		disco C OK
+03		OK			Ejecutando TUTA-EAF		disco C OK
+04		OK			Ejecutando GLNCVL-EAF 		disco C OK
+05		OK			Ejecutando GLNCHL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 04-May-2023 8:50 am
+01		OK			Ejecutando GLNMid-B Fce		disco C OK
+02		OK			Ejecutando GLNMid-A Fce		disco C OK
+03		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+04		OK			Ejecutando GLNWIL-EAF 		disco C OK
+05		OK			Ejecutando CHSCLE-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-May-2023 9:00 am
+01		OK			Ejecutando NUTA-F2		disco C OK
+02		OK			Ejecutando NY-F1		disco C OK
+03		OK			Ejecutando NY-F2		disco C OK
+04		OK			Ejecutando DSIncheon-EAFdc	disco C OK
+05		OK			Ejecutando GAL-EAF		disco C OK
+Desarrollo3	ERROR			Detenido SSAB			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 02-May-2023 9:10 am
+01		OK			Ejecutando SDICOL-South		disco C OK
+02		OK			Ejecutando GSDR-EAF		disco C OK
+03		OK			Ejecutando NUTA-F1		disco C OK
+04		OK			Ejecutando SSMalaysia-EAFdc	disco C OK
+05		ERROR			Detenido APEGNK-EAF		disco C OK,cuadro de dialogo indicando falta de 
+									recursos en Excel
+Desarrollo3	ERROR			Detenido SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Abr-2023 9:00 am
+01		OK			Ejecutando SDICC-South		disco C OK
+02		OK			Ejecutando TSOKA-EAFdc		disco C OK
+03		OK			Ejecutando SDICC-North		disco C OK
+04		OK			Ejecutando NDEC-EAFdc		disco C OK
+05		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+Desarrollo3	ERROR			Detenido 			disco C OK, actualizacion de plantas a procesar
+*************************************************************************************************************
+Revision Maquinas 27-Abr-2023 8:20 am
+01		OK			Ejecutando Alta-EAF		disco C OK
+02		OK			Ejecutando Regina-F4		disco C OK
+03		OK			Ejecutando NMAR-EAF		disco C OK
+04		OK			Ejecutando NDUF-EAF		disco C OK
+05		OK			Ejecutando NUTA-F1		disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Abr-2023 9:30 am
+01		ERROR			Detenido 			disco C OK
+02		ERROR			Detenido NSBS-South_awv		disco C OK
+03		OK			Ejecutando NMEM-EAF		disco C OK
+04		OK			Ejecutando NSEA-EAF		disco C OK
+05		ERROR			Detenido 			disco C OK
+Desarrollo3	ERROR			Detenido GLNWIL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 25-Abr-2023 9:00 am
+01		OK			Ejecutando NUTA-F1		disco C OK
+02		OK			Ejecutando NDEC-EAFdc		disco C OK
+03		OK			Ejecutando NDUF-EAF		disco C OK
+04		OK			Ejecutando NHICK-F1		disco C OK
+05		OK			Ejecutando NMAR-EAF		disco C OK
+Desarrollo3	OK			Ejecutando GLNCVL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Abr-2023 9:10 am
+01		ERROR			Detenido NSBS-South		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+02		ERROR			Detenido NSBS-North		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+03		OK			Ejecutando GAL-EAF		disco C OK
+04		ERROR			Detenido NSBS-South_awv		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+05		ERROR			Detenido NSBS-North_awv		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+Desarrollo3	ERROR			Detenido GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Abr-2023 9:10 am
+01		OK			Ejecutando SSAB			disco C OK
+02		OK			Ejecutando SDICC		disco C OK
+03		OK			Ejecutando NHICK		disco C OK
+04		OK			Ejecutando APEGNK		disco C OK
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	OK			Ejecutando GLNJKS 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Abr-2023 9:20 am
+01		OK			Ejecutando TENKOP		disco C OK
+02		OK			Ejecutando SYS			disco C OK
+03		OK			Ejecutando NMEM			disco C OK
+04		OK			Ejecutando Alta			disco C OK
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	ERROR			Detenido GLNJKS 		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 18-Abr-2023 9:00 am
+01		OK			Ejecutando NSBS			disco C OK
+02		OK			Ejecutando NMAR			disco C OK
+03		OK			Ejecutando SDICC		disco C OK
+04		OK			Ejecutando TsThaiNTS		disco C OK
+05		OK			Ejecutando SulbBahrain		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Abr-2023 9:20 am
+01		OK			Ejecutando VSY			disco C OK
+02		OK			Ejecutando HHAL			disco C OK
+03		OK			Ejecutando NMEM			disco C OK
+04		OK			Ejecutando Alta			disco C OK
+05		ERROR			Detenido Yumbo2			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+Desarrollo3	ERROR			Detenido GLNCHL 		disco C OK,cuadro de dialogo indicando falta de 
+									recursos en Excel
+*************************************************************************************************************
+Revision Maquinas 14-Abr-2023 9:10 am
+01		OK			Ejecutando NSEA			disco C OK
+02		OK			Ejecutando Regina		disco C OK
+03		OK			Ejecutando HHAL			disco C OK
+04		OK			Ejecutando NASGhent		disco C OK
+05		OK			Ejecutando VSY			disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Abr-2023 9:00 am
+01		OK			Ejecutando TSKYU		disco C OK
+02		OK			Ejecutando CTLatrobe		disco C OK
+03		OK			Ejecutando TUTA			disco C OK
+04		OK			Ejecutando ALLSVK		disco C OK
+05		OK			Ejecutando VSY			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Abr-2023 9:50 am
+01		OK			Ejecutando SDICOL		disco C OK
+02		OK			Ejecutando NUTA			disco C OK
+03		OK			Ejecutando POL			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando DSPohang		disco C OK
+Desarrollo3	OK			Ejecutando GLNCVL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Abr-2023 9:00 am
+01		OK			Ejecutando Butler		disco C OK
+02		OK			Ejecutando NHICK		disco C OK
+03		OK			Ejecutando NSBS			disco C OK
+04		OK			Ejecutando APECHAT		disco C OK
+05		OK			Ejecutando SulbBahrain		disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Abr-2023 9:20 am
+01		OK			Ejecutando NY			disco C OK, pregunta en excel diciendo que el
+									summary ya existia, que si se deseaba reemplazarlo
+02		OK			Ejecutando SDICC		disco C OK
+03		OK			Ejecutando NHICK		disco C OK
+04		ERROR			Detenido TSTAH			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+05		ERROR			Detenido SYS			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+Desarrollo3	ERROR			Detenido GLNMid 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Abr-2023 8:50 am
+01		OK			Ejecutando HHAL			disco C OK
+02		OK			Ejecutando ALLSVK		disco C OK
+03		OK			Ejecutando Regina		disco C OK
+04		OK			Ejecutando NASGhent		disco C OK
+05		OK			Ejecutando NMAR			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Abr-2023 9:00 am
+01		OK			Ejecutando FinklCH		disco C OK
+02		OK			Ejecutando SYS			disco C OK
+03		OK			Ejecutando TUTA			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando DSIncheon		disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Abr-2023 9:00 am
+01		OK			Ejecutando GMSFS		disco C OK
+02		OK			Ejecutando DSPohang		disco C OK
+03		OK			Ejecutando NY			disco C OK
+04		OK			Ejecutando POL			disco C OK
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	ERROR			Detenido GLNJKS 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Abr-2023 9:00 am
+01		OK			Ejecutando GMSFS		disco C OK
+02		OK			Ejecutando NSBS			disco C OK
+03		OK			Ejecutando NY			disco C OK
+04		OK			Ejecutando StdS			disco C OK
+05		OK			Ejecutando SDICOL		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-Mar-2023 9:40 am
+01		OK			Ejecutando KWT			disco C OK
+02		OK			Ejecutando FinklCH		disco C OK
+03		OK			Ejecutando NY			disco C OK
+04		OK			Ejecutando oHofors		disco C OK
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	ERROR			Detenido GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-Mar-2023 9:00 am
+01		OK			Ejecutando POL			disco C OK
+02		OK			Ejecutando GMSFS		disco C OK
+03		OK			Ejecutando NSBS			disco C OK
+04		OK			Ejecutando StdS			disco C OK
+05		OK			Ejecutando NY			disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Mar-2023 8:50 am
+01		OK			Ejecutando NSBS			disco C OK
+02		OK			Ejecutando NY			disco C OK
+03		OK			Ejecutando GMSFS		disco C OK
+04		OK			Ejecutando SDICOL		disco C OK
+05		OK			Ejecutando POL			disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Mar-2023 9:50 am
+01		OK			Ejecutando TSOKA		disco C OK
+02		OK			Ejecutando CHSCLE		disco C OK
+03		OK			Ejecutando GMSFS		disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando NY			disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Mar-2023 9:20 am
+01		OK			Ejecutando IND			disco C OK
+02		OK			Ejecutando SSAB			disco C OK
+03		OK			Ejecutando POL			disco C OK
+04		OK			Ejecutando SulbBahrain		disco C OK
+05		OK			Ejecutando NMEM			disco C OK
+Desarrollo3	ERROR			Detenido GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Mar-2023 9:00 am
+01		OK			Ejecutando KWT			disco C OK
+02		OK			Ejecutando SDICC		disco C OK
+03		OK			Ejecutando NSBS			disco C OK
+04		ERROR			Detenido TENKOP			disco C OK,llego correo que el archivo zip
+									no contenia informacion
+05		OK			Ejecutando NDEC			disco C OK
+Desarrollo3	ERROR			Detenido GLNWIL 		disco C OK,llego correo que el archivo zip
+									no contenia informacion
+*************************************************************************************************************
+Revision Maquinas 23-Mar-2023 9:00 am
+01		OK			Ejecutando CTLatrobe		disco C OK
+02		OK			Ejecutando SDICC		disco C OK
+03		OK			Ejecutando NDEC			disco C OK
+04		OK			Ejecutando DSPohang		disco C OK
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	OK			Ejecutando GLNJKS 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Mar-2023 8:50 am
+01		OK			Ejecutando VSY 			disco C OK
+02		OK			Ejecutando DSPohang		disco C OK
+03		OK			Ejecutando CTLatrobe		disco C OK
+04		OK			Ejecutando Regina		disco C OK
+05		OK			Ejecutando SYS			disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Mar-2023 9:20 am
+01		ERROR			Detenido POL 			disco C OK,llego correo que el archivo zip
+								no contenia informacion
+				LOG:2023/03/21T5:17:21,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_
+				20230321051721.zip,E:\Usuarios\Sitio
+02		OK			Ejecutando NY			disco C OK
+03		OK			Ejecutando NASGhent		disco C OK
+04		OK			Ejecutando DSPohang		disco C OK
+05		OK			Ejecutando SYS			disco C OK
+Desarrollo3	ERROR			Detenido GLNMTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Mar-2023 9:00 am
+01		OK			Ejecutando FinklCH 		disco C OK
+02		OK			Ejecutando TUTA			disco C OK
+03		OK			Ejecutando TSKYU		disco C OK
+04		OK			Ejecutando NDEC			disco C OK
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Mar-2023 8:40 am
+01		OK			Ejecutando TSTAH 		disco C OK
+02		OK			Ejecutando NSBS			disco C OK
+03		OK			Ejecutando SDICC		disco C OK
+04		OK			Ejecutando NY			disco C OK
+05		OK			Ejecutando KWT			disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Mar-2023 9:10 am
+01		OK			Ejecutando NUTA 		disco C OK
+02		ERROR			Detenido OTKSCAL		disco C OK,llego correo que el archivo zip
+								no contenia informacion, tenia actualizacion pendiente.
+				LOG:2023/03/15T5:31:08,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_
+				20230315053108.zip,E:\Usuarios\Sitio
+03		OK			Ejecutando GMSFS		disco C OK
+04		ERROR			Detenido GSDR			disco C OK,llego correo que el archivo zip
+								no contenia informacion, tenia actualizacion pendiente.
+				LOG:2023/03/15T9:06:51,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_
+				20230315090651.zip,E:\Usuarios\Sitio
+05		OK			Ejecutando TENKOP		disco C OK
+Desarrollo3	ERROR			Detenido GLNWTB 		disco C OK, reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 14-Mar-2023 8:50 am
+01		OK			Ejecutando NUTA 		disco C OK
+02		OK			Ejecutando SDICC		disco C OK
+03		OK			Ejecutando GAL			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando StdS			disco C OK
+Desarrollo3	OK			Detenido 			disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 13-Mar-2023 9:10 am
+01		OK			Ejecutando NMAR 		disco C OK
+02		OK			Ejecutando SSAB			disco C OK
+03		OK			Ejecutando HHAL			disco C OK
+04		OK			Ejecutando GSDR			disco C OK
+05		OK			Ejecutando Alta			disco C OK
+Desarrollo3	ERROR			Detenido GLNMid			disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Mar-2023 8:50 am
+01		OK			Ejecutando APECHAT 		disco C OK
+02		OK			Ejecutando oHofors		disco C OK
+03		OK			Ejecutando KWT			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando NUTA			disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Mar-2023 8:50 am
+01		OK			Ejecutando SSMalaysia 		disco C OK
+02		OK			Ejecutando Alta			disco C OK
+03		OK			Ejecutando TENKOP		disco C OK
+04		OK			Ejecutando SSAB			disco C OK
+05		OK			Ejecutando NMEM			disco C OK
+Desarrollo3	ERROR			Detenido GLNMTB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Mar-2023 8:50 am
+01		OK			Ejecutando CTLatrobe 		disco C OK
+02		OK			Ejecutando GMSFS		disco C OK
+03		OK			Ejecutando NY			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando DSPohang		disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Mar-2023 9:20 am
+01		OK			Ejecutando KWT 			disco C OK
+02		OK			Ejecutando NUTA			disco C OK
+03		ERROR			Detenido oHofors		disco C OK, se reinicio y forzo
+				LOG:2023/03/07T3:27:14,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Ovako
+				\VM2\Ovako (Operative Evolution) Summary 20210927.xls)
+				GIF:En este caso no se encontraron archivos GIF correspondientes a esta planta
+				con una terminacion de nombre .gif~, por lo que se reviso la planta Yumbo2 ejecutada 
+				anteriormente, la cual cuenta si contaba con archivos gif del tipo mencionado anteriormente
+				con fecha del 2023/03/07.
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando POL			disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Mar-2023 9:10 am
+01		OK			Ejecutando KWT 			disco C OK
+02		OK			Ejecutando POL			disco C OK
+03		OK			Ejecutando TSTAH		disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando NY			disco C OK
+Desarrollo3	ERROR			Detenido GLNMid			disco C OK, cuadro de dialogo con pregunta en excel 
+*************************************************************************************************************
+Revision Maquinas 03-Mar-2023 7:15 am
+01		OK			Ejecutando GMSFS 		disco C OK
+02		OK			Ejecutando DSPohang		disco C OK
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando Regina		disco C OK
+05		OK			Ejecutando CTLatrobe		disco C OK
+Desarrollo3	ERROR			Detenido GLNMid			disco C OK, cuadro de dialogo con pregunta en excel 
+*************************************************************************************************************
+Revision Maquinas 02-Mar-2023 8:45 am
+01		OK			Ejecutando DSIncheon 		disco C OK
+02		OK			Ejecutando FinklCH		disco C OK
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	OK			Ejecutando GLNWIL 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Mar-2023 9:15 am
+01		ERROR			Detenido POL 			disco C Lleno,se reinicio y forzo la planta
+				LOG:2023/02/28T22:06:49,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\CMC\VM2\
+				CMC Steel (Operative Evolution) Summary 20230203.xls)
+				GIF: En este caso no se encontraron archivos GIF correspondientes a esta planta
+				con una terminacion de nombre .gif~, por lo que se reviso la planta SSAB ejecutada 
+				anteriormente, la cual cuenta si contaba con archivos gif del tipo mencionado anteriormente
+				con fecha del 2023/02/28.
+02		OK			Ejecutando KWT			disco C OK
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		OK			Ejecutando TSTAH		disco C OK
+Desarrollo3	ERROR			Detenido GLNPTB 		disco C OK, se reinicio y forzo la planta
+*************************************************************************************************************
+Revision Maquinas 28-Feb-2023 9:10 am
+01		OK			Ejecutando Regina 		disco C OK
+02		OK			Ejecutando NSBS			disco C OK
+03		OK			Ejecutando APECHAT		disco C OK
+04		OK			Ejecutando DSIncheon		disco C OK
+05		OK			Ejecutando KWT			disco C OK
+Desarrollo3	OK			Ejeutando GLNPTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Feb-2023 9:40 am
+01		OK			Ejecutando StdS 		disco C OK
+02		ERROR			Detenido GAL			disco C Lleno, se reinicio y forzo  la planta
+				LOG:2023/02/27T3:21:19,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Hoeganaes\
+				VM2\Hoeganaes (Operative Evolution) Summary 20221011.xls)
+				GIF: En este caso no se encontraron archivos GIF correspondientes a esta planta
+				con una terminacion de nombre .gif~, por lo que se reviso la planta POL ejecutada 
+				anteriormente, la cual cuenta si contaba con archivos gif del tipo mencionado anteriormente
+				con fecha del 2023/02/27.
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		ERROR			Detenido SDICOL			disco C Lleno, se reinicio y forzo  la planta
+				LOG:2023/02/24T23:33:00,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\
+				Plantas_20230224233300.zip,E:\Usuarios\Sitio
+				GIF: Se generaron varios archivos GIF con una terminacion de nombre .gif~
+				Se ha dejado un zip en S:\ErroresGIF\SDICOLErrores_20230227.zip   (Para su analisis)
+Desarrollo3	ERROR			Detenido GLNCHL 		disco C OK, cuadro de dialogo con pregunta en excel 
+*************************************************************************************************************
+Revision Maquinas 24-Feb-2023 9:00 am
+01		OK			Ejecutando Regina 		disco C OK
+02		OK			Ejecutando FinklCH		disco C OK
+03		ERROR			Detenido GMSFS			disco C OK,se reinicio y forzo la planta
+				LOG:2023/02/24T2:36:24,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\
+				Plantas_20230224023624.zip,E:\Usuarios\Sitio
+04		OK			Ejecutando NUTA			disco C OK
+05		OK			Ejecutando GCTUL		disco C OK
+Desarrollo3	ERROR			Detenido GLNWTB 		disco C OK, cuadro de dialogo con pregunta en excel 
+*************************************************************************************************************
+Revision Maquinas 23-Feb-2023 9:00 am
+01		OK			Ejecutando NUTA 		disco C OK
+02		OK			Ejecutando DSIncheon		disco C OK
+03		OK			Ejecutando APECHAT		disco C OK
+04		ERROR			Detenido Regina			disco C OK,se reinicio y forzo la planta
+				LOG:2023/02/23T0:44:15,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\
+				Plantas_20230223004415.zip,E:\Usuarios\Sitio
+05		OK			Ejecutando TSTAH		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB 		disco C OK 
+*************************************************************************************************************
+Revision Maquinas 22-Feb-2023 9:00 am
+01		ERROR			Detenido 			disco C OK, reinicio de equipo, se forzo la planta
+				LOG:2023/02/22T6:31:57,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Alleima
+				 Sandviken\VM2\Alleima (Operative Evolution) Summary 20221010.xls)
+02		ERROR			Detenido KWT			disco C Lleno, se reinicio y forzo la planta
+				LOG:2023/02/22T3:19:38,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\
+				Plantas_20230222031938.zip,E:\Usuarios\Sitio
+				GIF: Se generaron varios archivos GIF con una terminacion de nombre .gif~
+				Se ha dejado un zip en S:\ErroresGIF\KWTErrores_20230222.zip   (Para su analisis)
+03		OK			Ejecutando SDICC		disco C OK
+04		OK			Ejecutando NSBS			disco C OK
+05		ERROR			Detenido VSY			disco C Lleno, se reinicio y forzo la planta
+				LOG:2023/02/22T12:43:24,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\
+				Vallourec Star Youngstown\VM2\Vallourec Star (Operative Evolution) Summary 20191119.xls)
+				GIF: En este caso no se encontraron archivos GIF correspondientes a esta planta
+				con una terminacion de nombre .gif~, por lo que se reviso la planta SSAB ejecutada 
+				anteriormente, la cual cuenta si contaba con archivos gif del tipo mencionado anteriormente
+				con fecha del 2023/02/22.
+Desarrollo3	OK			Detenido 			disco C OK, trabajo de actualizacion 
+*************************************************************************************************************
+Revision Maquinas 21-Feb-2023 9:00 am
+01		OK			Ejecutando SDICC		disco C OK
+02		OK			Ejecutando APECHAT		disco C OK
+03		OK			Ejecutando DSIncheon		disco C OK
+04		OK			Ejecutando FinklCH		disco C OK
+05		OK			Ejecutando NSBS			disco C OK 
+Desarrollo3	OK			Ejecutando GLNMid		disco C OK 
+*************************************************************************************************************
+Revision Maquinas 20-Feb-2023 10:00 am
+01		OK			Ejecutando SSAB			disco C OK
+02		OK			Ejecutando TSOKA		disco C OK
+03		ERROR			Detenido VSY			disco C Lleno, se reinicio y forzo la planta
+				LOG:2023/02/18T17:18:24,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas
+				\Plantas_20230218171824.zip,E:\Usuarios\Sitio
+				GIF: Se generaron varios archivos GIF con una terminacion de nombre .gif~
+				Se ha dejado un zip en S:\ErroresGIF\VSYErrores_20230220.zip   (Para su analisis)
+04		ERROR			Detenido SDICC			disco C Lleno, se reincio y forzo la planta
+				LOG:2023/02/18T13:09:44,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Steel 
+				Dynamics Inc\VM2\Steel Dynamics Inc (Operative Evolution) Summary 20221226a.xls)
+				GIF: En este caso no se encontraron archivos GIF correspondientes a esta planta
+				con una terminacion de nombre .gif~, por lo que se reviso la planta POL ejecutada 
+				anteriormente, la cual cuenta con archivos gif correctos con fecha del 2023/02/19.
+05		OK			Ejecutando NSBS			disco C OK 
+Desarrollo3	ERROR			Detenido GLNMTB			disco C OK,cuadro de dialogo con pregunta en excel 
+*************************************************************************************************************
+Revision Maquinas 17-Feb-2023 8:50 am
+01		OK			Ejecutando APEGNK		disco C OK
+02		OK			Ejecutando NHICK		disco C OK
+03		OK			Ejecutando Regina		disco C OK
+04		OK			Ejecutando SDICOL		disco C OK
+05		OK			Ejecutando SYS			disco C OK 
+Desarrollo3	OK			Ejecutando GLNMid		disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Feb-2023 9:10 am
+01		ERROR			Detenido TsThaiNTS	 	disco C Lleno,se reinicio y forzo
+				LOG:2023/02/16T6:17:38,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Tata Steel
+				Thailand NTS\VM2\Tata Steel (Operative Evolution) Summary 20221204.xls)
+02		OK			Ejecutando NSBS			disco C OK
+03		OK			Ejecutando TSOKA		disco C OK
+04		ERROR			Detenido StdS 			disco C Lleno,se reinicio y forzo
+				LOG:2023/02/16T6:45:49,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Standard 
+				Steel\VM2\Standard Steel (Operative Evolution) Summary 20221013.xls)
+05		OK			Ejecutando SSAB			disco C OK 
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Feb-2023 9:00 am
+01		OK			Ejecutando NSBS	 		disco C OK
+02		OK			Ejecutando SSMalaysia		disco C OK
+03		OK			Ejecutando SSAB			disco C OK
+04		OK			Ejecutando ALLSVK 		disco C OK
+05		OK			Ejecutando			disco C OK, ejecutando pruebas de OE por sistemas 
+Desarrollo3	OK			Detenido			disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 14-Feb-2023 9:00 am
+01		OK			Ejecutando StdS	 		disco C OK
+02		ERROR			Detenido VSY			disco C OK, Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo
+				LOG:2023/02/14T14:08:43,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Vallourec
+				 Star Youngstown\VM2\Vallourec Star (Operative Evolution) Summary 20191119.xls)
+03		ERROR			Detenido GMSFS			disco C OK, reinicio de equipo
+04		OK			Ejecutando KWT 			disco C OK
+05		OK			Ejecutando SDICC		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Feb-2023 9:00 am
+01		OK			Ejecutando SYS	 		disco C OK
+02		OK			Ejecutando CTLatrobe		disco C OK
+03		OK			Ejecutando GCTUL		disco C OK
+04		ERROR			Detenido Alta 			disco C lleno, se reinicio y forzo
+				LOG:2023/02/13T1:23:23,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\AltaSteel\
+				VM2\Scaw Metals (Operative Evolution) Summary 20221211b.xls)
+05		ERROR			Detenido SDICOL			disco C OK
+				LOG:2023/02/13T10:33:58,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\
+				Plantas_20230213103358.zip,E:\Usuarios\Sitio
+Desarrollo3	OK			Detenido GLNCVL 		disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 10-Feb-2023 8:45 am
+01		OK			Ejecutando NSBS	 		disco C OK
+02		OK			Ejecutando SSAB			disco C OK
+03		OK			Ejecutando NMEM			disco C OK
+04		OK			Ejecutando TENKOP 		disco C OK
+05		OK			Ejecutando ALLSVK		disco C OK
+Desarrollo3	OK			Ejecutando GLNMid 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Feb-2023 8:50 am
+01		OK			Ejecutando Regina	 	disco C OK
+02		OK			Ejecutando APEGNK		disco C OK
+03		OK			Ejecutando SYS			disco C OK
+04		OK			Ejecutando POL 			disco C OK
+05		OK			Ejecutando CTLatrobe		disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Feb-2023 8:50 am
+01		OK			Ejecutando TENKOP	 	disco C OK
+02		OK			Ejecutando NY			disco C OK
+03		OK			Ejecutando SDICOL		disco C OK
+04		OK			Ejecutando TSOKA 		disco C OK
+05		ERROR			Detenido FinklCH		disco C lleno, se reinicio y forzo
+					LOG:2023/02/08T10:06:45,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Finkl
+					 Steel\VM2\Finkl Steel(Operative Evolution) Summary 20220507.xls)
+Desarrollo3	ERROR			Detenido GLNCVL 		disco C OK, detenido con pantallas de preguntas de excel
+*************************************************************************************************************
+Revision Maquinas 07-Feb-2023 9:00 am
+01		OK			Ejecutando OTKSCAL	 	disco C OK
+02		OK			Ejecutando KWT			disco C OK
+03		ERROR			Detenido VSY			disco C OK, excel  marco que no podia 
+									ejecutar con los recursos actuales
+					LOG: 2023/02/07T9:07:34,antes procesaCargaVM2(arch=E:\Acerias\PlantasSitio\Vallourec
+					Star Youngstown\VM2\Vallourec Star (Operative Evolution) Summary 20191119.xls)
+04		OK			Ejecutando NY 			disco C OK
+05		OK			Ejecutando SDICC		disco C OK
+
+Desarrollo3	OK			Ejecutando GLNCVL 		disco C OK 
+*************************************************************************************************************
+Revision Maquinas 06-Feb-2023 9:43 am
+01		ERROR			Detenido  VSY	 		disco C lleno se reinicio y forzo
+					LOG: 2023/02/06T6:15:17,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_20230206061517.zip,E:\Usuarios\Sitio
+					GIF: Se generaron varios archivos GIF con una terminacion de nombre .gif~
+					     Se ha dejado un zip en S:\ErroresGIF\GIFErrores_VSY_20230206.zip   (Para su analisis)
+
+02		OK			Ejecutando YKS			disco C OK
+03		OK			Ejecutando APEGNK		disco C OK
+04		OK			Ejecutando NY 			disco C OK
+05		OK			Ejecutando POL			disco C OK
+
+Desarrollo3	ERROR			Detenido 			disco C OK se detuvo para revisar actualizaciones
+*************************************************************************************************************
+Revision Maquinas 03-Feb-2023 9:00 am
+01		OK			Ejecutando DSPohang 		disco C OK
+02		OK			Ejecutando NUTA			disco C OK
+03		OK			Ejecutando TSOKA		disco C OK
+04		ERROR			Detenido SSAB			disco C OK, se reinicio y forzo
+LOG: 2023/02/03T0:50:31,en mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_20230203005031.zip,E:\Usuarios\Sitio
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Feb-2023 7:10 am
+01		ERROR			Detenido VSY 			disco C OK, excel  marco que no podia 
+									ejecutar con los recursos actuales
+LOG: antes procesaCargaVM2 (arch=E:\Acerias\PlantasSitio\Vallourec Star Youngstown\VM2\Vallourec Star (Operative Evolution) Summary 20191119.xls) 
+02		OK			Ejecutando NUTA			disco C OK
+03		OK			Ejecutando SulbBahrain		disco C OK
+04		OK			Ejecutando NasGhent		disco C OK
+05		ERROR			Detenido DSPohang		disco C C lleno,se limpio, reinicio y forzo
+LOG: mandarDatosOperEvol f_zip2(E:\Usuarios\Plantas\Plantas_20230202002021.zip,E:\Usuarios\Sitio
+Desarrollo3	OK			Ejecutando GLNCHL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Feb-2023 8:50 am
+01		OK			Ejecutando TSOKA 		disco C OK
+02		ERROR			Detenido GMSFS			disco C lleno,se limpio, reinicio y forzo
+03		OK			Ejecutando TUTA			disco C OK
+04		OK			Ejecutando NUTA			disco C OK
+05		OK			Ejecutando ALLSVK		disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-Ene-2023 9:30 am
+01		OK			Ejecutando Alta 		disco C OK
+02		OK			Ejecutando SYS			disco C OK
+03		OK			Ejecutando NSBS			disco C OK
+04		OK			Ejecutando NUTA			disco C OK
+05		OK			Ejecutando HHAL			disco C OK
+Desarrollo3	OK			Detenida			disco C OK, trabajo actualizacion
+*************************************************************************************************************
+Revision Maquinas 30-Ene-2023 9:10 am
+01		OK			Ejecutando NDUF 		disco C OK
+02		ERROR			Detenido KWT			disco C OK, se reinicio y forzo
+03		OK			Ejecutando OTKSCAL		disco C OK
+04		OK			Ejecutando SSMalaysia		disco C OK
+05		ERROR			Detenido VSY			disco C OK, Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo
+Desarrollo3	OK			Ejecutando GLNCHL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Ene-2023 3:31 pm
+01		ERROR			Ejecutando SULB 		disco C lleno,se limpio, reinicio y forzo
+02		ERROR			Ejecutando VSY			disco C lleno,se limpio, reinicio y forzo
+03		ERROR			Detenido para revisar CHSCLE  se reinicio y puso a correr, NOTA a CHSCLE se le puso 
+									que NO se procese automativo en PlantasVM2
+04		ERROR			Ejecutando KWT			disco C lleno,se limpio, reinicio y forzo
+05		OK			Ejecutando NUTA			disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			detenido con pantallas de preguntas de excel
+*************************************************************************************************************
+Revision Maquinas 25-Ene-2023 9:00 am
+01		OK			Ejecutando Stds    		disco C OK
+02		OK			Ejecutando TSThaiNTS		disco C OK
+03		ERROR			Detenido VSY			disco C lleno,se limpio, reinicio y forzo
+04		OK			Ejecutando NY			disco C OK
+05		OK			Ejecutando GMSFS		disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Ene-2023 8:50 am
+01		ERROR			Detenido VSY    		disco C OK
+02		OK			Ejecutando TSTAH		disco C OK
+03		OK			Ejecutando ALLSVK		disco C OK
+04		OK			Ejecutando NHICK		disco C OK
+05		ERROR			Detenido POL			disco C lleno,se limpio, reinicio y forzo
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Ene-2023 9:00 am
+01		OK			Ejecutando Alta    		disco C OK
+02		ERROR			Detenido			disco C OK, reincio de equipo 
+03		ERROR			Detenido VSY			disco C OK,Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo
+04		OK			Ejecutando SYS			disco C OK
+05		OK			Ejecutando NHICK		disco C OK
+Desarrollo3	ERROR			Detenido GLNPTB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Ene-2023 8:40 am
+01		ERROR			Detenido VSY    		disco C lleno,se limpio, reinicio y forzo
+02		OK			Ejecutando SDICC		disco C OK 
+03		OK			Ejecutando NHICK		disco C OK
+04		OK			Ejecutando Yumbo2		disco C OK
+05		OK			Ejecutando SulbBahrain		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Ene-2023 8:50 am
+01		OK			Ejecutando SYS    		disco C OK
+02		ERROR			Detenido KWT			disco C OK 
+03		OK			Ejecutando oHofors		disco C OK
+04		OK			Ejecutando NMEM			disco C OK
+05		ERROR			Detenido VSY			disco C lleno,se limpio, reinicio y forzo
+Desarrollo3	OK			Detenido 			disco C OK, trabajo actualizacion
+*************************************************************************************************************
+Revision Maquinas 18-Ene-2023 7:30 am
+01		OK			Detenido    			disco C OK, cambio de archivo website
+02		OK			Ejecutando DSIncheon		disco C OK 
+03		OK			Ejecutando SulbBahrain		disco C OK
+04		OK			Ejecutando NMAR			disco C OK
+05		OK			Ejecutando SDICOL		disco C OK
+Desarrollo3	OK			Ejecutando GLNMid 		disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Ene-2023 9:00 am
+01		OK			Ejecutando Alta   		disco C OK
+02		OK			Ejecutando GMSFS		disco C OK 
+03		OK			Ejecutando NY			disco C OK
+04		OK			Ejecutando FinklCH		disco C OK
+05		ERROR			Detenido VSY			disco C OK, Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo
+Desarrollo3	ERROR			Detenido 			disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 16-Ene-2023 8:50 am
+01		ERROR			Detenido VSY   			disco C lleno,se limpio, reinicio y forzo
+02		ERROR			Detenido POL			disco C lleno,se limpio, reinicio y forzo 
+03		OK			Ejecutando DSPohang		disco C OK
+04		OK			Ejecutando NDEC			disco C OK
+05		OK			Ejecutando SDICC		disco C OK
+Desarrollo3	ERROR			Detenido GLNCHL			disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 13-Ene-2023 8:50 am
+01		OK			Ejecutando SSAB   		disco C OK 
+02		OK			Ejecutando CTLatrobe		disco C OK  
+03		OK			Ejecutando NUTA			disco C OK
+04		ERROR			Detenido SDICOL			disco C OK, el equipo tenia actualizacion pendiente 
+05		ERROR			Detenido DSIncheon		disco C lleno,se limpio, reinicio y forzo
+Desarrollo3	ERROR			Detenido GLNMid			disco C OK, reinicio de equipo
+*************************************************************************************************************
+Revision Maquinas 12-Ene-2023 8:50 am
+01		OK			Ejecutando Regina   		disco C OK 
+02		OK			Ejecutando SSAB			disco C OK  
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando SDICOL		disco C OK 
+05		OK			Ejecutando TENKOP		disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			disco C OK, trabajo de actualizacion
+*************************************************************************************************************
+Revision Maquinas 11-Ene-2023 8:30 am
+01		OK			Ejecutando GMSFS   		disco C OK 
+02		ERROR			Detenido TUTA			disco C lleno,se limpio, reinicio y forzo  
+03		OK			Ejecutando NHICK		disco C OK
+04		OK			Ejecutando TSThaiNTS		disco C OK 
+05		ERROR			Detenido VSY			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 10-Ene-2023 9:05 am
+01		OK			Ejecutando ALLSVK   		disco C OK 
+02		OK			Ejecutando NASGhent		disco C OK 
+03		OK			Ejecutando NHICK		disco C OK
+04		ERROR			Detenido CTLatrobe		disco C lleno,se limpio, reinicio y forzo 
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	ERROR			Detenido GLNPTB			disco C OK, mensaje en excel 
+*************************************************************************************************************
+Revision Maquinas 09-Ene-2023 9:00 am
+01		OK			Ejecutando SDICC   		disco C OK 
+02		OK			Ejecutando APECHAT		disco C OK 
+03		OK			Ejecutando NMEM			disco C OK
+04		OK			Ejecutando GMSFS		disco C OK 
+05		OK			Ejecutando Alta			disco C OK
+Desarrollo3	OK			Ejecutando GLNMid		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Ene-2023 8:55 am
+01		OK
+02		ERROR			Ejecutando VSY			disco C lleno, se vacio, reinicio y forzo
+03		ERROR			Ejecutando DSPohang		disco C lleno, se vacio, reinicio y forzo
+04		ERROR			Ejecutando DSPohang		disco C OK, con pregunta de excel reinicio y forzo 
+05		ERROR			Ejecutando POL			disco  C Lleno, se vacio, reinicio y forzo	
+Desarrollo3	ERROR			Detenido GLNMID			disco C OK,se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 06-Ene-2023 8:55 am
+01		ERROR			Detenido KWT   			disco C Lleno,se limpio, reincio y forzo 
+02		OK			Ejecutando FinklCH		disco C OK 
+03		OK			Ejecutando DSPohang		disco C OK
+04		OK			Ejecutando ALTA			disco C OK 
+05		OK			Ejecutando NDEC			disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			disco C OK,se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 05-Ene-2023 8:50 am
+01		OK			Ejecutando NASGhent   		disco C OK 
+02		ERROR			Detenido ALLSVK			disco C Lleno,se limpio, reincio y forzo 
+03		OK			Ejecutando Regina		disco C OK
+04		OK			Ejecutando NMEM			disco C OK 
+05		OK			Ejecutando VSY			disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Ene-2023 8:50 am
+01		OK			Ejecutando NUTA   		disco C OK 
+02		OK			Ejecutando SSMalaysia		disco C OK
+03		OK			Ejecutando OTKSCAL		disco C OK
+04		ERROR			Detenido TUTA			disco C Lleno,se limpio, reincio y forzo 
+05		ERROR			Detenido KWT			disco C OK,se reinicio y forzo
+Desarrollo3	ERROR			Detenido GLNMTB			disco C OK, mensaje en excel se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 03-Ene-2023 9:00 am
+01		OK			Ejecutando NUTA   		disco C OK 
+02		OK			Ejecutando HHAL			disco C OK
+03		OK			Ejecutando NASGhent		disco C OK
+04		OK			Ejecutando KWT			disco C OK 
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Ene-2023 9:50 am
+01		ERROR			Detenido KWT   			disco C Lleno,se limpio, reincio y forzo 
+02		ERROR			Detenido Regina			disco C Lleno,se limpio, reincio y forzo
+03		ERROR			Detenido NASGhent		disco C Lleno,se limpio, reincio y forzo
+04		ERROR			Detenido VSY			disco C OK,Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo 
+05		OK			Ejecutando NDEC			disco C OK
+Desarrollo3	ERROR			Detenido GLNMid			disco C OK, se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 30-Dic-2022 9:00 am
+01		OK			Ejecutando NMEM   		disco C OK 
+02		OK			Ejecutando GMSFS		disco C OK
+03		ERROR			Detenido IND			disco C Lleno,se limpio, reincio y forzo
+04		OK			Ejecutando Regina		disco C OK
+05		ERROR			Detenido VSY			disco C OK,pero excel  marco que no podia 
+									ejecutar con los recursos actuales
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Dic-2022 9:00 am
+01		OK			Ejecutando OTKSCAL   		disco C OK 
+02		OK			Ejecutando TUTA			disco C OK
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando IND			disco C OK
+05		OK			Ejecutando GMSFS		disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 28-Dic-2022 8:50 am
+01		OK			Ejecutando VSY   		disco C OK 
+02		OK			Ejecutando TSKYU		disco C OK
+03		OK			Ejecutando NUTA			disco C OK
+04		OK			Ejecutando SDICOL		disco C OK
+05		OK			Ejecutando ALLSVK		disco C OK
+Desarrollo3	ERROR			Detenido GLNWTB			disco C OK, se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 27-Dic-2022 8:40 am
+01		OK			Ejecutando NUTA   		disco C OK 
+02		OK			Ejecutando VSY			disco C OK
+03		OK			Ejecutando POL			disco C OK
+04		OK			Ejecutando TSKYU		disco C OK
+05		OK			Ejecutando ALLSVK		disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Dic-2022 9:10 am
+01		OK			Ejecutando TSTAH   		disco C OK 
+02		OK			Ejecutando oHofors		disco C OK
+03		ERROR			Detenido VSY			disco C lleno, se limpio, reinicio y forzo
+04		OK			Ejecutando KWT			disco C OK
+05		ERROR			Detenido SulbBahrain		disco C lleno, se limpio, reinicio y forzo
+Desarrollo3	ERROR			Detenido GLNPTB			disco C OK, se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 23-Dic-2022 9:00 am
+01		OK			Ejecutando NMAR   		disco C OK 
+02		OK			Ejecutando GMSFS		disco C OK
+03		OK			Ejecutando Regina			disco C OK
+04		OK			Ejecutando StdS			disco C OK
+05		OK			Ejecutando NSBS			disco C OK
+Desarrollo3	ERROR			Detenido GLNPTB			disco C OK, se reinicio y forzo
+*************************************************************************************************************
+Revision Maquinas 22-Dic-2022 9:00 am
+01		OK			Ejecutando SulbBahrain   	disco C OK 
+02		OK			Ejecutando NY			disco C OK
+03		ERROR			Detenido GMSFS			disco C lleno, se limpio, reinicio y forzo
+04		ERROR			Detenido SDICOL			disco C OK
+05		OK			Ejecutando IND			disco C OK
+Desarrollo3	ERROR			Detenido GLNCHL			disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Dic-2022 8:50 am
+01		OK			Ejecutando NY   		disco C OK 
+02		OK			Ejecutando SulbBahrain		disco C OK
+03		OK			Ejecutando TSOKA		disco C OK
+04		OK			Detenido TUTA			disco C OK
+05		OK			Ejecutando SDICOL		disco C OK
+Desarrollo3	ERROR			Detenido GLNCVL			disco C OK, mensaje en excel, se reinicio
+									y forzo
+*************************************************************************************************************
+Revision Maquinas 20-Dic-2022 9:00 am
+01		OK			Ejecutando NHICK   		disco C OK 
+02		ERROR			Detenido VSY			disco C OK, Mensaje excel de archivo cannot 
+									be accesed,Se reinicio y forzo 
+03		OK			Ejecutando TSTAH		disco C OK
+04		OK			Detenido GMSFS			disco C OK
+05		OK			Ejecutando GSDR			disco C OK
+Desarrollo3	OK			Ejecutando GLNCVL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 19-Dic-2022 9:00 am
+01		OK			Ejecutando GMSFS   		disco C OK 
+02		OK			Ejecutando SSAB			disco C OK
+03		OK			Ejecutando TENKOP		disco C OK
+04		ERROR			Detenido VSY			disco C lleno, se limpio, reinicio y forzo 
+05		OK			Ejecutando KWT			disco C OK
+Desarrollo3	OK			Detenida trabajo actualizacion	disco C OK
+*************************************************************************************************************
+Revision Maquinas 16-Dic-2022 9:00 am
+01		ERROR			Detenido DSIncheon   		disco C lleno, se limpio, reinicio y forzo 
+02		OK			Ejecutando NUTA			disco C OK
+03		OK			Ejecutando VSY			disco C OK
+04		ERROR			Detenido DSPohang		disco C OK, pero tenia pregunta en excel de 
+									reemplazar el archivo summary.
+05		OK			Ejecutando OTKSCAL		disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Dic-2022 8:50 am
+01		OK			Ejecutando GMSFS   		disco C OK
+02		OK			Ejecutando NUTA			disco C OK
+03		OK			Ejecutando SSAB			disco C OK
+04		ERROR			Detenido KWT			disco C lleno, se limpio, reinicio y forzo 
+05		OK			Ejecutando SDICC		disco C OK
+Desarrollo3	OK			Ejecutando GLNCVL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Dic-2022 7:40 am
+01		OK			Ejecutando Alta   		disco C OK
+02		OK			Ejecutando NMEM			disco C OK
+03		OK			Ejecutando APECHAT		disco C OK
+04		OK			Ejecutando DSPohang		disco C OK 
+05		OK			Ejecutando VSY			disco C OK
+Desarrollo3	OK			Ejecutando GLNCVL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Dic-2022 7:30 am
+01		OK			Ejecutando SDICOL   		disco C OK
+02		OK			Ejecutando Alta			disco C OK
+03		OK			Ejecutando GMSFS		disco C OK
+04		OK			Ejecutando ALLSVK		disco C OK 
+05		OK			Ejecutando NUTA			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Dic-2022 9:10 am
+01		OK			Ejecutando SSAB   		disco C OK
+02		OK			Ejecutando POL			disco C OK
+03		ERROR			Detenido GMSFS			disco C lleno, se limpio, reinicio y forzo
+04		ERROR			Detenido SDICC			disco C lleno, se limpio, reinicio y forzo 
+05		OK			Ejecutando NUTA			disco C OK
+Desarrollo3	ERROR			Detenido GLNCHL			disco C OK,pero excel  marco que no podia 
+									ejecutar con los recursos actuales
+*************************************************************************************************************
+Revision Maquinas 09-Dic-2022 9:10 am
+01		OK			Ejecutando NHICK   		disco C OK
+02		OK			Ejecutando POL			disco C OK
+03		OK			Ejecutando DSPohang		disco C OK
+04		OK			Ejecutando OTKSCAL		disco C OK 
+05		OK			Ejecutando Regina		disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 08-Dic-2022 8:50 am
+01		OK			Ejecutando SulbBahrain   	disco C OK
+02		OK			Ejecutando TSOKA		disco C OK
+03		OK			Ejecutando DSIncheon		disco C OK
+04		ERROR			Detenido con KWT		disco C lleno, se vacio, reinicio y forzo 
+05		OK			Ejecutando NUTA			disco C OK
+Desarrollo3	OK			Ejecutando GLNWTB		disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Dic-2022 9:00 am
+01		ERROR			Detenido con SDICOL		disco C lleno, se vacio, reinicio y forzo
+02		OK			Ejecutando NHICK		disco C OK
+03		OK			Ejecutando GSDR			disco C OK
+04		OK			Ejecutando SSAB			disco C OK
+05		OK			Ejecutando oHofors		disco C OK
+Desarrollo3	OK			Detenida trabajo actualizacion	disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Dic-2022 8:30 am
+01		OK			Ejecutando SDICC			disco C OK
+02		OK			Ejecutando Stds				disco C OK
+03		ERROR			Detenido VSY				disco C OK, pero excel  marco que no podia 
+										ejecutar con los recursos actuales
+04		OK			Ejecutando APECHAT			disco C OK
+05		OK			Ejecutando DsPohang			disco C OK
+Desarrollo3	OK			Ejecutando GLNPTB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Dic-2022 8:50 am
+01		OK			Ejecutando GMSFS			disco C OK
+02		OK			Ejecutando TUTA				disco C OK
+03		OK			Ejecutando TSTAH			disco C OK
+04		ERROR			Detenido con SulbBahrain		disco C lleno, se vacio, reinicio y forzo
+05		OK			Ejecutando NUTA				disco C OK
+Desarrollo3	OK			Ejecutando GLNMTB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Dic-2022 04:05 pm
+01		ERROR			Ejecutando TSOKA			Disco C Lleno, se vacio, reseteo y forzo TSOKA
+02		ERROR			Ejecutando SSMalaysia   		Disco C Lleno, se vacio, reseteo y forzo SSMalaysia
+03		OK			Ejecutando NDUF				disco C OK
+04		OK			Ejecutando DSIncheon			disco C OK
+05		ERROR			Ejecutando SDICC			Disco C Lleno, se vacio, reseteo y forzo SDICC
+Desarrollo3	ERROR			Detenido con GLNMTB			disco C OK, pero excel  marco que no podia 
+											ejecutar con los recursos actuales
+*************************************************************************************************************
+Revision Maquinas 02-Dic-2022 8:50 am
+01		OK			Ejecutando NSBS				disco C OK
+02		OK			Ejecutando SSMalaysia   		disco C OK
+03		OK			Ejecutando Yumbo2			disco C OK
+04		OK			Ejecutando NY				disco C OK
+05		OK			Ejecutando CTLatrobe			disco C OK
+Desarrollo3	OK			Detenido con GLNMid			disco C OK. 
+*************************************************************************************************************
+Revision Maquinas 01-Dic-2022 8:50 am
+01		OK			Ejecutando SSAB				disco C OK
+02		OK			Ejecutando NY   			disco C OK
+03		OK			Ejecutando oHofors			disco C OK
+04		ERROR			Detenido con Regina			disco C lleno, se limpio disco,
+										reinicio y forzo el sistema.
+05		OK			Ejecutando GSDR				disco C OK
+Desarrollo3	ERROR			Detenido con GLNCHL 			Reinicio de la computadora, disco C OK. 
+*************************************************************************************************************
+Revision Maquinas 30-Nov-2022 8:50 am
+01		ERROR			Detenido con VSY			disco C lleno, se limpio disco, reinicio y
+										 forzo el sistema.
+02		OK			Ejecutando SDICC   			disco C OK
+03		ERROR			Detenido con GAL			disco C lleno, se limpio disco, reinicio 
+										y forzo el sistema.
+04		OK			Ejecutando NY				disco C OK
+05		OK			Ejecutando KWT				disco C OK
+Desarrollo3	OK			Ejecutando GLNWIL 			disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-Nov-2022 8:50 am
+01		OK			Ejecutando SDICC			disco C OK
+02		ERROR			Detenido con VSY   			disco C OK, se reinicio y forzo el sistema.
+03		OK			Ejecutando KWT				disco C OK
+04		OK			Ejecutando NMAR				disco C OK
+05		OK			Ejecutando POL				disco C OK
+Desarrollo3	ERROR			Detenido con GLNPTB 			Mensaje con pregunta de excel de guardar 
+										archivo,se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 28-Nov-2022 8:50 am
+01		OK			Ejecutando SDICC			disco C OK
+02		OK			Ejecutando DSPohang   			disco C OK
+03		OK			Ejecutando NMAR				disco C OK
+04		OK			Ejecutando KWT				disco C OK
+05		OK			Ejecutando POL				disco C OK
+Desarrollo3	OK			Ejecutando GLNCHL			disco C OK
+*************************************************************************************************************
+Revision Maquinas 27-Nov-2022 05:18 pm
+01		ERROR			Ejecutando VSY				Mensaje excel de ccHeader_VallourecStar Youngstown.xls cannot be accesed, disco C OK
+										Archivo si existe en carpeta E:\Acerias\PlantasSitio\Vallourec Star Youngstown\VM2
+										Se reinicio, se forzo y se volvio a correr
+02		OK			Ejecutando NHICK			disco C OK
+03		OK			Ejecutando KWT				disco C OK
+04		OK			Ejecutando SDICC			disco C OK
+05		OK			Ejecutando POL				disco C OK
+Desarrollo3	ERROR			Ejecutando GLNPTB			Mensaje de excel "Excel cannot complete this task with available resources"
+										se reseteo, se forzo GLNPTB y se arranco de nuevo  el proceso
+*************************************************************************************************************
+Revision Maquinas 25-Nov-2022 08:50 am
+01		OK			Ejecutando KWT	 			disco C OK  
+02		OK			Ejecutando POL				disco C OK
+03		ERROR			Detenido con VSY	    		disco C OK
+04		OK			Ejecutando NUTA				disco C OK
+05		ERROR			Detenida con SDICOL			disco C lleno, se limpio disco, se reinicio y forzo el sistema.
+Desarrollo3	ERROR			Detenida trabajo de actualizacion	disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Nov-2022 08:50 am
+01		OK			Ejecutando GSDR	 			disco C OK  
+02		OK			Ejecutando FinklCH			disco C OK
+03		OK			Ejecutando SSAB    			disco C OK
+04		OK			Ejecutando oHofors			disco C OK
+05		OK			Ejecutando SDICOL			disco C OK
+Desarrollo3	ERROR			Detenida trabajo de actualizacion	disco C OK
+*************************************************************************************************************
+Revision Maquinas 23-Nov-2022 08:50 am
+01		OK			Ejecutando StdS	 			disco C OK  
+02		OK			Ejecutando APECHAT			disco C OK
+03		OK			Ejecutando DSPohang    			disco C OK
+04		ERROR			Detenido Excel con POL			disco C OK
+05		OK			Ejecutando NHICK			disco C OK
+Desarrollo3 ERROR			Detenido con pregunta de excel	disco C OK
+*************************************************************************************************************
+Revision Maquinas 22-Nov-2022 08:50 am
+01 OK			Ejecutando TUTA	 	disco C OK  
+02 ERROR 		Detenido con DSIncheon	disco C lleno, se reinicio, limpio disco y forzo el sistema.
+03 OK 		Ejecutando TSTAH   	disco C OK
+04 OK 		Ejecutando POL		disco C OK
+05 OK 		Ejecutando NHICK		disco C OK
+Desarrollo3 OK 	Ejecutando GLNWIL		disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Nov-2022 09:24 am
+01 ERROR	Estaba detenido Excel 	disco C OK  se reseteo y se puso a correr normal
+02 OK 		Ejecutando Alta		disco C OK
+03 OK 		Ejecutando GMSFS	disco C OK
+04 OK 		Ejecutando VSY		disco C OK
+05 OK 		Ejecutando NDUF		disco C OK
+Desarrollo3 OK 	Ejecutando GLNWTB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Nov-2022 12:24 am
+01 OK 		Ejecutando oHofors	disco C OK
+02 OK		Ejecutando SulbBahrain	disco C OK
+03 OK		Ejecutando NDUF		disco C OK
+04 ERROR	Ejecutando NasGhent	Disco C LLLENO se reseteo, limpio y forzo
+05 ERROR	Ejecutando VSY		Disco C LLLENO se reseteo, limpio y forzo
+Desarrollo3 OK 	Ejecutando GLNWTB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Nov-2022 8:50 am
+01 OK 	Ejecutando DSPohang	disco C OK
+02 error	Detenido TSThaiNTS	disco C lleno, se libero disco, reinicio y forzo el sistema.
+03 error	Detenido KWT		disco C lleno, se libero disco, reinicio y forzo el sistema.
+04 OK		Ejecutando NUTA		disco C OK
+05 OK		Ejecutando SDICC		disco C OK
+Desarrollo3 OK Ejecutando GLNPTB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Nov-2022 7:40 am
+01 OK 	Ejecutando NUTA	 	disco C OK
+02 OK		Ejecutando SDICC		disco C OK
+03 OK		Ejecutando HHAL		disco C OK
+04 OK		Ejecutando SSAB		disco C OK
+05 OK		Ejecutando OTKSCAL	disco C OK
+Desarrollo3 error	Detenido GLNMTB	disco C OK, Desconectado de VPN, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 16-Nov-2022 8:50 am
+01 OK 	Ejecutando VSY	 	disco C OK
+02 OK		Ejecutando TSKYU		disco C OK
+03 OK		Ejecutando GMSFS		disco C OK
+04 OK		Ejecutando Regina		disco C OK
+05 OK		Ejecutando NUTA		disco C OK
+Desarrollo3 OK	Ejecutando GLNPTB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 15-Nov-2022 8:50 am
+01 OK 	Ejecutando CTLatrobe 	disco C OK
+02 error	Detenido con DSPohang	disco C lleno, se reinicio y forzo el sistema.
+03 OK		Ejecutando SSMalaysia	disco C OK
+04 error	Detenido con SDICC	disco C lleno, se reinicio y forzo el sistema.
+05 OK		Ejecutando NHICK	disco C OK
+Desarrollo3 OK	Ejecutando GLNPTB	disco C OK
+*************************************************************************************************************
+Revision Maquinas 14-Nov-2022 8:50 am
+01 OK 	
+02 OK		
+03 OK		
+04 OK	
+05 Detenida con SYS por disco C lleno, se reinicio,se limpio el disco y forzo.
+Desarrollo3 Detenida con GLNPTB tenia pregunta de excel de guardar archivo, se reinicio y forzo.
+*************************************************************************************************************
+Revision Maquinas 13-Nov-2022 10:00 am
+01 OK 		Ejecutando OTKSCAL 	disco C OK
+02 OK		Ejecutando SulbBahrain	disco C OK
+03 OK		Ejecutando FinklCH	disco C OK
+04 OK		Ejecutando SSAB		disco C OK
+05 OK		Ejecutando oAlta	disco C OK
+Desarrollo3 OK	Ejecutando GLNCVL	disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Nov-2022 9:00 am
+01 Detenida por que no tenia acceso al servidor. 
+02 Detenida por que no tenia acceso al servidor. 
+03 Detenida por que no tenia acceso al servidor. 
+04 Detenida por que no tenia acceso al servidor. 
+05 Detenida por que no tenia acceso al servidor. 
+Desarrollo3 Detenida por que no tenia acceso al servidor.
+Servidor 10.0.4.4 Estaba detenido por reinicio del equipo.
+*************************************************************************************************************
+Revision Maquinas 10-Nov-2022 9:00 am
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 9-Nov-2022 12:14 pm
+01 OK
+02 OK
+03 OK
+04 Excel estaba detenido, se reseteo maquina y se forzo POL
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 8-Nov-2022 12:14 pm
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK 
+Desarrollo3 Pregunta de Excel  detuvo proceso con  GLNPTB, se resete, se forzo GLNPTB
+*************************************************************************************************************
+Revision Maquinas 6-Nov-2022 11:43 am
+01 Disco C lleno, Corriendo SULB Bahrain, se reseteo, se limpio disco C, se forzo SULB
+02 Disco C Lleno, Corriendo ALTA, se reseteo, limpio disco y se forzo ALTA
+03 
+04  Disco C Lleno, corriendo Gerdau TUTA, se limpio Disco C, se forzo TUTA, se reseteo maquina
+05  Excel estaba detenido con GMSFS, se reseteo y forso GMSFS
+Desarrollo3 estab a detenido excel, se reseteo maquiina y forzo WTB
+*************************************************************************************************************
+Revision Maquinas 3-Nov-2022 11:43 am
+01 OK
+02 OK
+03 OK
+04 OK  
+05 Disco C estaba lleno corriendo VSY, se vacio disco , reseteo maquina y forzo VSY
+Desarrollo3 Se perdio la conexion  a TxCare, y estaba una pregunta en excel, en negro
+		Se reseteo y forzo Wilton
+*************************************************************************************************************
+Revision Maquinas 2-Nov-2022 8:30
+01 Disco duro lleno, corriendo REGINA, se limpio disco reseteo maquina y forzo Regina
+02 OK
+03 No  estaba corriendo Excel se puso a correr
+04 OK  
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 31-Oct-2022 8:50
+01 OK
+02 Detenido excel  por falta de recursos con GMSFS,se borraron archivos temporales, se reinicio y se forzo.
+03 OK
+04 OK  
+05 OK
+Desarrollo3 Detenida por estar sin conexion a VPN, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 30-Oct-2022 9:50
+01 OK
+02 OK
+03 OK
+04 OK Detenido excel  por falta de recursos con Nucor Yamato Steel EAF1, se lleno disco C, se borraron archivos
+	temporales, se reseteo la maquina y se forzo nucor yamato 
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 28-Oct-2022 8:20
+01 Detenida con VSY por mensaje en Excel de que no se podia entrar al archivo, se reinicio y forzo el sistema.
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenida por estar sin conexion a VPN, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 27-Oct-2022 8:20
+01 OK
+02 OK
+03 Detenida con SDICOL por disco lleno, se reinicio y forzo el sistema.
+04 OK
+05 OK
+Desarrollo3 Detenida con GLNCVL por mensaje en Excel, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 26-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK.
+*************************************************************************************************************
+Revision Maquinas 25-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 24-Oct-2022 8:50
+01 OK
+02 Detenido con TSTAH por Excel con pregunta de guardar archivo, se reinicio y forzo el sistema.
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenida con GLNWIL por mensaje en Excel, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 23-Oct-2022 13:10
+01 OK
+02 OK
+03 Estaba detenido en una preegunta de Exccel que decia "Nucor Steel (Operative Evolution) Summary 20220915.xls"
+         is now available for editing, se contesto y estaba VSY,  se forzo reinicio y arranco de nuevo
+04 Disco C Llleno, estaba corriendo SSMalaysia, se reseteo, limpio disco, forzo ssmalaysia y se volvio a correr
+05 Disco C Llleno, estaba corriendo POL, se reseteo, limpio disco, forzo POL y se volvio a correr
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 21-Oct-2022 9:10
+01 OK
+02 Detenida por disco lleno, se reinicio y forzo el sistema.
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 20-Oct-2022 8:30
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenida porque se quedo sin conexion, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 19-Oct-2022 8:30
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 18-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 17-Oct-2022 8:50
+01 Detenida con DSPohang por disco lleno, se reinicio y forzo el sistema.
+02 OK
+03 Detenida con Regina por actualizacion pendiente,se reinicio y forzo el sistema.
+04 OK
+05 OK
+Desarrollo3 Detenido con GLNMTB se reincio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 14-Oct-2022 8:50
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 13-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 12-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenida por reinicio de la maquina, se inicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 11-Oct-2022 9:10
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 10-Oct-2022 8:40
+01 OK
+02 OK
+03 Detenida por reinicio de la maquina, se inicio y forzo el sistema.
+04 OK
+05 Detenida con SYS por disco lleno, se libero, reincio y forzo el sistema.
+Desarrollo3 Detenida para trabajo de actualizacion.
+*************************************************************************************************************
+Revision Maquinas 09-Oct-2022 19:03
+01 OK
+02 OK
+03 No estaba ejecutando excel, se reseteo y puso a correr de nuevo
+04 Detenido por falta de recursos en Excel, el disco C estaba lleno, se vacio disco C
+	se reseteo, se forzo SDICC se puso a correrr de nuevo
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 07-Oct-2022 8:40
+01 Detenida por reinicio de la maquina, se inicio y forzo el sistema .
+02 OK
+03 OK
+04 OK
+05 Detenida desde el dia anterior con Grupo Siderurgico Reyna por problemas en el procesamiento de la planta.
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 06-Oct-2022 8:40
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 05-Oct-2022 7:50
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenido con GLNJKS con pregunta de excel, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 04-Oct-2022 8:40
+01 OK
+02 Detenido en VSY, se reinicio y forzo el sistema.
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+*************************************************************************************************************
+Revision Maquinas 03-Oct-2022 9:10
+01 Detenido con CTLatrobe por disco lleno, se libero disco, se reinicio y forzo el sistema.
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 Detenida con GLNCVL por falta de conexion a VPN y disco lleno, se libero disco, se reinicio y forzo el sistema.
+*************************************************************************************************************
+Revision Maquinas 30-Sept-2022 8:50 
+01 OK
+02 Detenido con RMSM por disco lleno,se libero disco, se reinicio y forzo el sistema.
+03 Detenido con SSMalaysia por disco lleno,se libero disco, se reinicio y forzo el sistema.
+04 OK
+05 OK
+Desarrollo3 Detenida para trabajo de actualizacion.
+*************************************************************************************************************
+Revision Maquinas 29-Sept-2022 8:50 
+01 OK
+02 OK
+03 OK
+04 OK
+05 Detenido con VSY por disco lleno, se libero disco, se reinicio y forzo el sistema.
+Desarrollo3 OK
+
+*************************************************************************************************************
+Revision Maquinas 28-Sept-2022 10:14 
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 estaba detenido en GLNJKS con la pregunta de excel y habia perdido la VPN, se reseteo, se 
+		levanto conecto la VPN, y el dellserver2, forzar y correr
+
+------------------------------------------------------------------------
+Revision Maquinas 27-Sept-2022 8:40 
+01 OK
+02 OK
+03 OK
+04 OK
+05 OK
+Desarrollo3 OK
+
+------------------------------------------------------------------------
+Revision Maquinas 26-Sept-2022 8:50 
+01 OK
+02 OK
+03 NY, Excel con pregunta de guardar archivo, Restart,Forzar
+04 OK
+05 OK
+Desarrollo3 OK
+
+------------------------------------------------------------------------
+Revision Maquinas 25-Sep-2022 20:00
+01 POL,detenido, dar Restart, Forzar
+02 LATROBE, disco C lleno, Vaciar C: y Restart, Forzar
+03 OK
+04 OK
+05 VSY,Error Excel y no acceso a A: y S:,RESTART,Forzar
+Desarrollo3 GLNCVL, Excel detenido con pregunta Book31.xls, Cerrar,
+                  Restart, Conectar VPN, Conectar Dellserver, Forzar auto
+
