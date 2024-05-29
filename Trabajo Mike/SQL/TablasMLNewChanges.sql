@@ -48,7 +48,7 @@ GO
 ALTER TABLE [dbo].[ml_Tendencia] CHECK CONSTRAINT [FK_Tendencia_idPG];
 GO
 
-/****** Object:  Table [dbo].[ml_Tendencia]    Script Date: 24/05/2024 12:35:21 p. m. ******/
+/****** Object:  Table [dbo].[ml_LlavesG]    Script Date: 27/05/2024 12:35:21 p. m. ******/
 SET ANSI_NULLS ON
 GO
 
