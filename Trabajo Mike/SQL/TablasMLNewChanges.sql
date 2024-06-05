@@ -1,3 +1,7 @@
+drop table if exists ml_Gas_Limite
+drop table if exists ml_Tendencia
+drop table if exists ml_LlavesG
+drop table if exists ml_Gas_Alerta
 /****** Object:  Table [dbo].[ml_Gas_Limite]    Script Date: 24/05/2024 12:35:21 p. m. ******/
 SET ANSI_NULLS ON
 GO
@@ -23,6 +27,7 @@ CREATE TABLE [dbo].[ml_Tendencia](
 	[id] [bigint] identity(1,1) NOT NULL,
 	[idGas] [bigint] NOT NULL,
 	[idPG] [int] NOT NULL,
+	[valorActual] numeric(10,4) NOT NULL,
 	[Fecha] [datetime] NOT NULL,
  	[v30] numeric(10,4) NOT NULL,
 	[v60] numeric(10,4) NOT NULL,
@@ -87,7 +92,17 @@ GO
 Alter TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idTend];
 GO
 
-
-
-drop table ml_LlavesG
-
+/****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
+CREATE TABLE dbo.ml_Gas_Alerta (
+    idAlerta BIGINT IDENTITY(1,1) PRIMARY KEY,
+    mes INT,
+    tipoAlerta VARCHAR(10),
+    alertaActiva BIT,
+    idTendencia BIGINT,
+    idLlave BIGINT,
+    idGas BIGINT,
+    valorActual NUMERIC(10,4),
+    FOREIGN KEY (idTendencia) REFERENCES dbo.ml_Tendencia(id),
+    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
+    FOREIGN KEY (idGas) REFERENCES dbo.ml_Gas_Limite(id)
+);
