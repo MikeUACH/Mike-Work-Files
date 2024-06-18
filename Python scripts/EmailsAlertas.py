@@ -17,10 +17,10 @@ cursor = conn.cursor()
 # Configuración del correo
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-smtp_user = 'a343441@uach.com'
-smtp_password = 'sf23scf3'
-from_email = 'a343441@uach.com'
-to_emails = ['a343441@uach.com', 'otro_correo@ejemplo.com', 'otro_mas@ejemplo.com']  # Lista de destinatarios
+smtp_user = "a343441@uach.mx"
+smtp_password = "ytxunlvdkruyoquf"  # Contraseña de aplicación generada
+from_email = 'MHernandez@amiautomation.com'
+to_emails = ['a343441@uach.com', 'jesus.rodriguez@amiautomation.com']  # Lista de destinatarios
 
 def send_email(subject, body, to_emails):
     msg = MIMEMultipart()

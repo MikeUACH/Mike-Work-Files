@@ -2,12 +2,117 @@ Revision Incluye
 	Conectarse a cada Maquina y revisar que Excel  este corriendo y disco C no este lleno
 	Asegurar que el  acceso a los drives O: y S: este completo
 	Asegurar que la maquina que se revisa en VisualBasic, no tenga mas  de 1 Dia Corriendo
+
+*************************************************************************************************************
+Revision Maquinas 13-Jun-2024 9:13 am
+01		OK			Ejecutando GLNMID-B FCE		disco C OK				
+02		Standby			Usado para pruebas		disco C OK, SDICC-SOUTH, termino ejecutado a las 6 AM
+03		Standby			Usado para pruebas		disco C OK, NUTA F1Sub, termino ejecutando a las 6 AM
+04		OK			Ejecutando RMSM-F5		disco C OK
+05		Error			Detenido en CTReading-F-fce	disco C OK, insertaRangosSummary falla por falta de que le pase la 										    planta y el horno
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 13-Jun-2024 9:13 am
+01		OK			Ejecutando NUTA-F2Sub		disco C OK				
+02		Standby			Usado para pruebas		disco C OK, SDICC-SOUTH, termino ejecutado a las 6 AM
+03		Standby			Usado para pruebas		disco C OK, ARVEDIAST-EAF, termino ejecutado a las 4 AM 
+04		OK			Ejecutando NIHCK-F2Sub		disco C OK
+05		OK			Ejecutando ALLSVK-EAF	 	disco C OK
+Desarrollo3	ERROR			REINICIADA			disco C OK
+*************************************************************************************************************
+Revision Maquinas 12-Jun-2024 9:33 am
+01		ERROR			Detenido NIND-South		disco C OK				
+02		ERROR			Detenido NDUF-EAF		disco C OK
+03		OK			Ejecutando Alta-EAF		disco C OK
+04		OK			Ejecutando POL-EAF		disco C OK
+05		OK			Ejecutando GLNPTB-EAF	 	disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 11-Jun-2024 8:20 am
+01		OK			Ejecutando TSOKA-EAFdc		disco C OK				
+02		OK			Ejecutando SulbBahrain-EAF	disco C OK
+03		ERROR			Detenido en NMEM-EAF 		disco C OK, Al tratar de ejecutarlo se cierra
+04		OK			Ejecutando TUTA-EAF		disco C OK
+05		OK			Ejecutando TUTA-EAF	 	disco C OK
+Desarrollo3	Error			Detenido en DSIncheon		disco C OK, Error por desconexión con la VPN, ya conectada y 											    corriendo AM IND
+*************************************************************************************************************
+Revision Maquinas 10-Jun-2024 09:08 am
+01		OK			Ejecutando SDICC-North		disco C OK				
+02		ERROR			Detenido NMAR-EAF		disco C OK, el archivo zip n contiene info
+03		OK			Ejecutando SDICC-South 		disco C OK
+04		OK			Ejecutando DSpohang-Adc Shell	disco C OK
+05		OK			Ejecutando TUTA-EAF	 	disco C OK
+Desarrollo3	OK			Ejecutando NOVE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 07-Jun-2024 09:08 am
+01		OK			Ejecutando NSBS-North		disco C OK				
+02		ERROR			Detenido NUTA-F1		disco C OK, el archivo zip n contiene info
+03		ERORR			Detenido NUTA-F2Sub 		disco C OK
+04		OK			Ejecutando DSncheon-EAFdc	disco C OK
+05		OK			Ejecutando NDEC-EAFdc	 	disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 06-Jun-2024 11:48 am
+01		OK			Ejecutando APEGNK-EAF		disco C OK				
+02		OK			Ejecutando TENKOP-EAF		disco C OK
+03		OK			Ejecutando NY-F1 		disco C OK
+04		OK			Ejecutando APECHAT-EAF		disco C OK
+05		OK			Ejecutando TSOKA-EAFdc	 	disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Jun-2024 9:28 am
+01		OK			Ejecutando GLNMTB-EAF		disco C OK				
+02		OK			Ejecutando oHofors-EAF  	disco C OK
+03		OK			Ejecutando TSOKA-EAFdc 		disco C OK
+04		OK			Ejecutando NHICK-F2dc		disco C OK
+05		OK			Ejecutando NDEC-EAFdc	 	disco C OK
+Desarrollo3	ERROR			No ejecutando nada		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Jun-2024 9:40 am
+01		OK			Ejecutando GLWIL-EAF		disco C OK				
+02		OK			Ejecutando DSPohang-Bdc Shell  	disco C OK
+03		OK			Ejecutando APEGNK-EAF 		disco C OK
+04		OK			Ejecutando NY-F1 		disco C OK
+05		OK			Ejecutando APECHAT-EAF	 	disco C OK
+Desarrollo3	OK			Ejecutando VSY			disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Jun-2024 9:40 am
+01		OK			Ejecutando GLNWIL-EAF		disco C OK				
+02		ERROR			Detenido NHICK-F1dc 	  	disco C OK, no copio el archivo zip  
+03		ERROR			Detenido YAMS-EAFdc 		disco C OK, falta de recursos Excel
+04		OK			Ejecutando TSKYU-EAFdc 		disco C OK,
+05		ERROR			Ejecutando GLNPTB-EAF	 	disco C OK, falta de recursos Excel
+Desarrollo3	OK			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 31-May-2024 9:13 am
+01		OK			Ejecutando NMAR-EAF		disco C OK						
+02		OK			Ejecutando TUA-EAF	  	disco C OK 
+03		OK			Ejecutando YAMS-EAFdc 		disco C OK
+04		OK			Ejecutando TSKYU-EAFdc 		disco C OK
+05		OK			Ejecutando TSOKA-EAFdc  	disco C OK
+Desarrollo3	OK			Ejecutando CakratuJaka		disco C OK
+*************************************************************************************************************
+Revision Maquinas 30-May-2024 9:13 am
+01		OK			Ejecuant POL-EAF		disco C OK						
+02		ERROR			Sin ejecuar nada.	  	disco C OK 
+03		ERROR			Ejecutando SDIC-Souht 		disco C OK, Mas de 24 horas
+04		ERROR			Ejecutando NSEA-EAF 		disco C OK, Mas de 24 horas
+05		OK			Ejecutando OTKSCAL-EAF  	disco C OK,
+Desarrollo3	OK			Ejecutando OEMK			disco C OK
+*************************************************************************************************************
+Revision Maquinas 29-May-2024 9:15 am
+01		OK			Ejecuant StdS-EAF		disco C OK						
+02		OK			Ejecutando GMSFS-F3	  	disco C OK, lleva mas de 24 horas, pero los ultimos 2 procesos 											    igualmente tardo mas de 24 horas
+03		OK			Ejecutando SDIC-Souht 		disco C OK
+04		OK			Ejecutando NSEA-EAF 		disco C OK							
+05		OK			Ejecutando SDICC-North  	disco C OK
+Desarrollo3	OK			Ejecutando ALTN			disco C OK
 *************************************************************************************************************
 Revision Maquinas 28-May-2024 8:56 am
-01		OK			Terminando Alta-EAF		disco C OK											
+01		OK			Terminando Alta-EAF		disco C OK						
 02		OK			Ejecutando GMSFS-F3	  	disco C OK
 03		OK			Ejecutando NMEM-EAF 		disco C OK
-04		OK			Ejecutando GLNMTB-LMF 		disco C OK													
+04		OK			Ejecutando GLNMTB-LMF 		disco C OK							
 05		Error			Detenido en GLNCVL-EAF  	disco C OK, Sin recursos suficientes para terminar la tarea
 Desarrollo3	Ok			Reiniciada			disco C OK, Ya se encuentra ejecuntando NOVE
 *************************************************************************************************************

@@ -1,7 +1,8 @@
 drop table if exists ml_Gas_Limite
 drop table if exists ml_Tendencia
-drop table if exists ml_LlavesG
 drop table if exists ml_Gas_Alerta
+drop table if exists Usuarios_gas
+drop table if exists ml_LlavesG
 /****** Object:  Table [dbo].[ml_Gas_Limite]    Script Date: 24/05/2024 12:35:21 p. m. ******/
 SET ANSI_NULLS ON
 GO
@@ -53,6 +54,35 @@ GO
 ALTER TABLE [dbo].[ml_Tendencia] CHECK CONSTRAINT [FK_Tendencia_idPG];
 GO
 
+/****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
+CREATE TABLE dbo.ml_Gas_Alerta (
+    idAlerta BIGINT IDENTITY(1,1) PRIMARY KEY,
+    mes INT,
+    tipoAlerta VARCHAR(10),
+    -- alertaActiva BIT,
+    idTendencia BIGINT,
+    idLlave BIGINT,
+    idGas BIGINT,
+    valorActual NUMERIC(10,4),
+    FOREIGN KEY (idTendencia) REFERENCES dbo.ml_Tendencia(id),
+    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
+    FOREIGN KEY (idGas) REFERENCES dbo.ml_Gas_Limite(id)
+);
+
+
+/****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
+CREATE TABLE dbo.Usuarios_gas(
+    idUser BIGINT IDENTITY(1,1) PRIMARY KEY,
+    correoUser VARCHAR (50),
+    alertaActiva BIT,
+    CuerpoCorreo VARCHAR(200),
+    fechaEnvio [datetime] NOT NULL,
+    idLlave BIGINT,
+    idAlerta BIGINT,
+    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
+    FOREIGN KEY (idAlerta) REFERENCES dbo.ml_Gas_Alerta(idAlerta)
+);
+
 /****** Object:  Table [dbo].[ml_LlavesG]    Script Date: 27/05/2024 12:35:21 p. m. ******/
 SET ANSI_NULLS ON
 GO
@@ -65,6 +95,8 @@ CREATE TABLE [dbo].[ml_LlavesG](
 	[idGOL] [int] NOT NULL,
 	[idTend] [bigint] NOT NULL,
 	[idGas] [bigint] NOT NULL,
+    [idAlerta] [bigint] NOT NULL,
+    [idUsuario] [bigint] NOT NULL,
  CONSTRAINT [PK_ml_LlavesG] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -74,6 +106,10 @@ GO
 
 ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_idGOL] FOREIGN KEY([idGOL])
 REFERENCES [dbo].[PlantasGOL] ([id]);
+GO
+
+ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_idUsuario] FOREIGN KEY([idUser])
+REFERENCES [dbo].[Usuarios_gas] ([id]);
 GO
 
 ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_idTend] FOREIGN KEY([idTend])
@@ -86,23 +122,16 @@ GO
 
 ALTER TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idGOL];
 GO
+
 ALTER TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idGas];
 GO
 
 Alter TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idTend];
 GO
 
-/****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
-CREATE TABLE dbo.ml_Gas_Alerta (
-    idAlerta BIGINT IDENTITY(1,1) PRIMARY KEY,
-    mes INT,
-    tipoAlerta VARCHAR(10),
-    alertaActiva BIT,
-    idTendencia BIGINT,
-    idLlave BIGINT,
-    idGas BIGINT,
-    valorActual NUMERIC(10,4),
-    FOREIGN KEY (idTendencia) REFERENCES dbo.ml_Tendencia(id),
-    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
-    FOREIGN KEY (idGas) REFERENCES dbo.ml_Gas_Limite(id)
-);
+Alter TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idUsuario];
+GO
+
+
+
+
