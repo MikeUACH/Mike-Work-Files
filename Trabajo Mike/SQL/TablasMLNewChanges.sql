@@ -56,7 +56,7 @@ GO
 
 /****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
 CREATE TABLE dbo.ml_Gas_Alerta (
-    idAlerta BIGINT IDENTITY(1,1) PRIMARY KEY,
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
     mes INT,
     tipoAlerta VARCHAR(10),
     -- alertaActiva BIT,
@@ -72,7 +72,7 @@ CREATE TABLE dbo.ml_Gas_Alerta (
 
 /****** Object:  Table [dbo].[ml_Gas_Alerta]    Script Date: 3/06/2024 4:36 p. m. ******/
 CREATE TABLE dbo.Usuarios_gas(
-    idUser BIGINT IDENTITY(1,1) PRIMARY KEY,
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
     correoUser VARCHAR (50),
     alertaActiva BIT,
     CuerpoCorreo VARCHAR(200),
@@ -80,7 +80,7 @@ CREATE TABLE dbo.Usuarios_gas(
     idLlave BIGINT,
     idAlerta BIGINT,
     FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
-    FOREIGN KEY (idAlerta) REFERENCES dbo.ml_Gas_Alerta(idAlerta)
+    FOREIGN KEY (idAlerta) REFERENCES dbo.ml_Gas_Alerta(id)
 );
 
 /****** Object:  Table [dbo].[ml_LlavesG]    Script Date: 27/05/2024 12:35:21 p. m. ******/
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[ml_LlavesG](
 	[idTend] [bigint] NOT NULL,
 	[idGas] [bigint] NOT NULL,
     [idAlerta] [bigint] NOT NULL,
-    [idUsuario] [bigint] NOT NULL,
+    [idUser] [bigint] NOT NULL,
  CONSTRAINT [PK_ml_LlavesG] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -106,6 +106,10 @@ GO
 
 ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_idGOL] FOREIGN KEY([idGOL])
 REFERENCES [dbo].[PlantasGOL] ([id]);
+GO
+
+ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_GasAlerta] FOREIGN KEY([idAlerta])
+REFERENCES [dbo].[ml_Gas_Alerta] ([id]);
 GO
 
 ALTER TABLE [dbo].[ml_LlavesG]  WITH NOCHECK ADD  CONSTRAINT [FK_ml_LlavesG_idUsuario] FOREIGN KEY([idUser])
@@ -132,6 +136,7 @@ GO
 Alter TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_idUsuario];
 GO
 
-
+Alter TABLE [dbo].[ml_LlavesG] CHECK CONSTRAINT [FK_ml_LlavesG_GasAlerta];
+GO
 
 

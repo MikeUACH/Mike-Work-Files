@@ -1,9 +1,3 @@
-/****** Object:  StoredProcedure [dbo].[sp_ml_Alertas]    Script Date: 6/18/2024 4:02:07 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
 ALTER PROCEDURE [dbo].[sp_ml_Alertas]
 AS
 BEGIN
@@ -19,6 +13,7 @@ BEGIN
     DECLARE @valor90 NUMERIC(10,4);
     DECLARE @fecha DATETIME;
     DECLARE @idAlerta BIGINT;
+    DECLARE @cuerpoCorreo VARCHAR(1000);
 
     -- Obtener todas las tendencias que superan los límites
     DECLARE tendencia_cursor CURSOR FOR
@@ -44,11 +39,18 @@ BEGIN
             INSERT INTO dbo.ml_Gas_Alerta (mes, tipoAlerta, idTendencia, idLlave, idGas, valorActual)
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor90);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
+            
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor90, ', ID de Gas: ', @idGas
+            );
 
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
         END
         -- Insertar alerta para v60 si supera el límite y no se ha insertado una alerta para v90
         ELSE IF @valor60 > @limite
@@ -59,10 +61,17 @@ BEGIN
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor60);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
 
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor60, ', ID de Gas: ', @idGas
+            );
+
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
         END
         -- Insertar alerta para v30 si supera el límite y no se ha insertado una alerta para v90 o v60
         ELSE IF @valor30 > @limite
@@ -73,10 +82,17 @@ BEGIN
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor30);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
 
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor30, ', ID de Gas: ', @idGas
+            );
+
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
         END
         -- Si ninguna alerta supera el límite, insertar todas las alertas juntas
         ELSE
@@ -89,10 +105,17 @@ BEGIN
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor90);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
 
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor90, ', ID de Gas: ', @idGas
+            );
+
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
 
             -- Insertar alerta para v60
             SET @tipoAlerta = 'v60';
@@ -100,10 +123,17 @@ BEGIN
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor60);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
 
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor60, ', ID de Gas: ', @idGas
+            );
+
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
 
             -- Insertar alerta para v30
             SET @tipoAlerta = 'v30';
@@ -111,10 +141,17 @@ BEGIN
             VALUES (@mes, @tipoAlerta, @idTendencia, @idLlave, @idGas, @valor30);
             SET @idAlerta = SCOPE_IDENTITY(); -- Obtener el id de la alerta recién insertada
 
+            -- Crear el cuerpo del correo
+            SET @cuerpoCorreo = CONCAT(
+                'Alerta ID: ', @idAlerta, ' - Alerta de ', @tipoAlerta, ' superada. ', 
+                'Mes: ', @mes, ', Valor Actual: ', @valor30, ', ID de Gas: ', @idGas
+            );
+
             -- Enviar alerta a los usuarios
             INSERT INTO dbo.Usuarios_gas (correoUser, alertaActiva, CuerpoCorreo, fechaEnvio, idLlave, idAlerta)
-            SELECT u.correoUser, 1, CONCAT('Alerta de ', @tipoAlerta, ' superada.'), GETDATE(), @idLlave, @idAlerta
-            FROM dbo.Usuarios_gas u;
+            SELECT u.correoUser, 1, @cuerpoCorreo, GETDATE(), @idLlave, @idAlerta
+            FROM dbo.Usuarios_gas u
+            WHERE u.correoUser IS NOT NULL AND u.correoUser != '';
         END
 
         FETCH NEXT FROM tendencia_cursor INTO @idTendencia, @idGas, @fecha, @valor30, @valor60, @valor90, @limite, @idLlave;
@@ -123,4 +160,3 @@ BEGIN
     CLOSE tendencia_cursor;
     DEALLOCATE tendencia_cursor;
 END
-GO
