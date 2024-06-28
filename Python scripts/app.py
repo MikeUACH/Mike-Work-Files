@@ -28,7 +28,7 @@ from_email = 'MHernandez@amiautomation.com'
 def check_alerts():
     cursor.execute("""
         SELECT 
-            ga.id, ga.mes, ga.tipoAlerta, ga.valorActual, ga.idGas, ug.correoUser, ug.CuerpoCorreo
+            ga.id, ga.mes, ga.tipoAlerta, ga.valorActual, ga.idGas, ug.correoUser, ug.cuerpoCorreo
         FROM 
             ml_Gas_Alerta ga
         INNER JOIN 
@@ -37,13 +37,14 @@ def check_alerts():
             ug.correoUser IS NOT NULL AND ug.correoUser != ''
     """)
     rows = cursor.fetchall()
-    print(f'rows: {rows}')
-    for row in rows:
-        idAlerta, mes, tipoAlerta, valorActual, idGas, correoUser, CuerpoCorreo = row
+    #print(f'rows: {rows}')
+    for row in rows: 
+        idAlerta, correoUser, CuerpoCorreo = row
         subject = f"Alerta de Gas Excedido - Alerta ID: {idAlerta}"
         dismiss_link = f"http://localhost:5000/dismiss_alert?alert_id={idAlerta}"
-        body = (f'{CuerpoCorreo}')
+        body = CuerpoCorreo + f"<p><a href='{dismiss_link}'>Descartar esta alerta</a></p>"
         to_emails = [correoUser]
+        send_email(subject, body, to_emails)
 
         # Guardar el cuerpo del correo en la base de datos
         cursor.execute("""

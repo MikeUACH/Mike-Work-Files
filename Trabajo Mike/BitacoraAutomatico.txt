@@ -2,9 +2,81 @@ Revision Incluye
 	Conectarse a cada Maquina y revisar que Excel  este corriendo y disco C no este lleno
 	Asegurar que el  acceso a los drives O: y S: este completo
 	Asegurar que la maquina que se revisa en VisualBasic, no tenga mas  de 1 Dia Corriendo
+*************************************************************************************************************
+Revision Maquinas 27-Jun-2024 8:46 am
+01		OK			Ejecutando NHICK-F1dc   	disco C OK			
+02		OK			Ejecutando TENKOP-EAF		disco C OK
+03		OK			Ejecutando SDICOL-North DC	disco C OK
+04		OK			Ejecutando NHICK-F2dc   	disco C OK
+05		OK			Ejecutando SDICOL-South DC	disco C OK
+Desarrollo3	OK			Ejecutando SAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 26-Jun-2024 9:16 am
+01		OK			Ejecutando TENKOP-EAF		disco C OK			
+02		OK			Ejecutando NHICK-F1dc		disco C OK
+03		OK			Ejecutando SDICO-South DC	disco C OK
+04		OK			Ejecutando SulbBahrain-EAF	disco C OK
+05		OK			Ejecutando NHICK-F2dc		disco C OK
+Desarrollo3	ERROR			Usuario corrompido		disco C OK, El usuario DESARROLLO3 se corrompió por una UPDATE de 										    Windows, y ahora la macro se cicla por culpa de este 										    error que ya se soluciono, bueno tenemos la sospecha 										    que fue este el que lo ocasionó.
+*************************************************************************************************************
+Revision Maquinas 25-Jun-2024 9:16 am
+01		OK			Ejecutando NHICK-F2dc		disco C OK			
+02		OK			Ejecutando NHICK-F1dc		disco C OK
+03		OK			Ejecutando SulbBahrain-EAF	disco C OK
+04		OK			Ejecutando TENKOP-EAF		disco C OK
+05		OK			Ejecutando NMAR-EAF		disco C OK
+Desarrollo3	ERROR			Se desinstalo Excel		disco C OK
+*************************************************************************************************************
+Revision Maquinas 24-Jun-2024 9:31 am
+01		OK			Ejecutando GLNCVL-EAF		disco C OK			
+02		OK			Ejecutando OTKSCAL-EAF		disco C OK
+03		OK			Ejecutando TSKYU-EAFdc		disco C OK
+04		ERROR			Detenido DSIncheon-EAFdc	disco C OK, mas de 24 horas
+05		OK			Ejecutando ALLSVK-EAF		disco C OK
+Desarrollo3	ERROR			Actualizacion de windows		disco C OK
+*************************************************************************************************************
+Revision Maquinas 21-Jun-2024 9:05 am
+01		OK			Ejecutando NY-F1		disco C OK			
+02		OK			Ejecutando Tuta-EAF		disco C OK
+03		OK			Ejecutando NMEM-EAF		disco C OK
+04		OK			Ejecutando NUTA-F2		disco C OK
+05		ERROR			Detenido GLNPTB-EAF		disco C OK, archivo zip no contiene info
+Desarrollo3	ERROR			Reinicio programado viernes	disco C OK
+*************************************************************************************************************
+Revision Maquinas 20-Jun-2024 9:50 am
+01		OK			Ejecutando GLNPTB-LMF		disco C OK			
+02		OK			Ejecutando Yumbo2-HAE		disco C OK
+03		OK			Ejecutando GLNCHL-EAF		disco C OK
+04		OK			Ejecutando NUTA-F2		disco C OK
+05		OK			Ejecutando NDEC-EAFdc		disco C OK
+Desarrollo3	ERROR			Fallo energia electrica		disco C OK
 
 *************************************************************************************************************
-Revision Maquinas 13-Jun-2024 9:13 am
+Revision Maquinas 19-Jun-2024 9:50 am
+01		ERROR			Detenido SDICC-North		disco C OK, falta de recursos Excel				
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando GLNMTB-EAF		disco C OK
+04		OK			Ejecutando Yumbo2-HAE		disco C OK
+05		OK			Ejecutando OTKSCAL-EAF		disco C OK
+Desarrollo3	ERROR			Fallo energia electrica		disco C OK
+*************************************************************************************************************
+Revision Maquinas 18-Jun-2024 9:00 am
+01		OK			Ejecutando GLNCHL-EAF		disco C OK				
+02		OK			Ejecutando GLNPTB-LMF		disco C OK
+03		OK			Ejecutando TSThaiNTS-EAF	disco C OK
+04		OK			Ejecutando Yumbo2-HAE		disco C OK
+05		OK			Ejecutando GLNPTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando Butler		disco C OK
+*************************************************************************************************************
+Revision Maquinas 17-Jun-2024 9:13 am
+01		OK			Ejecutando NMEM-EAF		disco C OK				
+02		OK			Ejecutando GLNMTB-LMF		disco C OK
+03		Standby			Usado para pruebas		disco C OK, NUTA F1Sub
+04		ERROR			Detenido NUTA-F2		disco C OK, Archivo zip no contiene
+05		Error			Detenido NDEC-EAFdc		disco C OK, Archivo zip no contiene
+Desarrollo3	OK			Ejecutando NOVE			disco C OK,
+*************************************************************************************************************
+Revision Maquinas 14-Jun-2024 9:13 am
 01		OK			Ejecutando GLNMID-B FCE		disco C OK				
 02		Standby			Usado para pruebas		disco C OK, SDICC-SOUTH, termino ejecutado a las 6 AM
 03		Standby			Usado para pruebas		disco C OK, NUTA F1Sub, termino ejecutando a las 6 AM

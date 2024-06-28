@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[sp_ML_AgregarTendencias]    Script Date: 6/19/2024 10:28:02 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ML_AgregarTendencias]    Script Date: 6/20/2024 1:22:43 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,13 +31,14 @@ DBCC CHECKIDENT (ml_Gas_Limite, RESEED,0)
 DBCC CHECKIDENT (ml_Tendencia, RESEED,0)
 DBCC CHECKIDENT (ml_LlavesG, RESEED,0)
 DBCC CHECKIDENT (ml_Gas_Alerta, RESEED,0)
+DBCC CHECKIDENT (Usuarios_Gas, RESEED,0)
 begin transaction
 
 Exec sp_ML_AgregarTendencias 'gas-in-oil_Gerdau LN Cartersville_3_20240523_135349.xls','H',50,100,30,30,130
 select * from [ml_Gas_Limite]
 select * from [ml_Tendencia]
 select * from [ml_LlavesG]
-EXEC sp_ml_Alertas
+EXEC dbo.sp_ml_Alertas
 SELECT * FROM ml_Gas_Alerta
 SELECT * FROM Usuarios_Gas
 
@@ -53,7 +54,7 @@ select * from [ml_Tendencia]
 select * from [ml_LlavesG]
 
 rollback transaction
-
+INSERT INTO Usuarios_Gas(correoUser) VALUES ('a343441@uach.mx')
 begin transaction
 Exec sp_ML_AgregarTendencias 'gas-in-oil_Gerdau LN Cartersville_3_20240523_135349.xls','H20',300,80,90,120
 select * from [ml_Gas_Limite]
@@ -123,8 +124,8 @@ BEGIN
     -- Insertar en ml_Gas_Alerta (si es necesario)
     IF NOT EXISTS (SELECT 1 FROM [dbo].[ml_Gas_Alerta] WHERE [idGas] = @idGas)
     BEGIN
-        INSERT INTO [dbo].[ml_Gas_Alerta] ([mes], [tipoAlerta], [idTendencia], [idLlave], [idGas], [valorActual])
-        VALUES (0, 'Default', @idTend, NULL, @idGas, @valoractual);
+        INSERT INTO [dbo].[ml_Gas_Alerta] ([mes], [tipoAlerta], [idTendencia], [idGas], [valorActual])
+        VALUES (0, 'Default', @idTend, @idGas, @valoractual);
         SET @idAlerta = SCOPE_IDENTITY();
     END
     ELSE

@@ -33,3 +33,13 @@ DROP TABLE IF EXISTS dbo.ml_Gas_Limite;
 
 
 
+ALTER TABLE dbo.ml_LlavesG DROP CONSTRAINT FK_ml_LlavesG_idUsuario;
+ALTER TABLE dbo.ml_LlavesG DROP CONSTRAINT FK_ml_LlavesG_GasAlerta;
+ALTER TABLE dbo.ml_LlavesG DROP CONSTRAINT FK_ml_LlavesG_idTend;
+ALTER TABLE dbo.ml_LlavesG DROP CONSTRAINT FK_ml_LlavesG_idGas;
+
+ALTER TABLE dbo.Usuarios_Gas DROP CONSTRAINT FK__Usuarios___idAle__428AB4D9;
+ALTER TABLE dbo.Usuarios_Gas DROP CONSTRAINT FK__Usuarios___idLla__419690A0;
+
+ALTER TABLE dbo.ml_Gas_Alerta DROP CONSTRAINT FK__ml_Gas_Al__idGas__3EBA23F5;
+ALTER TABLE dbo.ml_Gas_Alerta DROP CONSTRAINT FK__ml_Gas_Al__idTen__3CD1DB83;

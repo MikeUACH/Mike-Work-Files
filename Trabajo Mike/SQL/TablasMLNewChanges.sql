@@ -14,6 +14,7 @@ CREATE TABLE [dbo].[ml_Gas_Limite] (
     [id] [bigint] IDENTITY(1,1) NOT NULL,
     [gas] [varchar](50) NOT NULL,
     [limite] numeric(10,4) NOT NULL,
+    [estandar] INTEGER NOT NULL,
     CONSTRAINT [PK_ml_Gas_Limite] PRIMARY KEY CLUSTERED ([id] ASC),
 );
 GO
@@ -61,11 +62,9 @@ CREATE TABLE dbo.ml_Gas_Alerta (
     tipoAlerta VARCHAR(10),
     -- alertaActiva BIT,
     idTendencia BIGINT,
-    idLlave BIGINT,
     idGas BIGINT,
     valorActual NUMERIC(10,4),
     FOREIGN KEY (idTendencia) REFERENCES dbo.ml_Tendencia(id),
-    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
     FOREIGN KEY (idGas) REFERENCES dbo.ml_Gas_Limite(id)
 );
 
@@ -76,10 +75,8 @@ CREATE TABLE dbo.Usuarios_gas(
     correoUser VARCHAR (50),
     alertaActiva BIT,
     CuerpoCorreo VARCHAR(200),
-    fechaEnvio [datetime] NOT NULL,
-    idLlave BIGINT,
+    fechaEnvio [datetime],
     idAlerta BIGINT,
-    FOREIGN KEY (idLlave) REFERENCES dbo.ml_LlavesG(id),
     FOREIGN KEY (idAlerta) REFERENCES dbo.ml_Gas_Alerta(id)
 );
 
