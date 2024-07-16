@@ -1,7 +1,72 @@
 Revision Incluye
 	Conectarse a cada Maquina y revisar que Excel  este corriendo y disco C no este lleno
 	Asegurar que el  acceso a los drives O: y S: este completo
-	Asegurar que la maquina que se revisa en VisualBasic, no tenga mas  de 1 Dia Corriendo
+	Asegurar que la maquina que se revisa en VisualBasic, no tenga mas  de 1 Dia Corriendo 
+
+*************************************************************************************************************
+Revision Maquinas 10-Jul-2024 9:03 am
+01		OK			Ejecutando ArvediAST-EAF	disco C OK			
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando NUTA-F2		disco C OK
+04		OK			Ejecutando NSEA-EAF		disco C OK
+05		OK			Ejecutando GLNMTB-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SSAB			disco C OK
+*************************************************************************************************************
+Revision Maquinas 09-Jul-2024 9:18 am
+01		OK			Ejecutando GMSFS-F4		disco C OK			
+02		OK			Ejecutando GLNCVL-EAF		disco C OK
+03		OK			Ejecutando TSOKA-EAFdc		disco C OK
+04		OK			Ejecutando NDEC-EAFdc   	disco C OK
+05		OK			Ejecutando GMSFS-F3		disco C OK
+Desarrollo3	ERROR			Desconectado VPN		disco C OK
+*************************************************************************************************************
+Revision Maquinas 05-Jul-2024 9:18 am
+01		OK			Ejecutando NSEA-EAF		disco C OK			
+02		OK			Ejecutando SDICOL-South DC	disco C OK
+03		OK			Ejecutando NHICK-F2dc		disco C OK
+04		OK			Ejecutando NHICK-F1dc   	disco C OK
+05		OK			Ejecutando SDICOL-North DC	disco C OK
+Desarrollo3	ERROR			Desconectado VPN		disco C OK
+*************************************************************************************************************
+Revision Maquinas 04-Jul-2024 9:43 am
+01		OK			Ejecutando NMAR-EAF		disco C OK			
+02		OK			Ejecutando TENKOP-EAF		disco C OK
+03		OK			Ejecutando NHICK-F2dc		disco C OK
+04		OK			Ejecutando SulBahrain-EAF   	disco C OK
+05		OK			Ejecutando NDUF-EAF		disco C OK
+Desarrollo3	OK			Ejecutando CCE			disco C OK
+*************************************************************************************************************
+Revision Maquinas 03-Jul-2024 9:15 am
+01		ERROR			Ejecutando CTLatrobe-EAF	disco C OK, falta de recursos Excel			
+02		ERROR			Ejecutando GSDR-EAF		disco C OK, operative evolution danado
+03		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+04		OK			Ejecutando StdS-EAF	   	disco C OK
+05		OK			Ejecutando HHAL-EAFdc		disco C OK
+Desarrollo3	ERROR			Fallo suministro electrico	disco C OK
+*************************************************************************************************************
+Revision Maquinas 02-Jul-2024 9:15 am
+01		OK			Ejecutando CHSCLE-EAF	   	disco C OK			
+02		OK			Ejecutando DSPohang-Adc Shell	disco C OK
+03		OK			Ejecutando GLNJKS-EAF		disco C OK
+04		OK			Ejecutando NDUF-EAF	   	disco C OK
+05		OK			Ejecutando POL-EAF		disco C OK
+Desarrollo3	OK			Ejecutando BLAP			disco C OK
+*************************************************************************************************************
+Revision Maquinas 01-Jul-2024 9:21 am
+01		OK			Ejecutando HHAL-EAFdc	   	disco C OK			
+02		ERROR			detenido NUT F1-sub		disco C OK, zip vacio
+03		ERROR			detenido POL-EAF		disco C OK, falta de recursos excel
+04		OK			Ejecutando CHSLE-EAF	   	disco C OK
+05		OK			Ejecutando DSPohang-Bdc Shell	disco C OK
+Desarrollo3	ERROR			Detenido			disco C OK, falla en la energia electrica
+*************************************************************************************************************
+Revision Maquinas 28-Jun-2024 12:57 pm
+01		OK			Ejecutando GLNMid-B FCE	   	disco C OK			
+02		OK			Ejecutando GLNMid-A FCE		disco C OK
+03		OK			Ejecutando POL-EAF		disco C OK
+04		OK			Ejecutando oHofors-EAF   	disco C OK
+05		OK			Ejecutando KWT-EAF		disco C OK
+Desarrollo3	OK			Ejecutando SAB			disco C OK
 *************************************************************************************************************
 Revision Maquinas 27-Jun-2024 8:46 am
 01		OK			Ejecutando NHICK-F1dc   	disco C OK			

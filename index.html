@@ -1,0 +1,1034 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>AMI - File Manager</title>
+
+	<link rel="stylesheet" type="text/css" href="fm.css">
+	<link rel="stylesheet" href="miniwin/estilosWin.css">
+
+	<script type="text/javascript" src="fileman.js?versionJS=23"></script>
+	<script type="text/javascript" src="fm.js?versionJS=23"></script>
+	<script type="text/javascript" src="protImagen.js?versionJS=23"></script>
+	<script type="text/javascript" src="ventanas.js?versionJS=23"></script>
+	<script type="text/javascript" src="funcSortTable.js?versionJS=23"></script>
+	<script type="text/javascript" src="miniwin/funcinc9.js?versionJS=23"></script>
+	<script type="text/javascript" src="miniwin/funcMiniWinAlt.js?versionJS=23"></script>
+	<script type="text/javascript" src="dhtmlxSuite/dhtmlxAjax/codebase/dhtmlxcommon.js?versionJS=23"></script>
+	<script type="text/javascript" src="acrobatDetectNS.js?versionJS=23"></script>
+
+	<!-- dhtmlxMenu -->
+	<script src="dhtmlxSuite/dhtmlxMenu/sources/dhtmlxcommon.js"></script>
+	<script src="dhtmlxSuite/dhtmlxMenu/sources/dhtmlxmenu.js"></script>
+	<script src="dhtmlxSuite/dhtmlxMenu/sources/ext/dhtmlxmenu_ext.js"></script>
+	<link rel="stylesheet" type="text/css" href="dhtmlxSuite/dhtmlxMenu/codebase/skins/dhtmlxmenu_dhx_blue.css">
+
+	<!-- dhtmlxWindows --> 
+	<link rel="stylesheet" type="text/css" href="dhtmlxSuite/dhtmlxWindows/sources/dhtmlxwindows.css"> 
+	<link rel="stylesheet" type="text/css" href="dhtmlxSuite/dhtmlxWindows/sources/skins/dhtmlxwindows_dhx_blue.css"> 
+	<script src="dhtmlxSuite/dhtmlxWindows/sources/dhtmlxwindows.js?versionJS=23"></script>
+	<script src="dhtmlxSuite/dhtmlxWindows/sources/dhtmlxcommon.js?versionJS=23"></script>
+
+	<!-- dhtmlxCombo  se agrega dhtmlxcomboCorrFilter para corregir error al seleccionar la primer opciÃ³n cuando se esta filtrando--> 
+	<link rel="stylesheet" type="text/css" href="dhtmlxSuite421/skins/skyblue/dhtmlx.css"/>
+	<script src="dhtmlxSuite421/sources/dhtmlxCombo/codebase/dhtmlxcomboCorrFilter.js"></script>
+	
+	<script type="text/javascript" src="detect-zoom.js?versionJS=23"></script>
+
+	<style type="text/css">
+			::-ms-clear { display: none; }
+	</style>
+
+	<script src="acrobatDetectIE.vbs" type="text/vbscript">
+		//<![CDATA[
+			function getAcrobatVersionIE
+				getAcrobatVersionIE = 0
+			end if
+		//]]>
+	</script>
+
+	<script type="text/javascript"><!--
+
+		var letBackToFrz 		='Back To Frozen Furnace';
+		var letSetPosition 		='Back To Frozen Graph';
+		var letScroll 			='Sync Scroll';
+		var letNoScroll 		='Stop Sync(New Frz Pos)';
+		var letFrozenPosition 	='Frozen Positions';
+		var texto01 			='You can go back to the Frozen Furnace, directly with this button and preserve the actual graphic and the originally frozen.';
+		var texto02 			='When You have different graph between the Frozen Furnace and the Current Furnace, you can change the Current Furnace to actual frozen graph.';
+		var texto03 			='Each Time you press the [Stop Sync(New Frz Pos)] button, you will be setting a new "Frozen Position".';
+		var texto04 			='When You Press the [Sync Scroll] button you can traverse through all the graphs, synchronized between the Frozen Furnace and the Current Furnace.';
+		var texto05 			='You can traverse between the different "Frozen Positions" you have made using the [No Scroll] button, you can have as many as you need, and traverse between them';
+		var texto06 			='Note: Each time you change the current Furnace, the "Frozen Positions" will be reseted';
+		var letOverlap 			='Overlap';
+		var letRemoveOverlay 	='Remove Overlay';
+		var texto07 			='Overlap the frozen graph over  the current graph';
+	///Modificacion freezeGOL
+		var letPartner 			='Go to another tank';
+		var letBackToFrzTank	='Back to Frozen Tank';
+		var texto08				='You can go back to the Frozen Tank, directly with this button and preserve the actual graphic and the originally frozen.';
+		var texto09 			='Note: Each time you change the current Tank, the "Frozen Positions" will be reseted';
+		var texto10 			='When You have different graph between the Frozen Tank and the Current Tank, you can change the Current Tank to actual frozen graph.';
+		var texto11 			='When You Press the [Sync Scroll] button you can traverse through all the graphs, synchronized between the Frozen Tank and the Current Tank.';
+		var texto12 			='Go to another Tank with the same name';
+	/////
+		var gridSummary;
+		var gridGlobal;
+		var arrRutPlantasVM2;
+		var arrRutPlantasGOL;
+		var msgCarp = 'Insert a valid Filename';
+		var msgProt = 'Please, ask to AMI the funcionality of right button.';
+		var saveSort = true;
+		var sel_item_msg  = 'Please select at least one item!';
+		var letreroLimite = 'Maximum number of characters in the description:';
+		var protegerImagenes = false;
+		var JTipoDocumento = 'no';
+		var letSelecList = 'Or Select from the List Below';
+		var contSelec = '';
+		//revisaComboCounters(contSelec);
+		var VM2Selec = '';
+
+/////Modificacion para GasOnLine
+		var GOLSelec = ''
+
+		var subWinOP = null;
+		var subWinComp = null;
+		var subWinCompDet = null;
+		var subWinEfectos = null;
+		var subWinGl = null;
+		var comboListaGraficas;
+		var changeDash = false;
+		var filtNombre = false;
+		var sesFiltroOp = 'false';
+		var valPDFG = 0;
+		var valPDFS = 0;
+		var valPDFC = 0;
+		var widthWindDet =0;
+		var heightWindDet =0;
+
+		var mensajeChatCon ='<img src="img/chat_c.gif" alt="You Have a New Message" title="You Have a New Message" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" />';
+		var mensajeChatSin = '<img src="img/chat_s.gif" alt="Ask For Online Support" title="Ask For Online Support" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20"/>';
+
+		var esinterno = 'True'
+
+		var iGpoTbj = 1;
+		var sTituloWin    = 'Note:';
+		var otrosMensaje  = '<nobr>&nbsp;Select the demo language&nbsp;</nobr>';
+		var sessionIDUser = 8;
+		var usuariosMensaje  = '<nobr>&nbsp;Online Users&nbsp;</nobr>';
+		var rootFolderMensaje ='<nobr>&nbsp;Select a Rootfolder&nbsp;</nobr>';
+
+		var tienepermiso = 'true';
+		var letNoPuedeBorrar = 'You can´t delete the following';
+		var letSaveDirectory = 'Save the last directory to the user';
+
+		var loginMsg = '';
+		var protegerImagenes = false;
+		var chatAbierto = true;
+
+		var notifyUsers = 'Notify Users by Email'
+		var notifyUsersTitle = 'Send Email to Users with activated Emails'
+		
+		var letZip = 'Zip';
+		var letUnzip = 'Unzip';
+		var letDel = 'Delete';
+		var letRen = 'Rename';
+		var letNewFol = 'Create new folder';
+		var letLogOff = 'Log off';
+
+		var categ = '9';
+		var blnMostrarDesc = 'true';
+		var idCorpor = '9';
+		var strMostrarDesc = 'onclick = "mostrarDesc(this.checked)"';
+		var allPlants = 'All Corporate Users ( Kyoei Steel )';		
+		var onlyPlant = 'Only AltaSteel Users';
+		var nombreCorpor = 'Kyoei Steel';
+		var titOnlyPlant = 'If you check this option the users whith responsability in this company and with responsability in the corporate will receive a notification'
+		var letShowUnitComments = 'Show Unit Comments';
+		var menu;
+		var menu1;
+		var menu2;
+		var menu3;
+		var arrImgsGallery = new Array();
+		var titVentGallery1 = 'Images';
+		var titVentGallery2 =' of';
+		var isZoom = true;
+		var strShowTwoGraphics = false;
+		var strShowGraphicsVertical = false;
+		var selTipGra = 5;
+		var porcVent = 0.8;
+		var anchVent = window.innerWidth * porcVent;
+		var altoVent = window.innerHeight - 20;
+		var showFirstTime = true;
+		var cargoImagenes = false;
+		var antBtn;
+		var windOPPosition = '0,0';
+		var codigoFiltro= "";
+		var freezeGraph ="";
+		var freezeGraphGS ="";
+		var freezeGraphCounter ="";
+		var freezeGraphZoom ="";
+		var freezeGraphZoomGS ="";
+		var freezeGraphZoomCounter ="";
+		var freezeGraphZoomLet ="";
+		var letSelecPlant ='Compare';
+		var idSelFreeze = 0;
+		var isNewFreeze = false;
+		var freezeGraphZoomLetCounter ="";
+		var freezeGraphZoomLetGS ="";
+		var freezeGraphZoomCounter = ""
+	
+//Modificacion para freeze de GasOnLine
+		var freezeGraphGol ="";
+		var freezeGraphZoomGol ="";
+		var freezeGraphZoomLetGol ="";
+//Termina modificacion
+
+		var localCompare = false;
+		var localCompareGS = false;
+		var localCompareCounter = false;
+///Modificacion para GasOnLine Freeze
+		var localCompareGol = false;
+		var compareOthersPlants = false;
+		var letNotExist = 'No zoom chart available: ';
+		var cargarImgGas = true;
+		var cargarImgScreen = true;
+		var cargarImgCounter = true;
+		var cargarImgVM2 = true;
+
+/////Modificacion para GasOnLine
+		var cargarImgGOL = true;
+
+		var mostrarZoom = false;
+		var freezeCom = "";
+		grafGas = '';
+		grafScreen = '';
+		//grafScreen = '';
+		grafCounter = '';
+		grafVM2 = 'ChartsCItimeF1';
+		var indexGraficaVM2 = 0;
+		var onSelection = true;
+
+/////Modificacion para GasOnLine
+		grafGOL = '';
+		var indexGraficaGOL = 0;
+		
+		var VerFiltrosGraficas=true
+		var filtrosGraficas ="actual,actual"
+		var filtrosGraficasFreeze ="actual,actual"
+		var graphFileman
+		var graphFileman
+		var freezeFileman
+		var lWind = 0;
+		var tWind = 0;
+		var hWind = 0;
+		var wWind = 0;
+
+		var comentandoProceso = false
+		var comentarioProceso = ""
+		var tituloProceso = ""
+
+		var comentandoProcesoFrz = false
+		var comentarioProcesoFrz = ""
+		var tituloProcesoFrz = ""
+
+		var btnComentActivo = 'Cian'
+		var btnComentActivoFrz = 'Cian'
+
+		var windOP;
+//LALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALO
+		var freezeado = 0
+		var miGrafica
+		var miGraficaFrz
+
+		var filtrosCombo = ""
+//LALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALOLALO	
+		function revisaImagen(valor) {
+console.log('valor.src = ' + valor.src)
+			valor.onerror = cargarImagenPorDefecto;
+
+
+		}
+		
+		function cargarImagenPorDefecto(e){
+			e.target.src= 'img/t_PDF.gif';
+		}
+
+		function alCargar(){
+			// Revisa Acrobat
+			var tieneValor = true;
+			var acrobatVersion;
+			var scontentmain = Objeto("scontentmain");
+			var poneMensajeAcrobat = true;
+			var codigos = Objeto("codigos");
+			var cargarPagDet = 'True';
+
+			if (cargarPagDet){
+				if (subWinCompDet){
+					subWinCompDet.refresh();
+				}
+				if (subWinComp){
+					subWinComp.refresh();
+				}
+			}
+			if (poneMensajeAcrobat){			
+				if (! tieneValor){
+					acrobatVersion = getAcrobatVersion();
+					var loader = dhtmlxAjax.postSync("respuestaAjax.asp","op=revisaAcrobat&acrobatVersion=" + acrobatVersion + "");
+					if (acrobatVersion <= 0){					
+						if (scontentmain){
+							scontentmain.style.display = "inline"
+						}					
+					}
+				} else {
+					if (scontentmain){
+						scontentmain.style.display = "none"
+					}
+				}
+			} else {
+				var scontentmain = Objeto("scontentmain")
+				if (scontentmain){
+					scontentmain.style.display = "none"
+				}
+			}
+
+			// MiniWin
+			win_init();
+			winpage = new lib_doc_size();
+			addWindow('tablaMiniWin', sTituloWin, '<div id="divWinCont"></div>', 100, 100, 700, 200, '#dddddd', '#dddddd', 'miniWin/iconos/', 'miniWinSec', 'alCerrar();');
+
+			if (loginMsg != '') { console.log(loginMsg); }
+			if (protegerImagenes) { trap(); }
+			if (chatAbierto) { window.setInterval("showData('newMensajeChat')", 58000); }
+
+			muestraPaging(Objeto('mitablaTrans'));
+			window.setInterval("showData('listaUsuarios')", 63000);	
+			
+			generaMenu();
+
+			revisaComboCounters(contSelec);
+			//revisaComboVM2(VM2Selec);
+			var btnHrefBtnVM2 = Objeto("hrefBtnVM2");
+			var stateGridDetail;
+
+//////Modificacion para GasOnLine
+			var btnHrefBtnGOL = Objeto("hrefBtnGOL");
+			
+/*			
+			try  {
+				if (hrefBtnVM2)	{
+					// Crear ventana de Detalle OP
+					var dhxWinsOP = new dhtmlXWindows();
+					dhxWinsOP.setImagePath("dhtmlxSuite/dhtmlxWindows/sources/imgs/");
+//					windOP = dhxWinsOP.createWindow('idOP', 120, 40, anchVent, altoVent -20);
+					windOP = dhxWinsOP.createWindow('idOP', -8000, -8000, anchVent -anchVent/6, altoVent -170);
+					windOP.setModal(false);
+					windOP.setText('Operative Evolution');
+					windOP.button("minmax1").hide();
+					windOP.button("close").hide();
+					windOP.button("park").hide();
+		//			windOP.addUserButton("closeDash", 1, "algo", "cesrar");
+					windOP.allowResize();
+					windOP.allowPark();
+					windOP.attachURL("dashboardGenVM2.asp?docto=rmds&onlyDetail=X");
+//					windOP.centerOnScreen();
+//					windOP.show();
+//					windOP.setPosition(0,0);
+
+					windOP.attachEvent("onResizeFinish", resizeWindow)
+					windOP.attachEvent("onMoveFinish", saveWindowPos)
+					
+					setTimeout ("windOP.hide();", 500); 
+//					windOP.hide();
+
+				}
+			} catch (e){}			
+*/
+			if (codigos){
+				if (sesFiltroOp == "true"){
+					for (var i=0;i <codigos.options.length ; i++){
+						if (codigos.options[i].value == "Operation"){
+							codigos.options[i].selected = true;
+						}
+					}
+				}
+			}
+	//######################################################
+    //##################CREA SELECT OE DE INFORMES##########
+    //######################################################
+			if(document.getElementById('selOperEv')){
+			var loader = dhtmlxAjax.postSync("ajax.asp","op=obtienecontador");
+			var resp = "";
+			var palabraBuscar
+			var numinicio=0
+			resp = loader.xmlDoc.responseText;
+			resp = resp.split("|");
+			if(resp[3].search('<optgroup') >= 0){
+				palabraBuscar = '<optgroup'
+				numinicio = 1
+			}else{
+				palabraBuscar = '<option'
+				numinicio = 2
+			}
+			var sessionDirSelect = resp[3].split(palabraBuscar)
+			var cambiaSelectOE = ""
+console.log("sessionDirSelect = " + sessionDirSelect)
+			for (var i = numinicio; i < sessionDirSelect.length; i++) {
+				if((i+1)==sessionDirSelect.length){
+					cambiaSelectOE = cambiaSelectOE +palabraBuscar + sessionDirSelect[i].split('</select>')[0]
+				}else{
+					cambiaSelectOE = cambiaSelectOE +palabraBuscar + sessionDirSelect[i]
+				}
+			}
+					console.log('cambiaSelectOE = ' + cambiaSelectOE)
+// FJMF Esta era la instruccion anterior no salia la opcion de NucorDuferdofin     18/6/18
+//				document.getElementById('selOperEv').innerHTML = document.getElementById('selOperEv').innerHTML.split('cambiaalgoaqui')[0]+cambiaSelectOE
+				document.getElementById('selOperEv').innerHTML = resp[3] 
+			
+
+			}
+
+	//######################################################
+    //##################CREA SELECT GOL DE INFORMES##########
+    //######################################################
+			if (document.getElementById('selGasOnLi')){
+				var loader = dhtmlxAjax.postSync("ajax.asp","op=obtienecontador");
+				var resp = "";
+				var palabraBuscarGOL
+				var numinicioGOL = 0;
+				resp = loader.xmlDoc.responseText;
+			console.log('respGOL= ' + resp)
+				resp = resp.split("|")
+		console.log('respGOL= ' + resp)
+				if (resp[8].search('<optgroup') >= 0){
+					palabraBuscarGOL = '<optgroup'
+					numInicioGOL = 1
+				}else {
+					palabraBuscarGOL = '<option'
+					numinicioGOL = 2
+				}
+console.log('resp (10)= ' + resp[8]) 
+	console.log('palabraBuscarGOL = ' + palabraBuscarGOL)
+	console.log('numinicioGOL = ' + numinicioGOL)
+				
+				var sessionDirSelectGOL = resp[8].split(palabraBuscarGOL)
+				var cambiaSelectGoL = ""
+	console.log('sessionDirSelectGOL = ' + sessionDirSelectGOL)
+				for (var i = numinicioGOL; i < sessionDirSelectGOL.length ; i++ ){
+					if ((i+1) == sessionDirSelectGOL.lenght){
+						cambiaSelectGoL = cambiaSelectGoL +palabraBuscarGOL + sessionDirSelectGOL[i].split('</select>')[0]
+					}else {
+						cambiaSelectGoL = cambiaSelectGoL +palabraBuscarGOL+ sessionDirSelectGOL[i]
+					}
+				}
+		console.log('cambiaSelectGoL= ' + cambiaSelectGoL)
+		document.getElementById('selGasOnLi').innerHTML = document.getElementById('selGasOnLi').innerHTML.split('cambiaalgoaqui')[0]+cambiaSelectGoL
+		//document.getElementById('selOperEv').innerHTML = resp[8] 
+
+			}
+		
+		}	
+
+		function valorCombo(){
+			return comboListaGraficas.getSelectedValue() 		
+		}
+
+		function seleccionaCombo(id, seleccionar){
+			if (seleccionar){
+				changeDash = true;
+			}
+			comboListaGraficas.selectOption(id);
+			changeDash = false;
+		}
+		function resizeWindow(){
+			window[1].alerta();
+		}
+
+		function muestraVentanaDetail(){
+			if (showFirstTime){				
+//				windOP.centerOnScreen();
+				if ('0,0' != '0,0'){
+					windOP.setPosition(0,0);
+				} else{
+					windOP.setPosition(anchVent/3 + 80, 170);
+				}
+				windOP.show();
+//				windOP.setDimension(anchVent+1000, altoVent +200);
+				showFirstTime = false
+
+			} else{
+				windOP.show();
+//				windOP.gridDetalle.objBox.scrollTop = windOP.v_scroll+"px";
+//				window[1].gridDetalle.objBox.scrollTop = window[1].v_scroll+"px";
+			}
+			
+
+//			windOP.Objeto("objDashDetail").style="width:99%; height:95%;"
+		}
+
+		function closeWindow() {
+			windOP.hide();
+		}
+
+		function eventoOnchange(){
+
+//			generaImagen(this.value, false, false, false, false); 
+//			AgregaPos(this);
+		}
+		function changeSizeV(){
+//			setTimeout ("windOP.setDimension(anchVent+10, altoVent+10);", 50);
+			
+		}
+
+		function saveWindowPos(){
+			var position = windOP.getPosition();
+			var loader = dhtmlxAjax.postSync("respuestaAjax.asp","op=savewinpos&valores=" + position + "");
+//			savewinpos
+		}
+
+		function changeFilter(valor){
+console.log(' *** funcion changeFilter ***')
+			var filtro;
+			var codigos = Objeto("codigos");
+
+console.log('codigos=' + codigos)
+
+console.log('valor= ' +valor)
+
+			if (valor=="all"){
+				filtro = "";
+			} else if (valor == "any"){
+				filtro = "any";
+			} else{
+				filtro = valor.toString();
+			}
+
+console.log('filtro=' + filtro)
+console.log('subWinOP=' + subWinOP)
+
+			if (subWinOP){
+				var objSearch = subWinOP.Objeto("searchText");
+				objSearch.value='Filter by';
+				objSearch.style.color='#999';		
+				if (subWinOP.gridDetalle){
+					
+					subWinOP.filterDash(filtro.toString());
+					subWinOP.gridDetalle.filterBy(2,"Delay");
+					subWinOP.gridDetalle.clearAll(true);
+					subWinOP.gridDetalle.filterBy(2,"Current", false);
+				}
+				if (subWinOP.gridDetallePrev){
+					//subWinOP.alertGral();
+					subWinOP.gridDetallePrev.filterBy(2,"Delay");
+					subWinOP.gridDetallePrev.clearAll(true);
+					subWinOP.gridDetallePrev.filterBy(2,"Current", false);
+				}
+			}
+			codigoFiltro = filtro;
+
+console.log('codigoFiltro=' + codigoFiltro)
+console.log('codigos= ' + codigos)
+
+			if (codigos){
+				//codigos.focus();
+			}
+		}
+		function changeQtyItemsUser(qty){
+			var loader = dhtmlxAjax.postSync("respuestaAjax.asp","op=itemsperpage&valor=" + qty + "");
+//			window.location.reload;
+			document.location.href = document.location.href;
+		}
+
+		//Se cambio nombre(se quito una s)
+		function SelecRowDash(rowSelected){
+			if (subWinOP){
+				if (!changeDash){
+					if (subWinOP.gridDetalle){
+						subWinOP.SelectRowDash(rowSelected);
+						//subWinOP.SelecRowDash(rowSelected);
+					}
+				}
+			}
+			if (subWinComp){
+				subWinComp.selectVar(rowSelected);
+			}
+		}
+
+		function refreshRank(){
+			if (subWinCompDet){
+				subWinCompDet.recargar();
+			}
+		}
+
+		function cambiaValor(valor, cual){
+			if (cual ==1){
+				var opcPaging2 = Objeto("opcPaging2");
+				if (opcPaging2)	{
+					opcPaging2.options[valor-1].selected = true;
+				}
+			} else{
+				var opcPaging1 = Objeto("opcPaging1");
+				if (opcPaging1)	{
+					opcPaging1.options[valor-1].selected = true;
+				}
+			}
+		}
+
+		function resetFilter(){
+console.log('****** funcion resetFilter ********')
+//			comboListaGraficas.DOMelem_input.select();
+//			comboListaGraficas.DOMelem_input.value='';
+//			comboListaGraficas.DOMelem_input.select();
+//			comboListaGraficas.setComboText("");
+//			comboListaGraficas.filterSelf();
+			doFilter(true);
+			comboListaGraficas.DOMelem_input.select();
+			doFilter(true);
+			if (subWinComp){
+				if (subWinComp.closed){
+					antesPutComboGraphicsCodes('', false)
+				} else {
+					subWinComp.filtrarGrid('clear');
+				}
+			}
+		}
+
+		function doFilter(mask) {
+console.log('--- funcion doFilter---')
+			comboListaGraficas.filter(function(opt){
+				// return false will hide item
+				// return true will show item
+				if (mask == true) return true;
+				return opt.text.match(new RegExp("^"+mask.toLowerCase(),"i"))!=null;
+			});
+			comboListaGraficas.DOMelem_input.value='';
+			comboListaGraficas.setFocus();
+		}
+
+		function cambiaValorFurnSes(selec){
+			sesFiltroOp = '';
+			var loader= dhx4.ajax.postSync("ajax.asp","op=cambiavalsesfurn&sel=" + selec);			
+		}
+
+//--></script>
+
+</head>
+<body id="IDBody" onload="alCargar()" onunload="cierraVentana();" onmouseover="prendeApagaVar(getTarget(event));">
+	<div id="miniWinSec"></div>
+
+	<script src="/fileman/dhtmlxSuite/dhtmlxAjax/codebase/dhtmlxcommon.js?versionJS=23"></script>
+
+	<script type="text/javascript"><!--
+		var varSessionTimeout = 65;
+		var varAvisarAntesSessionTimeOut = 1;
+		var vtTiempoAntes = ((varSessionTimeout - varAvisarAntesSessionTimeOut) * 60000);
+		var vtDuracion = (varAvisarAntesSessionTimeOut * 60000);
+		var vtDuracionSegundos = (vtDuracion / 1000);
+		var vtSegundos = vtDuracionSegundos;
+		var vtRenovar = 'Click this button to renew your session and close this message.';
+		var vtIgnorar = 'Click this button to close this message without renew the session.';
+		var vtLastRequest = '7/3/2024 4:31:32 PM';
+		var rutaScript = '/fileman/';
+		var esAutenticarComo = 'false';
+		var expiro = false;
+		var mensajeExpiro = false;
+
+		var vtCronometro;
+		var vtTOmensajeExpiro;
+		var crnInterval;
+
+		var esAutenticable = true
+
+		var crnTiempo = 0; // Tiempo (segundos) desde que renovo la sesion
+		var crnLimiteSesion = varSessionTimeout * 60; // Tiempo (segundos) limite de la sesion
+		var crnMomentoMuestraAviso = (varSessionTimeout - varAvisarAntesSessionTimeOut) * 60; // Tiempo cuando mostrara el aviso.
+
+		var crnMomentoOcultaAviso = crnMomentoMuestraAviso + 60; // Tiempo en que oculta el aviso
+		var crnMomentoMensajeExpiro = crnLimiteSesion + 60; //Indica el momento en que mostrara el aviso que ya expiro
+		
+		function crnArrancaCronometro(){
+			crnInterval = setInterval('crnCronometro()', 1000);
+		}
+
+		function crnCronometro() {
+			if (!expiro){
+				// Confirmar el tiempo de session cada dos minutos
+				if ((crnTiempo > 0) && (crnTiempo % 120 == 0) && (crnTiempo != crnMomentoMensajeExpiro)) {
+					dhtmlxAjax.get('/fileman/ajax.asp?op=getLastRequest', adjustCrn);
+				}
+				if (!esAutenticable){			
+					if (crnTiempo == crnMomentoMuestraAviso)
+						muestramensaje();
+					if  (crnTiempo == crnMomentoOcultaAviso)
+						accIgnorar();
+				}
+				if (crnTiempo == crnMomentoMensajeExpiro)
+					dhtmlxAjax.get('/fileman/ajax.asp?op=getLastRequest', adjustCrnExpiro);
+				crnTiempo++;
+			} else {
+				if (!mensajeExpiro){
+					if (crnTiempo == crnMomentoMensajeExpiro)
+						dhtmlxAjax.get('/fileman/ajax.asp?op=getLastRequest', adjustCrnExpiro);
+					crnTiempo++;
+				}
+			}
+		}
+
+		function adjustCrnExpiro(loader) {
+			if (esAutenticable){
+				if (loader.xmlDoc.responseText == "expiro") {
+					MuestraMensajeExpiro();
+					mensajeExpiro = true;
+					expiro = true;
+				}				
+			} else{
+				if (loader.xmlDoc.responseText == vtLastRequest) {
+					MuestraMensajeExpiro();
+					mensajeExpiro = true;
+					expiro = true;
+				}
+			}
+		}
+
+		function adjustCrn(loader) {
+			if (esAutenticable){
+				if (loader.xmlDoc.responseText == "expiro") {
+					crnTiempo = crnMomentoMensajeExpiro
+				}
+			}else{
+				if (loader.xmlDoc.responseText != vtLastRequest) {
+					vtLastRequest = loader.xmlDoc.responseText;
+					crnReset();
+				}
+			}
+		}
+
+		function crnReset() {
+			crnTiempo = 0
+		}
+		
+		crnArrancaCronometro();
+	//--></script>
+	<div align="center" id="MensajeTiempo" style="position:absolute; top:0; right:0; width:500px; height:200; visibility:hidden;
+	{font-family: Tahoma, sans-serif; border-style : ridge; border-collapse: collapse}; 
+		background: none repeat scroll 0 0 #777777 ; z-index : 50;">
+		<div style="width:100%; background.color:#666688;">
+			<b class="letraBlanca">YOUR SESSION WILL EXPIRE SOON</b>
+		</div>
+		<br /><br />
+		Because there has been no activity <br />your session will expire in&nbsp;
+		<span id="CuentaSegundos"></span>
+		&nbsp;seconds.
+		<br /><br />
+		<input type="button" name="btnRenovar" value="Renew" onmouseover="HRenovar()" onmouseout="HLimpiar()" onclick="accRenovar2()" />
+		&nbsp;&nbsp;&nbsp;
+		<input type="button" name="btnIgnorar" value="Ignore" onmouseover="HIgnorar()" onmouseout="HLimpiar()" onclick="accIgnorar()" />
+		<div id="HTexto"></div>
+<!--		<iframe id="FrameBalin" style="height:1; width:1; visibility:hidden"></iframe>	-->
+	</div>
+	<div id="AvisoExpiro" style="position:absolute; top:0; right:0; width:300px; height:80px; background:#FFFF99; visibility:hidden; opacity:.35;filter: alpha(opacity=35); -moz-opacity: 0.35; z-index : 50; color: #FF6666">
+		<b>YOUR SESSION HAS EXPIRED,<br />PLEASE SIGN IN AGAIN</b>
+	</div>
+	<script type="text/javascript" src="/fileman/funcValidate.js?versionJS=23"></script>
+
+	<div id="scontentmain" style="opacity:0.7;background-color:#FFFFFF;position:absolute;top:;right:0;width:300px;display:none">
+		<div align="right">
+			<a href="#" onclick="Objeto('scontentmain').style.display='none'"><font size="2"><img src="img/stop.gif" width="20" height="20" border="0" alt=""></font></a>
+		</div>
+		<font color="#FF8888"><b>Some reports are in PDF format, and you need the Adobe Reader plug-in installed on your computer. You can obtain a free copy <A target="_blank" HREF="http://get.adobe.com/reader/">here</A>. Please get your free copy and install it on your machine, as soon as possible.</b></font>
+	</div>
+	
+	<form name="listform" method="POST" action="fileman.asp">
+		<input type="hidden" name="key" />
+		<table cellpadding="1" cellspacing="0" bgcolor="#FFFFFF">
+			<tr>
+				<td rowspan="2" valign="top" align="center">
+					<a href="http://www.amiautomation.com">
+<img src="/fileman/img/logoAmi.jpg" style="text-align:center; border-width:0px;" complete="complete" ></a><h6 style="margin-top: 0px; margin-bottom: 0px; color: rgb(0, 153, 102);">Active WorkGroup:</h6><span style="color: #0000FF;" align="center" title="Active Work Group" >
+			<b>Transformer Care</b>
+		</span>
+				</td>
+				<td rowspan="2">&nbsp;</td>
+				<td rowspan="1" valign="top">
+					<font color="#666688">
+						User:
+						<b>francisco mariscal</b>
+					</font>
+				</td>
+				<td rowspan="2">&nbsp;</td>
+				<td rowspan="2" valign="top" width="45%">
+					<div class="cuadro" id="letreroSup"></div>
+					<div id="divContadores"></div>
+				</td>
+			</tr>
+			<tr bgcolor="#DDDDDD">
+				<td class="e3dLook">
+
+		<a onclick="AgregaPos(this);" href="fileman.asp?dir=\">
+			<img src="img/root.gif" border="0" align="middle" class="Button_unsel" alt="Root folder" title="Root folder" onmouseout="ButtonOff(this);" onmouseover="ButtonOver(this); return true;" width="20" height="20" /></a>
+<img src="img/separator.gif" border="0" align="middle" />
+		<a href="zAmigeConfig.asp">
+			<img src="img/config.gif" alt="Manage Personal Configuration" title="Manage Personal Configuration" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+
+		<a href="clientInfo.asp?idCliente=8">
+			<img src="img/registration.gif" alt="List of active users of site" title="List of active users of site" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+<img src="img/separator.gif" border="0" align="middle">
+		<script type="text/javascript"><!--
+			var directorioURLHTMLSum = 'D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5C';
+		//--></script>
+
+		<a style="text-decoration:none" href="javascript:nuevaVentanaHTML('comSummary.txt', 'Comments of Decay Summaries', '600', '400', directorioURLHTMLSum);">
+			<img src="img/coment1.gif" border="0" align="middle" alt="Comments of Decay Summaries" title="Comments of Decay Summaries" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+
+		<script type="text/javascript"><!--
+			var directorioURLHTMLAR = 'D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5C';
+		//--></script>
+
+		<a style="text-decoration:none" href="javascript:nuevaVentanaHTML('comAccionRecomendada.txt', 'Recommended Action', '650', '450', directorioURLHTMLAR);">
+			<img src="img/action1.gif" border="0" align="middle" alt="Recommended Action" title="Recommended Action" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+
+	<div id="ElDiv" style="
+		font-family:tahoma;
+		background-color:#FFFFDD;
+		position: absolute;
+		border: 1px groove #000000;
+		top:0px;
+		left: 0px;
+		visibility:hidden;
+	"><nobr>&nbsp;Select the demo language&nbsp;</nobr></div>
+<img src="img/separator.gif" border="0" align="middle" />
+			<a href="#">
+				<img src="img/forum-icon.gif" border="0" align="middle" alt="Communications Forum" title="Communications Forum" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" onclick="nuevaVentanaForo('foro/firmaForo.asp?tablero=AltaSteel&Grupo=General Communication', 'AMIGE_VentanaForo');" width="20" height="20" /></a>
+
+		<a style="text-decoration:none" href="#" onclick="javascript:nuevaVentanaProblem('helpDesk/logon.asp?reSize=true', 'AMIGE_HelpDesk'); return false;">
+			<img src="img/helpDesk.gif" border="0" align="middle" alt="Go to Case Deck" title="Go to Case Deck" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+<img src="img/separator.gif" border="0" align="middle" />
+	<a href="http://www.amige.com">
+		<img src="img/home.gif" alt="Go to homepage" title="Go to homepage" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+
+		<script type="text/javascript">
+			var directorioURLPDFHelp = 'http://txcare.virtualmeltshop.com/fileman/docums/';
+		</script>
+		<a style="text-decoration:none" href="javascript:nuevaVentanaPDFHelp('zAMIGE%2DoilTest00+Instructions+English%2Epdf', 'AMIGEOiltest', '800', '600');" >
+			<img src="img/help.gif" border="0" align="middle" alt="Help on how to use the AMI OilTest Diagnostic Site" title="Help on how to use the AMI OilTest Diagnostic Site" width="20" height="20" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" /></a>
+
+	<a style="text-decoration:none" href="javascript:nuevaVentanaASP('sugerencia.asp', 'Suggestion', '650', '450');" >
+		<img src="img/suggestion2.gif" border="0" align="middle" alt="Write Suggestion" title="Write Suggestion" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+<img src="img/separator.gif" border="0" align="middle" />
+		<a onclick="AgregaPos(this);" href="fileman.asp?dir=\">
+			<img id="btnFactory" src="img/factory.gif" border="0" align="middle" alt="Select other plant" title="Select other plant" class="Button_unsel" onmouseout="ButtonOff(this);" onmouseover="ButtonOver(this); return true;" width="20" height="20" /></a>
+
+			<a onclick="var loader = dhtmlxAjax.postSync('Ajax.asp','op=addfreeze&agregar=false&graph=&zoom=&let=');" href="dashboardGenVM2.asp?docto=rmds">
+			<img id="dashboardOP" src="img/dashboardgen.png" border="0" align="middle" alt="Dashboard of Operative Evolution" title="Dashboard of Operative Evolution" class="Button_unsel" onmouseout="ButtonOff(this);" onmouseover="ButtonOver(this); return true;" width="20" height="20" /></a>
+			
+			<img id="btnDemo" src="img/demoentrar.gif" alt="Change to Demo User" title="Change to Demo User" border="0" onclick="CambiaDemo(2, true)" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+ 
+		<a style="text-decoration:none" href="#" onclick="javascript:nuevaVentanaVM2('RedirVM2.asp', 'RedirVM2'); return false;">
+			<img src="img/VM2.jpg" border="0" align="middle" alt="Virtual Meltshop Monitor" title="Virtual Meltshop Monitor" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="25" height="25" /></a>
+
+					<a onclick="var loader = dhtmlxAjax.postSync('Ajax.asp','op=addfreeze&agregar=false&graph=&zoom=&let=');" href="dashboardGenVM2.asp?docto=rmds&int=true">
+					<img id="dashboardOP" src="img/dashboardInternos.png" border="0" align="middle" alt="GLOBAL Dashboard of Operative Evolution" title="GLOBAL Dashboard of Operative Evolution" class="Button_unsel" onmouseout="ButtonOff(this);" onmouseover="ButtonOver(this); return true;" width="20" height="20" /></a>
+
+					 <a style="text-decoration:none;" href="#" onclick="javascript:ventanaDash('dashboardGenVM2_Global.asp?docto=rmds&int=true','DashboardGlobal'); return false;">
+					<img id="dashboardGl" src="img/dashGlobal.jpg" alt="GLOBAL Dashboard Autoscroll of Operative Evolution" title="GLOBAL Dashboard Autoscroll of Operative Evolution" class="Button_unsel" onmouseout="ButtonOff(this);" onmouseover="ButtonOver(this); return true;" border="0" align="middle" width="20" height="20" /></a> 
+
+					
+			<a href="logout.asp" onclick="closeWindows();">
+				<img src="img/logout.gif" alt="Log off francisco mariscal" title="Log off francisco mariscal" border="0" align="middle" class="Button_unsel" onmouseover="ButtonOver(this); return true;" onmouseout="ButtonOff(this);" width="20" height="20" /></a>
+	
+				</td>				
+			</tr>
+		</table>
+<span id="menutd" style="filter:dropshadow(enabled=true, offX=2,offY=2, color=yellow)" width="10%"></span>
+<script type="text/javascript"><!--
+HM_Array1 = [[150],
+['Personal configuration', "", 1, 0, 1, 'Manage Personal Configuration','','menuPersonalConfig','menu']
+, ['Transformers', "", 1, 0, 1, 'Transformers','','menuTransformer','menu']
+, ['Communication', "", 1, 0, 1, 'Communication','','menuComunication','menu']
+, ['Help', "", 1, 0, 1, 'Help','','menuHelp','menu']
+, ['List of Plants', "fileman.asp?dir=\\", 1, 0, 0, 'Select other plant','factory.gif','menuPlant','menu']
+, ['Dashboard of Operative Evolution', "dashboardGenVM2.asp?docto=rmds", 1, 0, 0, 'Dashboard of Operative Evolution','dashboardgen.png','menuDashOP','menu']
+, ['Change to Demo User', "javascript:CambiaDemo(2, true);", 1, 0, 0, 'cambia a demo','demoentrar.gif','menuCambiaDemo','menu']
+, ['VM2', "javascript:nuevaVentanaVM2('RedirVM2.asp', 'RedirVM2')", 1, 0, 0, 'RedirVM2','VM2.jpg','menuVm2','menu']
+, ['GLOBAL Dashboard of Operative Evolution', "dashboardGenVM2.asp?docto=rmds&int=true", 1, 0, 0, 'GLOBAL Dashboard of Operative Evolution','dashboardInternos.png','menuDashOP','menu']
+, ['Log off', "login.asp?a=logout", 1, 0, 0, 'Log off','logout.gif','menuLogout','menu']
+,
+
+['Personal configuration', "zAmigeConfig.asp", 1, 0, 0, 'Manage Personal Configuration','config.gif','menuPersConfig','menuPersonalConfig']
+, ['List of active users', "clientInfo.asp?idCliente=8", 1, 0, 0, 'List of active users of site','registration.gif','menuClientList','menuPersonalConfig']
+,['Unit', "", 1, 0, 1, 'Unit','','menuUnit','menuTransformer']
+,['Summary', "javascript:nuevaVentanaHTML('comSummary.txt', 'Comments of Decay Summaries', '600', '400', 'D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5C')", 1, 0, 0, 'Comments of Decay Summaries','coment1.gif','menuResumeSummary','menuTransformer']
+, ['Recommendation', "javascript:nuevaVentanaHTML('comAccionRecomendada.txt', 'Recommended Action', '650', '450', 'D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5C')", 1, 0, 0, 'Recommended Action','action1.gif','menuRecomAction','menuTransformer']
+,
+['Forum', "javascript:nuevaVentanaForo('foro/firmaForo.asp?tablero=AltaSteel&Grupo=General Communication', 'AMIGE_VentanaForo');", 1, 0, 0, 'Communications Forum','forum-icon.gif','menuForum','menuComunication']
+, ['Case Deck', "javascript:nuevaVentanaProblem('helpDesk/logon.asp?reSize=true', 'AMIGE_HelpDesk');", 1, 0, 0, 'Go to Case Deck','helpDesk.gif','menuHelpDesk','menuComunication']
+,
+['Homepage', "http://www.amige.com", 1, 0, 0, 'Go to homepage','home.gif','menuHome','menuHelp']
+, ['Help Site', "javascript:nuevaVentanaPDFHelp('zAMIGE%2DoilTest00+Instructions+English%2Epdf', 'AMIGEOiltest', '800', '600');", 1, 0, 0, 'Help on how to use the AMI OilTest Diagnostic Site','help.gif','menuHelpPdf','menuHelp']
+, ['Suggestions', "javascript:nuevaVentanaASP('sugerencia.asp','Suggestion', '650', '350');", 1, 0, 0, 'Write Suggestion','suggestion2.gif','menuSuggestion','menuHelp']
+]
+
+HM_ArrayGas = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+, ['Unit Comments', "javascript:nuevaVentanaHTML('comentarios.txt', 'Show Unit Comments', '650', '450', 'd%3A%5Csitio%5Cusers%5Cgrupo+siderurgico+reyna%5Cinformes%5Camioil17subt1westinghousevcs66551gas%5C');", 1, 0, 0, 'Show Unit Comments','t_val.gif','menuComments','menuUnit']
+]
+HM_ArrayScreen = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+, ['Unit Comments', "javascript:nuevaVentanaHTML('comentarios.txt', 'Show Unit Comments', '650', '450', 'd%3A%5Csitio%5Cusers%5Cgrupo+siderurgico+reyna%5Cinformes%5Camioil17subt1westinghousevcs66551screen%5C');", 1, 0, 0, 'Show Unit Comments','t_val.gif','menuComments','menuUnit']
+]
+HM_ArrayCounterS = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayCounterG = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayCounter = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayVM2 = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayVM2S = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayVM2G = [[], ['Return List Units', "fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17Summary%5C&uni=Global+Decay+%28AMI%29&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=", 1, 0, 0, 'Back','back.gif','menuBack','menuUnit']
+]
+HM_ArrayGOL = [[]]
+HM_ArrayGOLS = [[]]
+HM_ArrayGOLG =[[]]
+//--></SCRIPT>
+<script type="text/javascript"><!--
+HMArrayContadoresCombo = [
+[150],
+] //--></SCRIPT>
+<script type="text/javascript"><!--
+HMArrayVM2Combo = [
+[150],
+] //--></SCRIPT>
+<script type="text/javascript"><!--
+HMArrayGOLCombo = [
+[150],
+] //--></SCRIPT>
+
+	<table cellspacing="1" width="100%">
+		<tr bgcolor="#DDDDDD">
+			<td class="e3dLookm" id="btnMenu1" width="25" onmouseover="HM_f_PopUp('elMenu14', event)" onmouseout="HM_f_PopDown('elMenu1')">
+				MENU
+			</td>
+			<div id="">
+			
+			<td class="e3dLook" id="menu1E3dLook" name="menu1E3dLook">&nbsp;
+				
+				<a href="http://www.amiautomation.com"><img src="/fileman/img/amigeIcono.gif" alt="AMI - Go to Home Page" title="AMI - Go to Home Page" width="50" height="25" border="0" align="right" class="Button_unsel" onmouseover="ButtonOver(this);" onmouseout="ButtonOff(this);"/></a>
+			</td>
+			<td class="e3dLookm"  name="menu2E3dLook" width="25" id="btnMenu8" onmouseover="HM_f_PopUp('elMenu15', event)" onmouseout="HM_f_PopDown('elMenu1')">
+				MENU
+			</td>
+</tr></table>
+<div class="testclass" id="DivArchivosSort">
+<table cellspacing="1" width="100%" id="mitablaTrans" class="sortable">
+<thead>
+<tr bgcolor="#666688"><td colspan="7"><table width="100%"><tr><td>
+&nbsp;<b class="letraBlanca">Index of Users\</b>
+</td><td><table align="right"><tr><td class="e3dLookm" bgcolor="#DDDDDD" onclick="ts_resortTable(Objeto('col0A'), 0); Objeto('BotOrdB').checked = true; Objeto('BotOrdA').checked = true;" title="Click here to sort table by Global Decay (AMI) criteria."><input type="radio" name="BotOrdA" id="BotOrdA" checked="checked" />&nbsp;Global Decay (AMI)</td></tr></table></td></tr></table></td></tr>
+<tr bgcolor="#DDDDDD"><td align="center" class="e3dLook"><a class="objOculto" id="col0A">checkbox</a><a style="text-decoration:none" href="fileman.asp?dir=%5CAltaSteel%5C&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=" >    <img src="img/back.gif" border="0" align="middle" title="Return to List of Units" alt="Back" onmouseout="window.status='';" onmouseover="window.status='Back';" /></a></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Unit criteria.">&nbsp;Unit&nbsp;<img src="img/nada.gif" id="colA1" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Current Location criteria.">&nbsp;Current Location&nbsp;<img src="img/nada.gif" id="colA2" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Manufacture criteria.">&nbsp;Manufacture&nbsp;<img src="img/nada.gif" id="colA3" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Serial Number criteria.">&nbsp;Serial Number&nbsp;<img src="img/nada.gif" id="colA4" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Critical Time criteria.">&nbsp;Critical Time&nbsp;<img src="img/nada.gif" id="colA5" /></td>
+</tr>
+</thead><tbody>
+<tr class="normal" id="Reng00000"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17EAFCGE288187Screen&uni=EAF+CGE%5F288187', 'Reng00000')" onmouseover="MouseSobreTR('Reng00000', '[EAF]', '1,90,1920,101')" onmouseout="MouseFueraTR('Reng00000', '1,90,1920,101')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">0</a></td>
+<td class="azul">EAF CGE_288187</td>
+<td class="azul">EAF</td>
+<td class="azul">CGE</td>
+<td class="azul">288187</td>
+<td class="azul">It was Suspicious</td>
+</tr>
+<tr class="normal" id="Reng00001"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17LMFTamini67585Screen&uni=LMF+Tamini%5F67585', 'Reng00001')" onmouseover="MouseSobreTR('Reng00001', '[LMF]', '1,105,1920,116')" onmouseout="MouseFueraTR('Reng00001', '1,105,1920,116')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">1</a></td>
+<td class="azul">LMF Tamini_67585</td>
+<td class="azul">LMF</td>
+<td class="azul">Tamini</td>
+<td class="azul">67585</td>
+<td class="azul">&nbsp;</td>
+</tr>
+<tr class="normal" id="Reng00002"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17EAFTamini67599Screen&uni=EAF+Tamini%5F67599', 'Reng00002')" onmouseover="MouseSobreTR('Reng00002', '[EAF]', '1,120,1920,131')" onmouseout="MouseFueraTR('Reng00002', '1,120,1920,131')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">2</a></td>
+<td class="azul">EAF Tamini_67599</td>
+<td class="azul">EAF</td>
+<td class="azul">Tamini</td>
+<td class="azul">67599</td>
+<td class="azul">Small decay</td>
+</tr>
+<tr class="normal" id="Reng00003"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17EAFReactorTamini67600Screen&uni=EAFReactor+Tamini%5F67600', 'Reng00003')" onmouseover="MouseSobreTR('Reng00003', '[EAF]', '1,135,1920,146')" onmouseout="MouseFueraTR('Reng00003', '1,135,1920,146')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">3</a></td>
+<td class="azul">EAFReactor Tamini_67600</td>
+<td class="azul">EAF</td>
+<td class="azul">Tamini</td>
+<td class="azul">67600</td>
+<td class="azul">It requires more samples to identify real trend.</td>
+</tr>
+<tr class="normal" id="Reng00004"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17LMFFPE3223011Screen&uni=LMF+FPE%5F32230%2D1%2D1', 'Reng00004')" onmouseover="MouseSobreTR('Reng00004', '[LMF]', '1,150,1920,161')" onmouseout="MouseFueraTR('Reng00004', '1,150,1920,161')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">4</a></td>
+<td class="azul">LMF FPE_32230-1-1</td>
+<td class="azul">LMF</td>
+<td class="azul">FPE</td>
+<td class="azul">32230-1-1</td>
+<td class="azul">Mid Term due possible Oil Contamination</td>
+</tr>
+<tr class="normal" id="Reng00005"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17LMFFPE3223011diverterScreen&uni=LMF+FPE%5F32230%2D1%2D1diverter', 'Reng00005')" onmouseover="MouseSobreTR('Reng00005', '[LMF Diverter]', '1,165,1920,176')" onmouseout="MouseFueraTR('Reng00005', '1,165,1920,176')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">5</a></td>
+<td class="azul">LMF FPE_32230-1-1diverter</td>
+<td class="azul">LMF Diverter</td>
+<td class="azul">FPE</td>
+<td class="azul">32230-1-1</td>
+<td class="azul">It was showing increased Arcing activities, then becomes thermal.</td>
+</tr>
+<tr class="normal" id="Reng00006"  onclick="MouseClickTR('fileman.asp?dir=D%3A%5CSitio%5CUsers%5CAltaSteel%5CInformes%5CAMIoil17LMFCGE288186failScreen&uni=LMF+CGE%5F288186%5Ffail', 'Reng00006')" onmouseover="MouseSobreTR('Reng00006', '[LMF]', '1,180,1920,191')" onmouseout="MouseFueraTR('Reng00006', '1,180,1920,191')" bgcolor="#DDDDEE">
+<td><img src="img/folder.gif" border="0" align="middle" /><a class="objOculto">6</a></td>
+<td class="azul">LMF CGE_288186_fail</td>
+<td class="azul">LMF</td>
+<td class="azul">CGE</td>
+<td class="azul">288186</td>
+<td class="azul">Damaged</td>
+</tr>
+</tbody><tfoot>
+<tr bgcolor="#DDDDDD"><td align="center" class="e3dLook"><a class="objOculto" id="col0A">checkbox</a><a style="text-decoration:none" href="fileman.asp?dir=%5CAltaSteel%5C&ScrollPos=&RengSelec=&OrdenPor=&OrdenAsc=" >    <img src="img/back.gif" border="0" align="middle" title="Return to List of Units" alt="Back" onmouseout="window.status='';" onmouseover="window.status='Back';" /></a></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Unit criteria.">&nbsp;Unit&nbsp;<img src="img/nada.gif" id="colB1" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Current Location criteria.">&nbsp;Current Location&nbsp;<img src="img/nada.gif" id="colB2" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Manufacture criteria.">&nbsp;Manufacture&nbsp;<img src="img/nada.gif" id="colB3" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Serial Number criteria.">&nbsp;Serial Number&nbsp;<img src="img/nada.gif" id="colB4" /></td>
+<td align="left" class="e3dLookm" title="Click here to sort table by Critical Time criteria.">&nbsp;Critical Time&nbsp;<img src="img/nada.gif" id="colB5" /></td>
+</tr>
+<script type="text/javascript"><!--
+var paramSort = new Array;
+var actualPage = 1;
+var numRegistros = 250;
+var totRegistros = 6;
+var down = true;
+var colPivote = 0;
+var idLblPagina = 'pageNo';
+var maxPage = Math.ceil(totRegistros / numRegistros);
+paramSort[0] = ['mitablaTrans', actualPage, numRegistros, totRegistros, down, colPivote, idLblPagina];
+//--></script>
+<tr bgcolor="#666688">
+<td colspan="6"><table width="100%"><tr><td><b class="letraBlanca">
+7 Folders</b></td><td>
+<table align="right"><tr><td class="e3dLookm" bgcolor="#DDDDDD" onclick="ts_resortTable(Objeto('col0A'), 0); Objeto('BotOrdA').checked = true; Objeto('BotOrdB').checked = true;" title="Click here to sort table by Global Decay (AMI) criteria."><input type="radio" name="BotOrdB" id="BotOrdB" checked="checked" />&nbsp;Global Decay (AMI)</td></tr></table>
+</td></tr></tfoot></table></td></tr></table>
+</div>
+<script type="text/javascript">
+<!--
+var JBgColor = "#DDDDEE";var JRengSelec = "";var JScrollPos = -1;var JOrdenPor = 0;var JOrdenAsc = 0;
+//--></script>
+<table><tbody><tr bgcolor="#DDDDDD"><td class="e3dLook" align="center">Operative Evolution<select id="selOperEv" name="selOperEv" size="1" onchange="jump(this)"><option value="#">Select a Furnace</option></select></TD></tr></tbody></table>
+<br><table><tbody><tr bgcolor="#DDDDDD"><td class="e3dLook" align="center">Gas on Line<select id="selGasOnLi" name="selGasOnLi" size="1" onchange="jump(this)"><option value="#">Select a Transformer Tank</option>cambiaalgoaqui</select></TD></tr></tbody></table>
+<table cellspacing="1"><tr bgcolor="#DDDDDD"><td align="center" class="e3dLook"><a style="text-decoration:none" href="fileman.asp?dir=0%7CAltaSteel%5CInformes%5C&MostrarTabla=SI" >Show Units Table</a></td></tr></table>
+<div id="footer" style="text-align:center; position:relative; bottom:-8px; width:100%; text-align:center; border:1px; font-size:13px; color:black; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30); opacity:.3;"><br /><br />
+		</div></form><script type="text/javascript">
+writit('AltaSteel - Edmonton, Canada<br />Global Decay (AMI)<br />', 'letreroSup');
+</script>
+
+<script type="text/javascript" src="MJ_Parametros.js?versionJS=23"></script>
+<script type="text/javascript" src="MJ_Loader.js?versionJS=23"></script>
+</html>

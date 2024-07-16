@@ -13,7 +13,7 @@ GO
 CREATE TABLE [dbo].[ml_Gas_Limite] (
     [id] [bigint] IDENTITY(1,1) NOT NULL,
     [gas] [varchar](50) NOT NULL,
-    [limite] numeric(10,4) NOT NULL,
+    [limite] numeric(10,4),
     [estandar] INTEGER NOT NULL,
     CONSTRAINT [PK_ml_Gas_Limite] PRIMARY KEY CLUSTERED ([id] ASC),
 );
