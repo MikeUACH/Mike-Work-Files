@@ -1,0 +1,25 @@
+cliente.txt|@&0|@&CMC Steel Poland, Poland|@&AMIGEoil07
+DirSummary.txt|@&0|@&AMIGEoil07SUMGlobal|@&Global Decay (AMIGE)|@&GlobalSummary|@&5/24/2011 9:16:10 PM|@&
+DirSummary.txt|@&1|@&AMIGEoil07Sum00DecayScreen|@&Weighed Screen Decay|@&ScreenSummary|@&5/24/2011 9:16:11 PM|@&
+DirSummary.txt|@&2|@&AMIGEoil07Sum01TIFScreen|@&Interfacial Tension|@&ScreenSummary|@&5/24/2011 9:16:11 PM|@&
+DirSummary.txt|@&3|@&AMIGEoil07Sum02NNScreen|@&Neutralization Number|@&ScreenSummary|@&5/24/2011 9:16:12 PM|@&
+DirSummary.txt|@&4|@&AMIGEoil07Sum03DielScreen|@&Dielectric Strength|@&ScreenSummary|@&5/24/2011 9:16:12 PM|@&
+DirSummary.txt|@&5|@&AMIGEoil07Sum04QIScreen|@&Quality Index|@&ScreenSummary|@&5/24/2011 9:16:12 PM|@&
+DirSummary.txt|@&6|@&AMIGEoil07Sum05PF25Screen|@&Power Factor 25|@&ScreenSummary|@&5/24/2011 9:16:13 PM|@&
+DirSummary.txt|@&7|@&AMIGEoil07Sum06H2OScreen|@&Moisture Content|@&ScreenSummary|@&5/24/2011 9:16:14 PM|@&
+DirSummary.txt|@&8|@&AMIGEoil07Sum07ColorScreen|@&Oil Color Code|@&ScreenSummary|@&5/24/2011 9:16:14 PM|@&
+DirSummary.txt|@&9|@&AMIGEoil07Sum08FuranScreen|@&Total Furan|@&ScreenSummary|@&5/24/2011 9:16:15 PM|@&
+DirSummary.txt|@&10|@&AMIGEoil07Sum10InhibScreen|@&DBPC Inhibitor|@&ScreenSummary|@&5/24/2011 9:16:15 PM|@&
+DirSummary.txt|@&11|@&AMIGEoil07Sum00DegAMIGEGas|@&Weighed Gas Decay (AMIGE)|@&GasSummary|@&5/24/2011 9:16:16 PM|@&
+DirSummary.txt|@&12|@&AMIGEoil07Sum01CombGas|@&Combustible Gas|@&GasSummary|@&5/24/2011 9:16:16 PM|@&
+DirSummary.txt|@&13|@&AMIGEoil07Sum02AcetyleneGas|@&Acetylene|@&GasSummary|@&5/24/2011 9:16:16 PM|@&
+DirSummary.txt|@&14|@&AMIGEoil07Sum03EthyleneGas|@&Ethylene|@&GasSummary|@&5/24/2011 9:16:17 PM|@&
+DirSummary.txt|@&15|@&AMIGEoil07Sum04EthaneGas|@&Ethane|@&GasSummary|@&5/24/2011 9:16:17 PM|@&
+DirSummary.txt|@&16|@&AMIGEoil07Sum05MethaneGas|@&Methane|@&GasSummary|@&5/24/2011 9:16:17 PM|@&
+DirSummary.txt|@&17|@&AMIGEoil07Sum06H2Gas|@&Hydrogen|@&GasSummary|@&5/24/2011 9:16:18 PM|@&
+DirSummary.txt|@&18|@&AMIGEoil07Sum07COGas|@&Carbon Monoxide|@&GasSummary|@&5/24/2011 9:16:18 PM|@&
+DirSummary.txt|@&19|@&AMIGEoil07Sum08CO2Gas|@&Carbon Dioxide|@&GasSummary|@&5/24/2011 9:16:19 PM|@&
+DirSummary.txt|@&20|@&AMIGEoil07Sum09COCO2Gas|@&Carbon Oxides|@&GasSummary|@&5/24/2011 9:16:19 PM|@&
+DirSummary.txt|@&21|@&AMIGEoil07Sum10O2Gas|@&Oxygen Diss.|@&GasSummary|@&5/24/2011 9:16:19 PM|@&
+DirSummary.txt|@&22|@&AMIGEoil07Sum11O2N2Gas|@&Oxygen-N2 Ratio|@&GasSummary|@&5/24/2011 9:16:20 PM|@&
+DirSummary.txt|@&99|@&AMIGEoil07OperativeEvolutionEAF|@&EAF|@&OperativeEvolution|@&07/22/2024 06:00:00|@&
