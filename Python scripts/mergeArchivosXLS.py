@@ -10,7 +10,6 @@ carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS"
 carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Acum"
 archivo_bat = r"C:\Users\EJRuiz\Desktop\GasInOilExporter\ProcesaExtraccionesGOLAuto.bat"
 archivo_bat_dinamico = r"C:\Users\EJRuiz\Desktop\GasInOilExporter"
-nombre_archivo = "ProcesaExtraccionesGOL_Dinamico.bat"  # Debes definir el nombre del archivo apropiadamente
 
 def combinar_archivos(carpeta_origen, carpeta_destino):
     # Combina archivos, elimina duplicados y guarda resultados en .xls
@@ -46,7 +45,7 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
         archivo_xls = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xls")
         convertir_xlsx_a_xls(archivo_xlsx, archivo_xls)
 
-        os.remove(archivo_xlsx)
+        #os.remove(archivo_xlsx)
 
         eliminar_archivos_viejos(carpeta_destino, archivo_xls)
 
@@ -88,14 +87,21 @@ def eliminar_archivos_viejos(carpeta_destino, archivo_xls_nuevo):
             base_name = base_name_match.group(1)
             if base_name in archivos_mas_recientes and archivo_xls != archivos_mas_recientes[base_name][0]:
                 os.remove(archivo_xls)
-
+                
 def construir_comando_bat(nombre_archivo, archivo_bat):
+    # Extraer la base del nombre del archivo sin la fecha
+    base_nombre = re.match(r'(gas-in-oil_.*?_0_)', nombre_archivo)
+    if base_nombre:
+        base_nombre = base_nombre.group(1)
+    else:
+        raise ValueError(f"El nombre del archivo no sigue el formato esperado: {nombre_archivo}")
+
     # Leer el archivo .bat y buscar el bloque correspondiente al nombre del archivo
     with open(archivo_bat, 'r') as f:
         lineas = f.readlines()
 
-    # Buscar la línea que contiene el nombre del archivo
-    patron = re.compile(rf'gas-in-oil_{re.escape(nombre_archivo)}_.*')
+    # Buscar la línea que contiene la base del nombre del archivo
+    patron = re.compile(rf'{re.escape(base_nombre)}.*')
     lineas_encontradas = [i for i, linea in enumerate(lineas) if patron.search(linea)]
 
     if not lineas_encontradas:
@@ -113,42 +119,49 @@ def construir_comando_bat(nombre_archivo, archivo_bat):
 
     return comando
 
-def generar_y_procesar_bat_dinamico(nombre_archivo, archivo_bat_dinamico, archivo_bat):
-    archivo_xlsx = os.path.join(carpeta_destino, f"{nombre_archivo}.xlsx")
-    if not os.path.exists(archivo_xlsx):
-        print(f"No se encontró el archivo Excel para {nombre_archivo}")
-        return
+def generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat):
+    archivos_xls = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
+    
+    for archivo in archivos_xls:
+        nombre_archivo = os.path.splitext(os.path.basename(archivo))[0]
+        archivo_xlsx = os.path.join(carpeta_destino, f"{nombre_archivo}.xlsX")
+        
+        if not os.path.exists(archivo_xlsx):
+            print(f"No se encontró el archivo Excel para {nombre_archivo}")
+            continue
 
-    df = pd.read_excel(archivo_xlsx)
+        df = pd.read_excel(archivo_xlsx)
 
-    # Verifica si hay filas donde 'Heat Start Time' y 'Heat End Time' estén vacíos
-    df_vacios = df[df['Heat Start Time'].isna() | df['Heat End Time'].isna()]
-    if not df_vacios.empty:
-        # Busca la última fila donde ambos campos no estén vacíos
-        ultima_fecha = df.dropna(subset=['Heat Start Time', 'Heat End Time'])['Heat End Time'].max()
-        if pd.isna(ultima_fecha):
-            print(f"No se pudo determinar la última fecha válida para {nombre_archivo}")
-            return
+        # Verifica si hay filas donde 'Heat Start Time' y 'Heat End Time' estén vacíos
+        df_vacios = df[df['Heat Start Time'].isna() | df['Heat End Time'].isna()]
+        if not df_vacios.empty:
+            # Busca la última fila donde ambos campos no estén vacíos
+            ultima_fecha = df.dropna(subset=['Heat Start Time', 'Heat End Time'])['Heat End Time'].max()
+            if pd.isna(ultima_fecha):
+                print(f"No se pudo determinar la última fecha válida para {nombre_archivo}")
+                continue
 
-        fecha_inicio = ultima_fecha.date()
-        fecha_fin = datetime.now().date()
+            fecha_inicio = ultima_fecha.date()
+            fecha_fin = datetime.now().date()
 
-        # Generar y guardar el comando .bat dinámico
-        comando = construir_comando_bat(nombre_archivo, archivo_bat)
-        with open(archivo_bat_dinamico, 'w') as f:
-            f.write(comando)
+            # Generar y guardar el comando .bat dinámico
+            comando = construir_comando_bat(nombre_archivo, archivo_bat)
+            archivo_bat_dinamico_path = os.path.join(archivo_bat_dinamico, f"{nombre_archivo}_Dinamico.bat")
+            with open(archivo_bat_dinamico_path, 'w') as f:
+                f.write(comando)
 
-        print(f"Archivo .bat generado para {nombre_archivo}: {archivo_bat_dinamico}")
+            print(f"Archivo .bat generado para {nombre_archivo}: {archivo_bat_dinamico_path}")
 
-        # Comentado: Ejecución del archivo .bat dinámico
-        # subprocess.run([archivo_bat_dinamico], shell=True)
+            # Comentado: Ejecución del archivo .bat dinámico
+            # subprocess.run([archivo_bat_dinamico_path], shell=True)
 
-        # Opción para eliminar el archivo .bat dinámico después de la ejecución
-        # os.remove(archivo_bat_dinamico)
-    else:
-        print(f"No se encontraron campos vacíos en {nombre_archivo}, no se generó el .bat")
+            # Opción para eliminar el archivo .bat dinámico después de la ejecución
+            # os.remove(archivo_bat_dinamico_path)
+        else:
+            print(f"No se encontraron campos vacíos en {nombre_archivo}, no se generó el .bat")
+
 
 # Ejecutar las funciones
 combinar_archivos(carpeta_origen, carpeta_destino)
-generar_y_procesar_bat_dinamico(nombre_archivo, archivo_bat_dinamico, archivo_bat)
+generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat)
 
