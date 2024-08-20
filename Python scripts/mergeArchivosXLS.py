@@ -1,16 +1,98 @@
 import os
 import pandas as pd
 import subprocess
-from datetime import datetime
+from datetime import datetime, timedelta
 import win32com.client as win32
 import re
+import time
 
 # Rutas de las carpetas y archivos
 carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS"
 carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Acum"
 archivo_bat = r"C:\Users\EJRuiz\Desktop\GasInOilExporter\ProcesaExtraccionesGOLAuto.bat"
 archivo_bat_dinamico = r"C:\Users\EJRuiz\Desktop\GasInOilExporter"
+    
+# Función para generar y procesar el archivo .bat dinámico
+def generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat):
+    archivos_xls = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
+    
+    for archivo in archivos_xls:
+        nombre_archivo = os.path.splitext(os.path.basename(archivo))[0]
+        archivo_xlsx = os.path.join(carpeta_destino, f"{nombre_archivo}.xls")
+        
+        if not os.path.exists(archivo_xlsx):
+            print(f"No se encontró el archivo Excel para {nombre_archivo}")
+            continue
 
+        print(f"Procesando archivo: {archivo_xlsx}")
+
+        # Leer como CSV con tabuladores
+        df = pd.read_csv(archivo, delimiter='\t', encoding='latin1')
+        
+        # Verifica si hay filas donde 'Heat Start Time' y 'Heat End Time' estén vacíos
+        df_vacios = df[df['Heat Start Time'].isna() & df['Heat End Time'].isna()]
+        if not df_vacios.empty:
+            # Convertir 'Heat End Time' a datetime con el formato correcto
+            df['Heat End Time'] = pd.to_datetime(df['Heat End Time'], format='%m/%d/%Y %H:%M', errors='coerce')
+
+            # Filtrar filas no vacías para calcular la última fecha válida
+            df_validas = df.dropna(subset=['Heat End Time'])
+            ultima_fecha = df_validas['Heat End Time'].max()
+            
+            if pd.isna(ultima_fecha):
+                print(f"No se pudo determinar la última fecha válida para {nombre_archivo}")
+                continue
+
+            print(f"Última fecha válida encontrada: {ultima_fecha}")
+
+            # Calcula la fecha de inicio como 5 días antes de la última fecha válida
+            fecha_inicio = (ultima_fecha - timedelta(days=5)).strftime("%m/%d/%Y %H:%M")
+            print(f'Fecha de inicio: {fecha_inicio}')
+            fecha_inicio = convertir_fecha(fecha_inicio)  # Convertir a yyyy-mm-dd
+            fecha_fin = datetime.now().strftime("%m/%d/%Y %H:%M")
+            print(f'Fecha final: {fecha_fin}')
+            fecha_fin = convertir_fecha(fecha_fin)  # Convertir a yyyy-mm-dd
+
+            # Generar y guardar el comando .bat dinámico
+            comando = construir_comando_bat(nombre_archivo, archivo_bat, fecha_inicio, fecha_fin)
+
+            archivo_bat_dinamico_path = os.path.join(archivo_bat_dinamico, f"{nombre_archivo}_Dinamico.bat")
+            with open(archivo_bat_dinamico_path, 'w') as f:
+                f.write(comando)
+
+            print(f"Archivo .bat generado para {nombre_archivo}: {archivo_bat_dinamico_path}")
+
+            # Comentado: Ejecución del archivo .bat dinámico
+            # subprocess.run([archivo_bat_dinamico_path], shell=True)
+
+            # Opción para eliminar el archivo .bat dinámico después de la ejecución
+            # os.remove(archivo_bat_dinamico_path)
+        else:
+            print(f"No se encontraron campos vacíos en {nombre_archivo}, no se generó el .bat")
+
+def convertir_fecha(fecha_str):
+    try:
+        # Verificar si ya está en el formato yyyy-MM-dd
+        fecha_datetime = datetime.strptime(fecha_str, '%Y-%m-%d %H:%M')
+        return fecha_datetime.strftime('%Y-%m-%d')
+    except ValueError:
+        pass
+    
+    try:
+        # Intentar convertir si la fecha incluye tiempo
+        fecha_datetime = datetime.strptime(fecha_str, '%m/%d/%Y %H:%M')
+        return fecha_datetime.strftime('%Y-%m-%d')
+    except ValueError:
+        pass
+
+    try:
+        # Intentar convertir si la fecha no incluye tiempo
+        fecha_datetime = datetime.strptime(fecha_str, '%m/%d/%Y')
+        return fecha_datetime.strftime('%Y-%m-%d')
+    except ValueError:
+        print(f"Error al convertir la fecha: {fecha_str}")
+        return None
+                
 def combinar_archivos(carpeta_origen, carpeta_destino):
     # Combina archivos, elimina duplicados y guarda resultados en .xls
     archivos_destino = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
@@ -88,7 +170,7 @@ def eliminar_archivos_viejos(carpeta_destino, archivo_xls_nuevo):
             if base_name in archivos_mas_recientes and archivo_xls != archivos_mas_recientes[base_name][0]:
                 os.remove(archivo_xls)
                 
-def construir_comando_bat(nombre_archivo, archivo_bat):
+def construir_comando_bat(nombre_archivo, archivo_bat, fecha_inicio, fecha_fin):
     # Extraer la base del nombre del archivo sin la fecha
     base_nombre = re.match(r'(gas-in-oil_.*?_0_)', nombre_archivo)
     if base_nombre:
@@ -117,51 +199,20 @@ def construir_comando_bat(nombre_archivo, archivo_bat):
     # Unir las líneas del bloque en un solo comando, separadas por un espacio
     comando = ' '.join([linea.strip() for linea in bloque_comando])
 
+    # Imprimir el comando antes de reemplazar las fechas para depuración
+    print("Comando original:")
+    print(comando)
+
+    # Reemplazar las fechas en el comando
+    comando = re.sub(r'\d{4}-\d{2}-\d{2}', fecha_inicio, comando, count=1)  # Cambia la primera fecha encontrada por fecha_inicio_bat
+
+    # Imprimir el comando después de reemplazar las fechas para depuración
+    print("Comando con fechas reemplazadas:")
+    print(comando)
+
     return comando
 
-def generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat):
-    archivos_xls = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
-    
-    for archivo in archivos_xls:
-        nombre_archivo = os.path.splitext(os.path.basename(archivo))[0]
-        archivo_xlsx = os.path.join(carpeta_destino, f"{nombre_archivo}.xlsX")
-        
-        if not os.path.exists(archivo_xlsx):
-            print(f"No se encontró el archivo Excel para {nombre_archivo}")
-            continue
-
-        df = pd.read_excel(archivo_xlsx)
-
-        # Verifica si hay filas donde 'Heat Start Time' y 'Heat End Time' estén vacíos
-        df_vacios = df[df['Heat Start Time'].isna() | df['Heat End Time'].isna()]
-        if not df_vacios.empty:
-            # Busca la última fila donde ambos campos no estén vacíos
-            ultima_fecha = df.dropna(subset=['Heat Start Time', 'Heat End Time'])['Heat End Time'].max()
-            if pd.isna(ultima_fecha):
-                print(f"No se pudo determinar la última fecha válida para {nombre_archivo}")
-                continue
-
-            fecha_inicio = ultima_fecha.date()
-            fecha_fin = datetime.now().date()
-
-            # Generar y guardar el comando .bat dinámico
-            comando = construir_comando_bat(nombre_archivo, archivo_bat)
-            archivo_bat_dinamico_path = os.path.join(archivo_bat_dinamico, f"{nombre_archivo}_Dinamico.bat")
-            with open(archivo_bat_dinamico_path, 'w') as f:
-                f.write(comando)
-
-            print(f"Archivo .bat generado para {nombre_archivo}: {archivo_bat_dinamico_path}")
-
-            # Comentado: Ejecución del archivo .bat dinámico
-            # subprocess.run([archivo_bat_dinamico_path], shell=True)
-
-            # Opción para eliminar el archivo .bat dinámico después de la ejecución
-            # os.remove(archivo_bat_dinamico_path)
-        else:
-            print(f"No se encontraron campos vacíos en {nombre_archivo}, no se generó el .bat")
-
-
 # Ejecutar las funciones
-combinar_archivos(carpeta_origen, carpeta_destino)
 generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat)
-
+#time.sleep(10)
+combinar_archivos(carpeta_origen, carpeta_destino)
