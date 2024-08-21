@@ -63,10 +63,10 @@ def generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archi
             print(f"Archivo .bat generado para {nombre_archivo}: {archivo_bat_dinamico_path}")
 
             # Comentado: Ejecución del archivo .bat dinámico
-            # subprocess.run([archivo_bat_dinamico_path], shell=True)
+            #subprocess.run([archivo_bat_dinamico_path], shell=True)
 
             # Opción para eliminar el archivo .bat dinámico después de la ejecución
-            # os.remove(archivo_bat_dinamico_path)
+            #os.remove(archivo_bat_dinamico_path)
         else:
             print(f"No se encontraron campos vacíos en {nombre_archivo}, no se generó el .bat")
 
@@ -106,30 +106,44 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
         df_nuevo = pd.read_csv(archivo, delimiter='\t', encoding='latin1')
         df_acumulado = pd.concat([df_acumulado, df_nuevo], ignore_index=True)
 
-        df_acumulado['Event Date'] = pd.to_datetime(df_acumulado['Event Date'])
-        fecha_limite = df_acumulado['Event Date'].max() - pd.DateOffset(years=1)
-        df_acumulado = df_acumulado[df_acumulado['Event Date'] >= fecha_limite]
+    # Convertir fechas a datetime, ignorando errores y llenando con NaT (Not a Time)
+    df_acumulado['Event Date'] = pd.to_datetime(df_acumulado['Event Date'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
+    df_acumulado['Heat Start Time'] = pd.to_datetime(df_acumulado['Heat Start Time'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
+    df_acumulado['Heat End Time'] = pd.to_datetime(df_acumulado['Heat End Time'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
 
-        df_acumulado['Heat Start Time'] = pd.to_datetime(df_acumulado['Heat Start Time'])
-        df_acumulado['Heat End Time'] = pd.to_datetime(df_acumulado['Heat End Time'])
+    # Aplicar el formato deseado para que se vea como '%m/%d/%Y %H:%M' al guardar en Excel
+    df_acumulado['Event Date'] = df_acumulado['Event Date'].dt.strftime('%m/%d/%Y %H:%M')
+    df_acumulado['Heat Start Time'] = df_acumulado['Heat Start Time'].dt.strftime('%m/%d/%Y %H:%M')
+    df_acumulado['Heat End Time'] = df_acumulado['Heat End Time'].dt.strftime('%m/%d/%Y %H:%M')
+    
+    # Filtrar fechas de 'Event Date' dentro del último año
+    fecha_limite = df_acumulado['Event Date'].max() - pd.DateOffset(years=1)
+    df_acumulado = df_acumulado[df_acumulado['Event Date'] >= fecha_limite]
 
-        df_acumulado['Heat Start Date'] = df_acumulado['Heat Start Time'].dt.date
-        df_acumulado = df_acumulado.sort_values(by='Heat End Time').drop_duplicates(subset='Heat Start Date', keep='last')
+    # Eliminar duplicados basados en 'Heat Start Time', asegurando que se conserve la fecha más reciente
+    df_acumulado = df_acumulado.sort_values(by='Heat End Time')
+    no_vacios = df_acumulado[df_acumulado['Heat Start Time'].notna()]
+    vacios = df_acumulado[df_acumulado['Heat Start Time'].isna()]
+    no_vacios = no_vacios.drop_duplicates(subset='Heat Start Time', keep='last')
+    
+    df_acumulado = pd.concat([no_vacios, vacios], ignore_index=True)
+    
+    # Eliminar duplicados basados en 'Event Date', asegurando que se conserve la fecha más reciente
+    df_acumulado = df_acumulado.sort_values(by='Event Date').drop_duplicates(subset='Event Date', keep='last')
 
-        df_acumulado.drop(columns=['Heat Start Date'], inplace=True)
-
-        nombre_archivo = os.path.basename(archivo)
-        archivo_xlsx = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xlsx")
+    # Guardar el DataFrame combinado en formato .xlsx y luego convertir a .xls
+    nombre_archivo = os.path.basename(archivo)
+    archivo_xlsx = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xlsx")
+    
+    with pd.ExcelWriter(archivo_xlsx, engine='openpyxl') as writer:
+        df_acumulado.to_excel(writer, index=False)
         
-        with pd.ExcelWriter(archivo_xlsx, engine='openpyxl') as writer:
-            df_acumulado.to_excel(writer, index=False)
-            
-        archivo_xls = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xls")
-        convertir_xlsx_a_xls(archivo_xlsx, archivo_xls)
+    archivo_xls = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xls")
+    convertir_xlsx_a_xls(archivo_xlsx, archivo_xls)
 
-        #os.remove(archivo_xlsx)
+    os.remove(archivo_xlsx)
 
-        eliminar_archivos_viejos(carpeta_destino, archivo_xls)
+    eliminar_archivos_viejos(carpeta_destino, archivo_xls)
 
     print(f"Archivos combinados, guardados en formato .xls y archivos antiguos eliminados.")
 
@@ -197,7 +211,7 @@ def construir_comando_bat(nombre_archivo, archivo_bat, fecha_inicio, fecha_fin):
     bloque_comando = lineas[inicio:fin]
 
     # Unir las líneas del bloque en un solo comando, separadas por un espacio
-    comando = ' '.join([linea.strip() for linea in bloque_comando])
+    comando = '\n'.join([linea.strip() for linea in bloque_comando])
 
     # Imprimir el comando antes de reemplazar las fechas para depuración
     print("Comando original:")
