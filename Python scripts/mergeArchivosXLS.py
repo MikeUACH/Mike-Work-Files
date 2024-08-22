@@ -4,11 +4,12 @@ import subprocess
 from datetime import datetime, timedelta
 import win32com.client as win32
 import re
-import time
+from openpyxl import load_workbook
+from openpyxl.styles import NamedStyle, Font
 
 # Rutas de las carpetas y archivos
-carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS"
-carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Acum"
+carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Acum"
+carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Filtrados"
 archivo_bat = r"C:\Users\EJRuiz\Desktop\GasInOilExporter\ProcesaExtraccionesGOLAuto.bat"
 archivo_bat_dinamico = r"C:\Users\EJRuiz\Desktop\GasInOilExporter"
     
@@ -107,15 +108,10 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
         df_acumulado = pd.concat([df_acumulado, df_nuevo], ignore_index=True)
 
     # Convertir fechas a datetime, ignorando errores y llenando con NaT (Not a Time)
-    df_acumulado['Event Date'] = pd.to_datetime(df_acumulado['Event Date'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
-    df_acumulado['Heat Start Time'] = pd.to_datetime(df_acumulado['Heat Start Time'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
-    df_acumulado['Heat End Time'] = pd.to_datetime(df_acumulado['Heat End Time'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
+    df_acumulado['Event Date'] = pd.to_datetime(df_acumulado['Event Date'], errors='coerce')
+    df_acumulado['Heat Start Time'] = pd.to_datetime(df_acumulado['Heat Start Time'], errors='coerce')
+    df_acumulado['Heat End Time'] = pd.to_datetime(df_acumulado['Heat End Time'], errors='coerce')
 
-    # Aplicar el formato deseado para que se vea como '%m/%d/%Y %H:%M' al guardar en Excel
-    df_acumulado['Event Date'] = df_acumulado['Event Date'].dt.strftime('%m/%d/%Y %H:%M')
-    df_acumulado['Heat Start Time'] = df_acumulado['Heat Start Time'].dt.strftime('%m/%d/%Y %H:%M')
-    df_acumulado['Heat End Time'] = df_acumulado['Heat End Time'].dt.strftime('%m/%d/%Y %H:%M')
-    
     # Filtrar fechas de 'Event Date' dentro del último año
     fecha_limite = df_acumulado['Event Date'].max() - pd.DateOffset(years=1)
     df_acumulado = df_acumulado[df_acumulado['Event Date'] >= fecha_limite]
@@ -131,13 +127,37 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
     # Eliminar duplicados basados en 'Event Date', asegurando que se conserve la fecha más reciente
     df_acumulado = df_acumulado.sort_values(by='Event Date').drop_duplicates(subset='Event Date', keep='last')
 
-    # Guardar el DataFrame combinado en formato .xlsx y luego convertir a .xls
+    # Guardar el DataFrame combinado en formato .xlsx
     nombre_archivo = os.path.basename(archivo)
     archivo_xlsx = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xlsx")
     
+    if verificar_si_existe(f"{os.path.splitext(nombre_archivo)[0]}.xls", carpeta_destino):
+        print(f"El archivo {os.path.splitext(nombre_archivo)[0]}.xls ya existe en {carpeta_destino} y no será reemplazado.")
+        return
     with pd.ExcelWriter(archivo_xlsx, engine='openpyxl') as writer:
         df_acumulado.to_excel(writer, index=False)
-        
+    
+    # Aplicar estilo de fuente a todas las celdas en el archivo Excel
+    wb = load_workbook(archivo_xlsx)
+    ws = wb.active
+
+    # Crear un estilo con fuente personalizada
+    fuente = Font(name='Aptos Narrow', size=11)
+    formato_fecha = NamedStyle(name="formato_fecha", number_format='m/d/yyyy h:mm')
+    
+    # Aplicar el formato a las columnas de fecha
+    for col in ['A', 'V', 'W']:  
+        for cell in ws[col]:
+            if cell.row > 1:  # Asumiendo que la primera fila es el encabezado
+                cell.style = formato_fecha
+                
+    # Aplicar el estilo de fuente a todas las celdas
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.font = fuente
+
+    wb.save(archivo_xlsx)
+
     archivo_xls = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xls")
     convertir_xlsx_a_xls(archivo_xlsx, archivo_xls)
 
@@ -146,6 +166,10 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
     eliminar_archivos_viejos(carpeta_destino, archivo_xls)
 
     print(f"Archivos combinados, guardados en formato .xls y archivos antiguos eliminados.")
+    
+def verificar_si_existe(nombre_archivo, carpeta_destino):
+    archivo_existente = os.path.join(carpeta_destino, nombre_archivo)
+    return os.path.exists(archivo_existente)
 
 def convertir_xlsx_a_xls(archivo_xlsx, archivo_xls):
     excel = win32.gencache.EnsureDispatch('Excel.Application')
@@ -228,5 +252,4 @@ def construir_comando_bat(nombre_archivo, archivo_bat, fecha_inicio, fecha_fin):
 
 # Ejecutar las funciones
 generar_y_procesar_bat_dinamico(carpeta_destino, archivo_bat_dinamico, archivo_bat)
-#time.sleep(10)
 combinar_archivos(carpeta_origen, carpeta_destino)
