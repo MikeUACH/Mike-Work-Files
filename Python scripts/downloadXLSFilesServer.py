@@ -22,14 +22,14 @@ def eliminar_archivos_en_carpeta(carpeta):
             shutil.rmtree(ruta_archivo)
             print(f"Archivo {archivo} borrado en {ruta_archivo}.")
 
-def copiar_archivos(origen, destino):
-    # Copiar archivos de una carpeta a otra
+def mover_archivos(origen, destino):
+    # Mover archivos de una carpeta a otra
     for archivo in os.listdir(origen):
         ruta_archivo_origen = os.path.join(origen, archivo)
         ruta_archivo_destino = os.path.join(destino, archivo)
         if os.path.isfile(ruta_archivo_origen):
-            shutil.copy2(ruta_archivo_origen, ruta_archivo_destino)
-            print(f"Archivo {archivo} copiado a {ruta_archivo_destino}.")
+            shutil.move(ruta_archivo_origen, ruta_archivo_destino)
+            print(f"Archivo {archivo} movido a {ruta_archivo_destino}.")
 
 def ejecutar_script(script_path):
     # Ejecutar un script de Python
@@ -53,19 +53,19 @@ def main():
     ruta_script = os.path.join(carpeta_script, 'mergeArchivosXLS.py')
 
     # Eliminar archivos en las carpetas de destino
-    #eliminar_archivos_en_carpeta(carpeta_destino_xls)
+    eliminar_archivos_en_carpeta(carpeta_destino_xls)
     eliminar_archivos_en_carpeta(carpeta_destino_acum)
 
-    # Copiar archivos de origen a destino
-    #copiar_archivos(carpeta_origen_xls, carpeta_destino_xls)
-    copiar_archivos(carpeta_origen_acum, carpeta_destino_acum)
+    # Mover archivos de origen a destino
+    mover_archivos(carpeta_origen_xls, carpeta_destino_xls)
+    mover_archivos(carpeta_origen_acum, carpeta_destino_acum)
 
     # Ejecutar el script de merge
-    #ejecutar_script(ruta_script)
+    ejecutar_script(ruta_script)
 
-    # Subir archivos resultantes a la carpeta original
-    #copiar_archivos(carpeta_destino_xls, carpeta_origen_xls)
-
+    # Mover archivos resultantes a la carpeta original
+    mover_archivos(carpeta_destino_xls, carpeta_origen_xls)
+    mover_archivos(carpeta_destino_acum, carpeta_origen_acum)
     print("Proceso completado con éxito.")
 
 if __name__ == "__main__":

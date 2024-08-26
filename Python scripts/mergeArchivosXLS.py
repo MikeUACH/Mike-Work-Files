@@ -2,14 +2,11 @@ import os
 import pandas as pd
 import subprocess
 from datetime import datetime, timedelta
-import win32com.client as win32
 import re
-from openpyxl import load_workbook
-from openpyxl.styles import NamedStyle, Font
 
 # Rutas de las carpetas y archivos
 carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Acum"
-carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS Filtrados"
+carpeta_destino = r"C:\Users\EJRuiz\Desktop\ArchivosXLS"
 archivo_bat = r"C:\Users\EJRuiz\Desktop\GasInOilExporter\ProcesaExtraccionesGOLAuto.bat"
 archivo_bat_dinamico = r"C:\Users\EJRuiz\Desktop\GasInOilExporter"
     
@@ -95,118 +92,72 @@ def convertir_fecha(fecha_str):
         return None
                 
 def combinar_archivos(carpeta_origen, carpeta_destino):
-    # Combina archivos, elimina duplicados y guarda resultados en .xls
-    archivos_destino = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
-    if archivos_destino:
-        df_acumulado = pd.concat([pd.read_csv(f, delimiter='\t', encoding='latin1') for f in archivos_destino], ignore_index=True)
-    else:
-        df_acumulado = pd.DataFrame()
+    # Obtener lista de archivos en ambas carpetas
+    archivos_origen = [f for f in os.listdir(carpeta_origen) if f.endswith('.xls')]
+    archivos_destino = [f for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
 
-    archivos_origen = [os.path.join(carpeta_origen, f) for f in os.listdir(carpeta_origen) if f.endswith('.xls')]
-    for archivo in archivos_origen:
-        df_nuevo = pd.read_csv(archivo, delimiter='\t', encoding='latin1')
-        df_acumulado = pd.concat([df_acumulado, df_nuevo], ignore_index=True)
+    # Ordenar los archivos alfabéticamente
+    archivos_origen.sort()
+    archivos_destino.sort()
 
+    # Crear un diccionario para los archivos destino con su nombre base como clave
+    dict_destino = {}
+    for archivo in archivos_destino:
+        base_nombre = re.match(r'(gas-in-oil_.*?_[0-3]_)', os.path.basename(archivo))
+        if base_nombre:
+            dict_destino[base_nombre.group()] = archivo
+
+    for archivo_origen in archivos_origen:
+        base_nombre_origen = re.match(r'(gas-in-oil_.*?_[0-3]_)', os.path.basename(archivo_origen))
+        if not base_nombre_origen:
+            print(f"Nombre de archivo no coincide con el patrón esperado: {archivo_origen}")
+            continue
+        
+        base_nombre_origen = base_nombre_origen.group()
+        archivo_destino = dict_destino.get(base_nombre_origen)
+
+        if archivo_destino:
+            # Leer el archivo de origen
+            df_origen = pd.read_csv(os.path.join(carpeta_origen, archivo_origen), delimiter='\t', encoding='latin1')
+            
+            # Leer el archivo de destino
+            df_destino = pd.read_csv(os.path.join(carpeta_destino, archivo_destino), delimiter='\t', encoding='latin1')
+            
+            # Combinar los datos
+            df_combinado = pd.concat([df_destino, df_origen], ignore_index=True)
+
+            # Procesar el DataFrame combinado según sea necesario
+            df_combinado = procesar_dataframe(df_combinado)
+
+            # Guardar el DataFrame combinado de nuevo en el archivo de destino
+            df_combinado.to_csv(os.path.join(carpeta_destino, archivo_destino), index=False, sep='\t', encoding='latin1')
+            print(f"Archivo combinado guardado: {archivo_destino}")
+
+        else:
+            print(f"No se encontró archivo de destino correspondiente para: {archivo_origen}")
+
+def procesar_dataframe(df):
     # Convertir fechas a datetime, ignorando errores y llenando con NaT (Not a Time)
-    df_acumulado['Event Date'] = pd.to_datetime(df_acumulado['Event Date'], errors='coerce')
-    df_acumulado['Heat Start Time'] = pd.to_datetime(df_acumulado['Heat Start Time'], errors='coerce')
-    df_acumulado['Heat End Time'] = pd.to_datetime(df_acumulado['Heat End Time'], errors='coerce')
+    df['Event Date'] = pd.to_datetime(df['Event Date'], errors='coerce')
+    df['Heat Start Time'] = pd.to_datetime(df['Heat Start Time'], errors='coerce')
+    df['Heat End Time'] = pd.to_datetime(df['Heat End Time'], errors='coerce')
 
     # Filtrar fechas de 'Event Date' dentro del último año
-    fecha_limite = df_acumulado['Event Date'].max() - pd.DateOffset(years=1)
-    df_acumulado = df_acumulado[df_acumulado['Event Date'] >= fecha_limite]
+    fecha_limite = df['Event Date'].max() - pd.DateOffset(years=1)
+    df = df[df['Event Date'] >= fecha_limite]
 
     # Eliminar duplicados basados en 'Heat Start Time', asegurando que se conserve la fecha más reciente
-    df_acumulado = df_acumulado.sort_values(by='Heat End Time')
-    no_vacios = df_acumulado[df_acumulado['Heat Start Time'].notna()]
-    vacios = df_acumulado[df_acumulado['Heat Start Time'].isna()]
+    df = df.sort_values(by='Heat End Time')
+    no_vacios = df[df['Heat Start Time'].notna()]
+    vacios = df[df['Heat Start Time'].isna()]
     no_vacios = no_vacios.drop_duplicates(subset='Heat Start Time', keep='last')
-    
-    df_acumulado = pd.concat([no_vacios, vacios], ignore_index=True)
-    
+
+    df = pd.concat([no_vacios, vacios], ignore_index=True)
+
     # Eliminar duplicados basados en 'Event Date', asegurando que se conserve la fecha más reciente
-    df_acumulado = df_acumulado.sort_values(by='Event Date').drop_duplicates(subset='Event Date', keep='last')
+    df = df.sort_values(by='Event Date').drop_duplicates(subset='Event Date', keep='last')
 
-    # Guardar el DataFrame combinado en formato .xlsx
-    nombre_archivo = os.path.basename(archivo)
-    archivo_xlsx = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xlsx")
-    
-    if verificar_si_existe(f"{os.path.splitext(nombre_archivo)[0]}.xls", carpeta_destino):
-        print(f"El archivo {os.path.splitext(nombre_archivo)[0]}.xls ya existe en {carpeta_destino} y no será reemplazado.")
-        return
-    with pd.ExcelWriter(archivo_xlsx, engine='openpyxl') as writer:
-        df_acumulado.to_excel(writer, index=False)
-    
-    # Aplicar estilo de fuente a todas las celdas en el archivo Excel
-    wb = load_workbook(archivo_xlsx)
-    ws = wb.active
-
-    # Crear un estilo con fuente personalizada
-    fuente = Font(name='Aptos Narrow', size=11)
-    formato_fecha = NamedStyle(name="formato_fecha", number_format='m/d/yyyy h:mm')
-    
-    # Aplicar el formato a las columnas de fecha
-    for col in ['A', 'V', 'W']:  
-        for cell in ws[col]:
-            if cell.row > 1:  # Asumiendo que la primera fila es el encabezado
-                cell.style = formato_fecha
-                
-    # Aplicar el estilo de fuente a todas las celdas
-    for row in ws.iter_rows():
-        for cell in row:
-            cell.font = fuente
-
-    wb.save(archivo_xlsx)
-
-    archivo_xls = os.path.join(carpeta_destino, f"{os.path.splitext(nombre_archivo)[0]}.xls")
-    convertir_xlsx_a_xls(archivo_xlsx, archivo_xls)
-
-    os.remove(archivo_xlsx)
-
-    eliminar_archivos_viejos(carpeta_destino, archivo_xls)
-
-    print(f"Archivos combinados, guardados en formato .xls y archivos antiguos eliminados.")
-    
-def verificar_si_existe(nombre_archivo, carpeta_destino):
-    archivo_existente = os.path.join(carpeta_destino, nombre_archivo)
-    return os.path.exists(archivo_existente)
-
-def convertir_xlsx_a_xls(archivo_xlsx, archivo_xls):
-    excel = win32.gencache.EnsureDispatch('Excel.Application')
-    wb = excel.Workbooks.Open(archivo_xlsx)
-    wb.SaveAs(archivo_xls, FileFormat=56)
-    wb.Close()
-    excel.Application.Quit()
-
-def eliminar_archivos_viejos(carpeta_destino, archivo_xls_nuevo):
-    nombre_base_nuevo = os.path.splitext(os.path.basename(archivo_xls_nuevo))[0]
-    archivos_xls = [os.path.join(carpeta_destino, f) for f in os.listdir(carpeta_destino) if f.endswith('.xls')]
-
-    archivos_mas_recientes = {}
-
-    for archivo_xls in archivos_xls:
-        nombre_archivo = os.path.basename(archivo_xls)
-        base_name_match = re.match(r"(.+?)(?=_\d{8}_\d{6})", nombre_archivo)
-        
-        if base_name_match:
-            base_name = base_name_match.group(1)
-            fecha_hora_str = re.search(r"_(\d{8}_\d{6})\.xls$", nombre_archivo)
-            if fecha_hora_str:
-                fecha_hora = datetime.strptime(fecha_hora_str.group(1), "%Y%m%d_%H%M%S")
-            else:
-                continue
-            
-            if base_name not in archivos_mas_recientes or fecha_hora > archivos_mas_recientes[base_name][1]:
-                archivos_mas_recientes[base_name] = (archivo_xls, fecha_hora)
-
-    for archivo_xls in archivos_xls:
-        nombre_archivo = os.path.basename(archivo_xls)
-        base_name_match = re.match(r"(.+?)(?=_\d{8}_\d{6})", nombre_archivo)
-        
-        if base_name_match:
-            base_name = base_name_match.group(1)
-            if base_name in archivos_mas_recientes and archivo_xls != archivos_mas_recientes[base_name][0]:
-                os.remove(archivo_xls)
+    return df
                 
 def construir_comando_bat(nombre_archivo, archivo_bat, fecha_inicio, fecha_fin):
     # Extraer la base del nombre del archivo sin la fecha
