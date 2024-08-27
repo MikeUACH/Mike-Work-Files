@@ -1,7 +1,6 @@
 import os
 import pandas as pd
-import subprocess
-from datetime import datetime, timedelta
+from datetime import datetime
 import re
 
 # Rutas de las carpetas y archivos
