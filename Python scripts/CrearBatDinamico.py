@@ -54,39 +54,41 @@ def obtener_fechas_de_archivos(carpeta_origen):
 def generar_comandos(cursor, fechas_por_archivo):
     comandos = []
 
-    for row in rows:  # Cambiado de cursor a rows
+    for row in cursor:
         ComboKey, FileGOL, furnaceID, Tank = row
-        #FileGOL = FileGOL.strip()
         print(f"Procesando FileGOL: {FileGOL}")  # Depuración
 
-        for base_nombre, fechas in fechas_por_archivo.items():
-            if base_nombre in FileGOL:
-                print(f"Match found: {base_nombre} in {FileGOL}")  # Depuración
+        # Obtener las fechas correspondientes del diccionario
+        fechas = fechas_por_archivo.get(FileGOL)
+        
+        if fechas:
+            fecha_event_date, fecha_heat_start_time = fechas
 
-                fecha_event_date, fecha_heat_start_time = fechas
+            # Calcular fecha para el comando basado en la lógica proporcionada
+            if fecha_event_date > fecha_heat_start_time:
+                fecha_comando = fecha_heat_start_time - timedelta(days=10)
+            else:
+                fecha_comando = fecha_event_date - timedelta(days=10)
 
-                # Calcular fecha para el comando basado en la lógica proporcionada
-                if fecha_event_date > fecha_heat_start_time:
-                    fecha_comando = fecha_heat_start_time - timedelta(days=10)
-                else:
-                    fecha_comando = fecha_event_date - timedelta(days=10)
+            # Formatear la fecha en el formato necesario para el comando
+            fecha_comando_str = fecha_comando.strftime('%Y-%m-%d')
 
-                # Formatear la fecha en el formato necesario para el comando
-                fecha_comando_str = fecha_comando.strftime('%Y-%m-%d')
-
-                # Generar comando basado en las variables
-                comando = f"""
-                D:
-                cd D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter
-                del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*"
-                VM2_GasInOil_Exporter_multiTank_072020.exe "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida" "{furnaceID}" "{fecha_comando_str}" "{Tank}"
-                del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\{FileGOL}*"
-                move /y "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*" "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\"
-                "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\actualizaBDGOL.vbs" "PROCESO" "{ComboKey}"
-                """
-                comandos.append(comando)
+            # Generar comando basado en las variables
+            comando = f"""
+            D:
+            cd D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter
+            del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*"
+            VM2_GasInOil_Exporter_multiTank_072020.exe "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida" "{furnaceID}" "{fecha_comando_str}" "{Tank}"
+            del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\{FileGOL}*"
+            move /y "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*" "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\"
+            "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\actualizaBDGOL.vbs" "PROCESO" "{ComboKey}"
+            """
+            comandos.append(comando)
+        else:
+            print(f"No se encontraron fechas para {FileGOL}. Comando no generado.")
 
     return comandos
+
 
 # Obtener fechas de los archivos en la carpeta de origen
 fechas_por_archivo = obtener_fechas_de_archivos(carpeta_origen)
