@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import subprocess
 from datetime import datetime, timedelta
 import re
 
@@ -30,29 +29,30 @@ def combinar_archivos(carpeta_origen, carpeta_destino):
         if not base_nombre_origen:
             print(f"Nombre de archivo no coincide con el patrón esperado: {archivo_origen}")
             continue
-        
+
         base_nombre_origen = base_nombre_origen.group()
         archivo_destino = dict_destino.get(base_nombre_origen)
 
         if archivo_destino:
             # Leer el archivo de origen
             df_origen = pd.read_csv(os.path.join(carpeta_origen, archivo_origen), delimiter='\t', encoding='latin1')
-            
+
             # Leer el archivo de destino
             df_destino = pd.read_csv(os.path.join(carpeta_destino, archivo_destino), delimiter='\t', encoding='latin1')
-            
+
             # Combinar los datos
             df_combinado = pd.concat([df_destino, df_origen], ignore_index=True)
 
             # Procesar el DataFrame combinado según sea necesario
             df_combinado = procesar_dataframe(df_combinado)
-
             # Guardar el DataFrame combinado de nuevo en el archivo de destino
             df_combinado.to_csv(os.path.join(carpeta_destino, archivo_destino), index=False, sep='\t', encoding='latin1')
             print(f"Archivo combinado guardado: {archivo_destino}")
 
         else:
             print(f"No se encontró archivo de destino correspondiente para: {archivo_origen}")
+
+
 
 def procesar_dataframe(df):
     # Convertir fechas a datetime, ignorando errores y llenando con NaT (Not a Time)
@@ -69,7 +69,7 @@ def procesar_dataframe(df):
     no_vacios = df[df['Heat Start Time'].notna()]
     vacios = df[df['Heat Start Time'].isna()]
     no_vacios = no_vacios.drop_duplicates(subset='Heat Start Time', keep='last')
-
+    
     df = pd.concat([no_vacios, vacios], ignore_index=True)
 
     # Eliminar duplicados basados en 'Event Date', asegurando que se conserve la fecha más reciente

@@ -14,6 +14,7 @@ query = "SELECT ComboKey, FileGOL, furnaceID, Tank FROM dbo.PlantasGOL"
 cursor.execute(query)
 rows = cursor.fetchall()
 
+datos_base_datos = {row.FileGOL: row for row in rows}
 # Ruta de archivos XLS
 carpeta_origen = r"C:\Users\EJRuiz\Desktop\ArchivosXLS"
 
@@ -26,7 +27,12 @@ def obtener_fechas_de_archivos(carpeta_origen):
         if base_nombre:
             base_nombre = base_nombre.group()
             archivo_xls = os.path.join(carpeta_origen, archivo)
-
+            
+            # Buscar el nombre en la base de datos
+            datos_db = datos_base_datos.get(base_nombre)
+            #if datos_db is None:
+                #print(f"Nombre archivo: {base_nombre} \n nombre en base de datos: {datos_db} \n")
+            
             # Leer archivo XLS como CSV delimitado por tabulaciones
             df = pd.read_csv(archivo_xls, delimiter='\t', encoding='latin1')
 
@@ -54,41 +60,48 @@ def obtener_fechas_de_archivos(carpeta_origen):
 def generar_comandos(cursor, fechas_por_archivo):
     comandos = []
 
-    for row in cursor:
+    for row in rows:  # Cambiado de cursor a rows
         ComboKey, FileGOL, furnaceID, Tank = row
-        print(f"Procesando FileGOL: {FileGOL}")  # Depuración
+        #FileGOL = FileGOL.strip()
+        #print(f"Procesando FileGOL: {FileGOL}")  # Depuración
 
-        # Obtener las fechas correspondientes del diccionario
-        fechas = fechas_por_archivo.get(FileGOL)
-        
-        if fechas:
-            fecha_event_date, fecha_heat_start_time = fechas
+        for base_nombre, fechas in fechas_por_archivo.items():
+            if base_nombre in FileGOL:
+                #print(f"Match found: {base_nombre} in {FileGOL} con combokey {ComboKey}")  # Depuración
 
-            # Calcular fecha para el comando basado en la lógica proporcionada
-            if fecha_event_date > fecha_heat_start_time:
-                fecha_comando = fecha_heat_start_time - timedelta(days=10)
-            else:
-                fecha_comando = fecha_event_date - timedelta(days=10)
+                fecha_event_date, fecha_heat_start_time = fechas
 
-            # Formatear la fecha en el formato necesario para el comando
-            fecha_comando_str = fecha_comando.strftime('%Y-%m-%d')
+                # Calcular fecha para el comando basado en la lógica proporcionada
+                if fecha_event_date > fecha_heat_start_time:
+                    fecha_comando = fecha_heat_start_time - timedelta(days=10)
+                else:
+                    fecha_comando = fecha_event_date - timedelta(days=10)
 
-            # Generar comando basado en las variables
-            comando = f"""
-            D:
-            cd D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter
-            del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*"
-            VM2_GasInOil_Exporter_multiTank_072020.exe "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida" "{furnaceID}" "{fecha_comando_str}" "{Tank}"
-            del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\{FileGOL}*"
-            move /y "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*" "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\"
-            "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\actualizaBDGOL.vbs" "PROCESO" "{ComboKey}"
-            """
-            comandos.append(comando)
-        else:
-            print(f"No se encontraron fechas para {FileGOL}. Comando no generado.")
+                # Formatear la fecha en el formato necesario para el comando
+                fecha_comando_str = fecha_comando.strftime('%Y-%m-%d')
+
+                # Generar comando basado en las variables
+                comando = f"""
+                D:
+                cd D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter
+                del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*"
+                VM2_GasInOil_Exporter_multiTank_072020.exe "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida" "{furnaceID}" "{fecha_comando_str}" "{Tank}"
+                del "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\{FileGOL}*"
+                move /y "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\salida\\{FileGOL}*" "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\ArchivosXLS\\"
+                "D:\\Sincronizar\\VM2\\extraerCCR\\GasInOilExporter\\actualizaBDGOL.vbs" "PROCESO" "{ComboKey}"
+                """
+                comandos.append(comando)
+                
+                # Actualizar la base de datos con el comando generado
+                update_query = """
+                    UPDATE dbo.PlantasGOL
+                    SET comando = ?
+                    WHERE FileGOL = ?
+                """
+                cursor.execute(update_query, (comando.strip(), FileGOL))
+                conn_str.commit()  # Confirmar los cambios en la base de datos
 
     return comandos
-
 
 # Obtener fechas de los archivos en la carpeta de origen
 fechas_por_archivo = obtener_fechas_de_archivos(carpeta_origen)

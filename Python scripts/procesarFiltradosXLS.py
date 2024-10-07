@@ -3,17 +3,19 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 def eliminar_filas_antiguas(df):
+    #df['Event Date'] = pd.to_datetime(df['Event Date'], errors='coerce')
+    df['TimeStarted'] = pd.to_datetime(df['TimeStarted'], errors='coerce')
     # Obtener la fecha de hoy
-    fecha_hoy = datetime.now()
-    # Calcular la fecha límite (hoy - 17 días)
-    fecha_limite = fecha_hoy - timedelta(days=17)
+    fecha_hoy =  df['TimeStarted'].max()
+    # Calcular la fecha límite (hoy - 15 días)
+    fecha_limite = fecha_hoy - timedelta(days=10)
 
-    # Convertir la columna 'Event Date' a datetime si no lo está
-    df['Event Date'] = pd.to_datetime(df['Event Date'], errors='coerce')
+    # Convertir la columna 'TimeStarted' a datetime si no lo está
+    df['TimeStarted'] = pd.to_datetime(df['TimeStarted'], errors='coerce')
 
-    # Filtrar filas donde 'Event Date' es mayor o igual a la fecha límite
-    df_filtrado = df[df['Event Date'] < fecha_limite]
-
+    # Filtrar filas donde 'TimeStarted' está dentro de los últimos 15 días
+    df_filtrado = df[(df['TimeStarted'] >= fecha_limite) & (df['TimeStarted'] <= fecha_hoy)]
+    
     return df_filtrado
 
 def procesar_archivos(carpeta_origen, carpeta_destino):
@@ -24,7 +26,7 @@ def procesar_archivos(carpeta_origen, carpeta_destino):
     for archivo in os.listdir(carpeta_origen):
         if archivo.endswith('.xls'):
             ruta_archivo = os.path.join(carpeta_origen, archivo)
-            df = pd.read_csv(ruta_archivo, delimiter='\t', encoding='latin1')
+            df = pd.read_csv(ruta_archivo, delimiter='\t', encoding='latin1', low_memory=False)
             
             # Aplicar la función de eliminación de filas antiguas
             df_filtrado = eliminar_filas_antiguas(df)
@@ -35,8 +37,8 @@ def procesar_archivos(carpeta_origen, carpeta_destino):
             print(f"Procesado: {archivo}")
 
 # Rutas de origen y destino
-carpeta_origen = r'C:\Users\EJRuiz\Desktop\ArchivosXLS'
-carpeta_destino = r'C:\Users\EJRuiz\Desktop\ArchivosXLS Filtrados'
+carpeta_origen = r'C:\Users\EJRuiz\Desktop\Proyecto Merge\CCR\ArchivoCCR(Dinamic dates files)'
+carpeta_destino = r'C:\Users\EJRuiz\Desktop\Proyecto Merge\CCR'
 
 # Ejecutar el procesamiento de archivos
 procesar_archivos(carpeta_origen, carpeta_destino)

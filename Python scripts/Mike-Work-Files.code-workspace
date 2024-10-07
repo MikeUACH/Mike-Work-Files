@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../ASP y WEB"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Mike-Work-Files"
+	}
+}
