@@ -30,24 +30,28 @@ for archivo in archivos_acum:
             # Leer el archivo acumulado
             df_acum = pd.read_csv(os.path.join(folder1_path, archivo), delimiter='\t', encoding='latin1')
             
-            # Verificar si hay duplicados en 'Event Date' antes de combinar
-            existing_dates = dataframes_xls[key]['Event Date'].unique()
-            
-            # Filtrar las fechas del DataFrame acumulado para evitar duplicados
-            df_acum_filtered = df_acum[~df_acum['Event Date'].isin(existing_dates)]
-            
-            # Combinar los DataFrames
-            dataframes_xls[key] = pd.concat([dataframes_xls[key], df_acum_filtered], ignore_index=True)
+            # Realizar el merge entre el DataFrame existente y el nuevo de "ArchivosXLS Acum"
+            merged_df = pd.merge(dataframes_xls[key], df_acum, on='Event Date', how='left', suffixes=('', '_acum'))
 
-            # Limpiar posibles filas vacías creadas al concatenar
-            dataframes_xls[key] = dataframes_xls[key].dropna(how='all').reset_index(drop=True)
+            # Actualizar las columnas con los datos de df_acum
+            for column in df_acum.columns:
+                if column != 'Event Date':  # No actualizar Event Date
+                    # Reemplazar los valores de columnas vacías con los del acumulado
+                    merged_df[column] = merged_df[column].combine_first(merged_df[column + '_acum'])
+                    merged_df = merged_df.drop(columns=[column + '_acum'])  # Eliminar la columna temporal
+
+            # Limpiar posibles filas vacías creadas al combinar
+            merged_df = merged_df.dropna(how='all').reset_index(drop=True)
+
+            # Guardar el archivo actualizado en la carpeta ArchivosXLS con el nuevo nombre
+            output_file_path = os.path.join(folder2_path, archivo)  # Usar el nombre del archivo en Archivos Acum
+            merged_df.to_csv(output_file_path, sep='\t', index=False, encoding='latin1')
+
+            # Reemplazar el DataFrame original en el diccionario con el DataFrame combinado
+            dataframes_xls[key] = merged_df
 
             # Si el archivo tiene un nombre diferente (por cambio de fecha), eliminar el archivo antiguo
             for archivo_xls in archivos_xls:
                 if key in archivo_xls and archivo_xls != archivo:
                     os.remove(os.path.join(folder2_path, archivo_xls))
                     break
-
-            # Guardar el archivo actualizado en la carpeta ArchivosXLS con el nuevo nombre
-            output_file_path = os.path.join(folder2_path, archivo)  # Usar el nombre del archivo en Archivos Acum
-            dataframes_xls[key].to_csv(output_file_path, sep='\t', index=False, encoding='latin1')
