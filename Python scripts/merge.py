@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import re
+from datetime import datetime, timedelta
 
 # Rutas de las carpetas que contienen los archivos XLS
 folder1_path = r"C:\Users\EJRuiz\Desktop\Proyecto Merge\Xls\ArchivosXLS Acum"
@@ -30,28 +31,43 @@ for archivo in archivos_acum:
             # Leer el archivo acumulado
             df_acum = pd.read_csv(os.path.join(folder1_path, archivo), delimiter='\t', encoding='latin1')
             
-            # Realizar el merge entre el DataFrame existente y el nuevo de "ArchivosXLS Acum"
-            merged_df = pd.merge(dataframes_xls[key], df_acum, on='Event Date', how='left', suffixes=('', '_acum'))
+            # Verificar si hay duplicados en 'Event Date' antes de combinar
+            existing_dates = dataframes_xls[key]['Event Date'].unique()
+            
+            # Filtrar las fechas del DataFrame acumulado para evitar duplicados
+            df_acum_filtered = df_acum[~df_acum['Event Date'].isin(existing_dates)]
+            
+            # Combinar los DataFrames (concatenar primero)
+            combined_df = pd.concat([dataframes_xls[key], df_acum_filtered], ignore_index=True)
 
-            # Actualizar las columnas con los datos de df_acum
-            for column in df_acum.columns:
-                if column != 'Event Date':  # No actualizar Event Date
-                    # Reemplazar los valores de columnas vacías con los del acumulado
-                    merged_df[column] = merged_df[column].combine_first(merged_df[column + '_acum'])
-                    merged_df = merged_df.drop(columns=[column + '_acum'])  # Eliminar la columna temporal
+            # Limpiar posibles filas vacías creadas al concatenar
+            combined_df = combined_df.dropna(how='all').reset_index(drop=True)
 
-            # Limpiar posibles filas vacías creadas al combinar
-            merged_df = merged_df.dropna(how='all').reset_index(drop=True)
+            # Hacer un merge para actualizar los valores del DataFrame acumulado
+            # Realizar un merge left usando el df acumulado como base para actualizar valores
+            dataframes_xls[key] = pd.merge(combined_df, df_acum, on='Event Date', how='left', suffixes=('', '_new'))
 
-            # Guardar el archivo actualizado en la carpeta ArchivosXLS con el nuevo nombre
-            output_file_path = os.path.join(folder2_path, archivo)  # Usar el nombre del archivo en Archivos Acum
-            merged_df.to_csv(output_file_path, sep='\t', index=False, encoding='latin1')
+            # Actualizar las celdas con valores del archivo de folder1_path
+            for col in df_acum.columns:
+                if col != 'Event Date':  # No actualizar la columna de fecha
+                    dataframes_xls[key][col] = dataframes_xls[key].apply(
+                        lambda row: row[f"{col}_new"] if pd.notnull(row[f"{col}_new"]) else row[col], axis=1
+                    )
 
-            # Reemplazar el DataFrame original en el diccionario con el DataFrame combinado
-            dataframes_xls[key] = merged_df
+            # Eliminar las columnas temporales que no son necesarias
+            dataframes_xls[key].drop(columns=[f"{col}_new" for col in df_acum.columns if col != 'Event Date'], inplace=True)
+
+            # Aplicar el filtro para que el archivo resultante solo contenga información del último año
+            dataframes_xls[key]['Event Date'] = pd.to_datetime(dataframes_xls[key]['Event Date'], errors='coerce')
+            one_year_ago = dataframes_xls[key]['Event Date'].max() - timedelta(days=365)
+            dataframes_xls[key] = dataframes_xls[key][dataframes_xls[key]['Event Date'] >= one_year_ago]
 
             # Si el archivo tiene un nombre diferente (por cambio de fecha), eliminar el archivo antiguo
             for archivo_xls in archivos_xls:
                 if key in archivo_xls and archivo_xls != archivo:
                     os.remove(os.path.join(folder2_path, archivo_xls))
                     break
+
+            # Guardar el archivo actualizado en la carpeta ArchivosXLS con el nuevo nombre
+            output_file_path = os.path.join(folder2_path, archivo)  # Usar el nombre del archivo en Archivos Acum
+            dataframes_xls[key].to_csv(output_file_path, sep='\t', index=False, encoding='latin1')
