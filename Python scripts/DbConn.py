@@ -1,11 +1,7 @@
 import pyodbc
 import pandas as pd
-
+from conectDB import conn
 try:
-    # Establece la conexión con la base de datos
-    conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:txcare.database.windows.net,1433;Database=Txcare;Uid=fmariscal;Pwd=Pancho49193@2')
-    print("Conexión exitosa")
-
     # Consulta a la base de datos
     query = "SELECT * FROM PlantasGOL"
 

@@ -3,18 +3,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from flask import Flask, request
 import pyodbc
-
+from conectDB import conn
 app = Flask(__name__)
 
-#Configuración de la conexión a la base de datos
-conn_str = (
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=tcp.database.windows.net,1433;"
-    "DATABASE=Txcare;"
-    "UID=fmariscal;"
-    "PWD=Pancho49193@2"
-)
-conn = pyodbc.connect(conn_str)
 cursor = conn.cursor()
 
 #Configuración del correo

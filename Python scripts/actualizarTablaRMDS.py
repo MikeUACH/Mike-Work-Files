@@ -1,7 +1,7 @@
 import os
 import pyodbc
 from difflib import SequenceMatcher
-
+from conectDB import conn
 # Función para calcular la similitud entre dos cadenas
 def obtener_similitud(cadena1, cadena2):
     if cadena1 is None:
@@ -10,14 +10,7 @@ def obtener_similitud(cadena1, cadena2):
         cadena2 = ''
     return SequenceMatcher(None, cadena1, cadena2).ratio()
 
-# Configurar la conexión a la base de datos
-conn_str = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
-                          'Server=tcp:txcare.database.windows.net,1433;'
-                          'Database=Txcare;'
-                          'Uid=fmariscal;'
-                          'Pwd=Pancho49193@2;')
-print("Conexión exitosa")
-cursor = conn_str.cursor()
+cursor = conn.cursor()
 
 # Obtener los archivos .zip de la carpeta
 ruta_carpeta = r'C:\Users\EJRuiz\Desktop\CCRs copia\ArchivosCCR De 10 dias'
@@ -86,7 +79,7 @@ for resultado in resultados:
         print(f"Actualizado {PlantName} a NULL en zipCCR (sin archivo zip)")
 
 # Asegúrate de hacer commit para guardar los cambios
-conn_str.commit()
+conn.commit()
 
 # Cerrar la conexión a la base de datos
-conn_str.close()
+conn.close()

@@ -5,16 +5,8 @@ Created on Thu Sep 12 11:25:07 2024
 @author: TDominguez
 """
 import pyodbc
+from conectDB import conn
 
-conn_str = (
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=tcp:txcare.database.windows.net,1433;"
-    "DATABASE=Txcare;"
-    "UID=fmariscal;"
-    "PWD=Pancho49193@2"
-)
-# Conectar a la base de datos
-conn = pyodbc.connect(conn_str)
 cursor = conn.cursor()
 
 

@@ -4,8 +4,8 @@ import re
 from datetime import datetime, timedelta
 
 # Rutas de las carpetas que contienen los archivos XLS
-folder1_path = r"C:\Users\EJRuiz\Desktop\Proyecto Merge\Xls\ArchivosXLS Acum"
-folder2_path = r"C:\Users\EJRuiz\Desktop\Proyecto Merge\Xls\ArchivosXLS"
+folder1_path = r"C:\Users\EJRuiz\Desktop\Mike-Work-Files\Proyecto Merge\Xls\ArchivosXLS Acum"
+folder2_path = r"C:\Users\EJRuiz\Desktop\Mike-Work-Files\Proyecto Merge\Xls\ArchivosXLS"
 
 # Obtener listas de archivos en ambas carpetas
 archivos_acum = [f for f in os.listdir(folder1_path) if f.endswith('.xls')]

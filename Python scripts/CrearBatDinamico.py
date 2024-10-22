@@ -3,11 +3,9 @@ import pandas as pd
 from datetime import datetime, timedelta
 import pyodbc
 import re
+from conectDB import conn
 
-# Configurar conexión a SQL Server
-conn_str = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:txcare.database.windows.net,1433;Database=Txcare;Uid=fmariscal;Pwd=Pancho49193@2')
-print("Conexión exitosa")
-cursor = conn_str.cursor()
+cursor = conn.cursor()
 
 # Obtener datos de la tabla PlantasGOL
 query = "SELECT ComboKey, FileGOL, furnaceID, Tank FROM dbo.PlantasGOL"
@@ -51,7 +49,7 @@ def obtener_fechas_de_archivos(carpeta_origen):
                 WHERE FileGOL = ?
             """
             cursor.execute(query, (fecha_heat_start_time, fecha_event_date, base_nombre))
-            conn_str.commit()  # Confirmar los cambios en la base de datos
+            conn.commit()  # Confirmar los cambios en la base de datos
             
             fechas_por_archivo[base_nombre] = (fecha_event_date, fecha_heat_start_time)
 
@@ -99,7 +97,7 @@ def generar_comandos(cursor, fechas_por_archivo):
                     WHERE FileGOL = ?
                 """
                 cursor.execute(update_query, (comando.strip(), FileGOL))
-                conn_str.commit()  # Confirmar los cambios en la base de datos
+                conn.commit()  # Confirmar los cambios en la base de datos
 
     return comandos
 
@@ -127,4 +125,4 @@ print(f"Nuevo archivo .bat creado: {archivo_bat}")
 
 # Cerrar conexión
 cursor.close()
-conn_str.close()
+conn.close()

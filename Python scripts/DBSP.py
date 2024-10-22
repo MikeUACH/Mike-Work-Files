@@ -1,8 +1,6 @@
 import pyodbc
-
+from conectDB import conn
 try:
-    conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:txcare.database.windows.net,1433;Database=Txcare;Uid=fmariscal;Pwd=Pancho49193@2')
-    print("conexion exitosa")
     cursor = conn.cursor()
     cursor.execute("SELECT @@version;")
     row=cursor.fetchone()
